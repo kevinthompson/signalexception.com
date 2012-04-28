@@ -139,6 +139,8 @@ end
 
 desc "Push Generated Site to Heroku"
 task :heroku do
+  `git add --all`
+  `git commit -m "Deploying Generated Files to Heroku"`
   `git push heroku master`
 end
 
