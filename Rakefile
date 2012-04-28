@@ -12,8 +12,9 @@ blog_index_dir  = 'source'    # directory for your blog's index page (if you put
 stash_dir       = "_stash"    # directory to stash posts for speedy generation
 posts_dir       = "_posts"    # directory for blog posts
 themes_dir      = ".themes"   # directory for blog files
-new_post_ext    = "md"  # default new post file extension when using the new_post task
-new_page_ext    = "md"  # default new page file extension when using the new_page task
+new_post_ext    = "md"        # default new post file extension when using the new_post task
+new_page_ext    = "md"        # default new page file extension when using the new_page task
+deploy_default  = "heroku"    # default deploy method
 
 
 # Jekyll
@@ -134,7 +135,7 @@ task :deploy => [:integrate] do
   File.delete(".preview-mode") if File.exists?(".preview-mode")
   Rake::Task[:generate].execute
   Rake::Task[:copydot].invoke(source_dir, public_dir)
-  Rake::Task[:heroku].execute
+  Rake::Task["#{deploy_default}"].execute
 end
 
 desc "Push Generated Site to Heroku"
