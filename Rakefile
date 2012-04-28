@@ -129,12 +129,17 @@ end
 # Deploy
 # ----------------------------------------
 
-desc "Default deploy task"
+desc "Default Deploy Task"
 task :deploy => [:integrate] do
   File.delete(".preview-mode") if File.exists?(".preview-mode")
   Rake::Task[:generate].execute
   Rake::Task[:copydot].invoke(source_dir, public_dir)
-  Rake::Task["#{deploy_default}"].execute
+  Rake::Task[:heroku].execute
+end
+
+desc "Push Generated Site to Heroku"
+task :heroku do
+  `git push heroku master`
 end
 
 desc "copy dot files for deployment"
