@@ -22,7 +22,7 @@
 -->
 <meta charset="utf-8"> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Hiding JavaScript-Dependent Content | Kevin Thompson</title>
+<title>Start Required Processes on Pow Application Boot | Kevin Thompson</title>
 <meta name="description" content="Kevin Thompson is an web application developer and user experience engineer from Oceanside, Ca"> 
 <meta name="keywords" content="Kevin Thompson, web development in san diego, web developer in san diego, san diego user experience, small business website, expressionengine developer"> 
 <meta name="author" content="Kevin Thompson"> 
@@ -73,32 +73,37 @@
   <div class="unit size-two-thirds pvn">
     <article class="post">  
       <div class="module">
-        <h1 class="title">Hiding JavaScript-Dependent Content</h1>
-        <span class="date">July 15, 2011</span>
-        <p>When implementing various JavaScript-dependent solutions such as image sliders and accordions, its easy to start throwing around <code>display:none;</code> attributes in your CSS to avoid seeing a flash of content before it&rsquo;s removed by your JavaScript, but there&rsquo;s another way to achieve the same result without alienating users that may have JavaScript disabled.</p>
+        <h1 class="title">Start Required Processes on Pow Application Boot</h1>
+        <span class="date">April 29, 2012</span>
+        <p>Using <a href="http://pow.cx/">Pow</a> to serve your Rack apps makes managing multiple applications a breeze, but you may still find yourself manually starting up additional processes that your apps depend on. Luckily, Pow provides us with a few hooks to automate these processes as well.</p>
 
 <!-- more -->
 
 
-<p>In order to ensure that your content remains visible when users happen to encounter it with JavaScript disabled, avoid hiding elements with CSS alone. Instead, apply a simple class to your <code>&lt;html&gt;</code> tag early during page rendering, then prefix JavaScript-dependent CSS with that class.</p>
+<p>In the <a href="http://pow.cx/manual.html">Pow Manual</a> under section 2.2, &ldquo;<a href="http://pow.cx/manual.html#section_2.2">Customizing Environment Variables</a>&rdquo;, we&rsquo;re given an overview of how we might customize the environment for our worker processes through the <code>.powrc</code> and <code>.powenv</code> files. However, because these files simply execute a series of bash commands, we can add much more than environment variable exports to our application boot process.</p>
 
-<h2>Example</h2>
+<p>For example, most of the projects I&rsquo;ve been contributing to lately use MongoDB, and as such, I need to have an instance of the <code>mongod</code> process running in order to connect to my databases. To avoid the inevitable application startup error, or having to manually check for an existing MongoDB process, I can simply add the following code to my <code>.powrc</code> file:</p>
 
-<h3>HTML</h3>
+<pre><code># Start MongoDB
+if ! ps ax | grep -v grep | grep 'mongod' &gt; /dev/null
+then
+  mongod -port 27017 &lt;/dev/null &amp;&gt;/dev/null &amp;
+fi
+</code></pre>
 
-<script src="https://gist.github.com/1085836.js?file=index.html"></script>
+<p>These few lines are all I need to check for a <code>mongod</code> process, and automatically start it if it&rsquo;s not already running when my application is booted.</p>
 
+<p>If you want to test the functionality in your <code>.rvmrc</code> file, you can run the files directly from your project directory: <code>./.rvmrc</code>. If you&rsquo;re going to be executing this file directly, I would recommend rounding out your code with a few echos for clarity:</p>
 
-<p><a href="https://gist.github.com/1085836">Available on Github &raquo;</a></p>
-
-<h3>CSS</h3>
-
-<script src="https://gist.github.com/1085836.js?file=style.css"></script>
-
-
-<p><a href="https://gist.github.com/1085836">Available on Github &raquo;</a></p>
-
-<p>By using this method, you&rsquo;ve first verified that JavaScript is enabled before hiding content that your user may otherwise be deprived of.</p>
+<pre><code>if ! ps ax | grep -v grep | grep 'mongod' &gt; /dev/null
+then
+  echo "Starting MongoDB server..."
+  mongod -port 27017 &lt;/dev/null &amp;&gt;/dev/null &amp;
+  echo "MongoDB is now up and running."
+else
+  echo "Relax bro. MongoDB is already running."
+fi
+</code></pre>
 
       </div>
     </article>
@@ -116,26 +121,6 @@
   
 
   
-
-  
-    
-  
-  
-
-  
-  
-
-  
-
-  
-    
-  
-  
-
-  
-  
-
-  
     
     
   
@@ -147,6 +132,22 @@
   
     
     
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
   
 
   
@@ -189,8 +190,8 @@
 
 <div class="post-nav sticky">
   <ul class="article-nav mbn clear">
-    <li class="previous"><a href="/blog/placeholder-image-services" >&laquo; Previous Post</a></li> 
-    <li class="next"><a href="/blog/iphone-and-ipad-browser-testing-using-the-ios-simulator">Next Post &raquo;</a></li>
+    <li class="previous"><a href="/blog/iphone-and-ipad-browser-testing-using-the-ios-simulator" >&laquo; Previous Post</a></li> 
+    
   </ul>
 </div>
   </div>

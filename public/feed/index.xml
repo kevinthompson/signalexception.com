@@ -4,13 +4,52 @@
  <title>Kevin Thompson</title>
  <link href="http://kevinthompson.info/feed" rel="self"/>
  <link href="http://kevinthompson.info/"/>
- <updated>2012-04-28T23:35:33-07:00</updated>
+ <updated>2012-04-29T01:46:20-07:00</updated>
  <id>http://warpspire.com/</id>
  <author>
    <name>Kevin Thompson</name>
    <email>kevin@kevinthompson.info</email>
  </author>
 
+ 
+ <entry>
+   <title>Start Required Processes on Pow Application Boot</title>
+   
+     <link href="http://kevinthompson.info/blog/start-required-processes-on-pow-application-boot" />
+   
+   <updated>2012-04-29T00:00:00-07:00</updated>
+   <id>http://kevinthompson.info/blog/start-required-processes-on-pow-application-boot</id>
+   <content type="html">&lt;p&gt;Using &lt;a href=&quot;http://pow.cx/&quot;&gt;Pow&lt;/a&gt; to serve your Rack apps makes managing multiple applications a breeze, but you may still find yourself manually starting up additional processes that your apps depend on. Luckily, Pow provides us with a few hooks to automate these processes as well.&lt;/p&gt;
+
+&lt;!&#8211; more &#8211;&gt;
+
+
+&lt;p&gt;In the &lt;a href=&quot;http://pow.cx/manual.html&quot;&gt;Pow Manual&lt;/a&gt; under section 2.2, &amp;ldquo;&lt;a href=&quot;http://pow.cx/manual.html#section_2.2&quot;&gt;Customizing Environment Variables&lt;/a&gt;&amp;rdquo;, we&amp;rsquo;re given an overview of how we might customize the environment for our worker processes through the &lt;code&gt;.powrc&lt;/code&gt; and &lt;code&gt;.powenv&lt;/code&gt; files. However, because these files simply execute a series of bash commands, we can add much more than environment variable exports to our application boot process.&lt;/p&gt;
+
+&lt;p&gt;For example, most of the projects I&amp;rsquo;ve been contributing to lately use MongoDB, and as such, I need to have an instance of the &lt;code&gt;mongod&lt;/code&gt; process running in order to connect to my databases. To avoid the inevitable application startup error, or having to manually check for an existing MongoDB process, I can simply add the following code to my &lt;code&gt;.powrc&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Start MongoDB
+if ! ps ax | grep -v grep | grep &#8216;mongod&#8217; &amp;gt; /dev/null
+then
+  mongod -port 27017 &amp;lt;/dev/null &amp;amp;&amp;gt;/dev/null &amp;amp;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These few lines are all I need to check for a &lt;code&gt;mongod&lt;/code&gt; process, and automatically start it if it&amp;rsquo;s not already running when my application is booted.&lt;/p&gt;
+
+&lt;p&gt;If you want to test the functionality in your &lt;code&gt;.rvmrc&lt;/code&gt; file, you can run the files directly from your project directory: &lt;code&gt;./.rvmrc&lt;/code&gt;. If you&amp;rsquo;re going to be executing this file directly, I would recommend rounding out your code with a few echos for clarity:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if ! ps ax | grep -v grep | grep &#8216;mongod&#8217; &amp;gt; /dev/null
+then
+  echo &quot;Starting MongoDB server&#8230;&quot;
+  mongod -port 27017 &amp;lt;/dev/null &amp;amp;&amp;gt;/dev/null &amp;amp;
+  echo &quot;MongoDB is now up and running.&quot;
+else
+  echo &quot;Relax bro. MongoDB is already running.&quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
  
  <entry>
    <title>iPhone &amp; iPad Browser Testing Using the iOS Simulator</title>
