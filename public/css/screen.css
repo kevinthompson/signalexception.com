@@ -441,7 +441,7 @@ pre,
 .social a[href*="twitter.com"]    { background:url('/images/icons/twitter_16.png') no-repeat left 5px; }
 .social a[href*="gowalla.com"]    { background:url('/images/icons/gowalla_16.png') no-repeat left 5px; }
 .social a[href*="linkedin.com"]   { background:url('/images/icons/linkedin_16.png') no-repeat left 5px; }
-.social a[href*="feedburner.com"] { background:url('/images/icons/rss_16.png') no-repeat left 5px; }
+.social a[href*="feed/index.xml"] { background:url('/images/icons/rss_16.png') no-repeat left 5px; }
 
 /* Disqus */
 #disqus_thread            { margin:-1.15em 1.5em 0; position:relative; }
