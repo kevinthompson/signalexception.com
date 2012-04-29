@@ -17,7 +17,7 @@ phone: (760) 525-4041
 date_format: "ordinal"
 
 # RSS
-subscribe_rss: /atom.xml
+subscribe_rss: /feed/index.xml
 
 # Github 
 github_user: "kevinthompson"
