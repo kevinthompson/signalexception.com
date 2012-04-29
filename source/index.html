@@ -1,29 +1,71 @@
 ---
 layout: default
+head_content: <link rel="alternate" type="application/atom+xml" href="http://kevinthompson.info/feed/" />
+class: home
 ---
-
-<div class="blog-index">
-  {% assign index = true %}
-  {% for post in paginator.posts %}
-  {% assign content = post.content %}
-    <article>
-      {% include article.html %}
-    </article>
-  {% endfor %}
-  <div class="pagination">
-    {% if paginator.next_page %}
-      <a class="prev" href="{{paginator.next_page}}">&larr; Older</a>
-    {% endif %}
-    <a href="/blog/archives">Blog Archives</a>
-    {% if paginator.previous_page %}
-    <a class="next" href="{{paginator.previous_page}}">Newer &rarr;</a>
-    {% endif %}
+<div class="intro line">
+  <div class="unit size-one-third">
+    <div class="img avatar">
+      <img src="/images/interface/avatar.png" />
+    </div>
+  </div>
+  <div class="last unit size-two-thirds">
+    <h1 class="name hires">Kevin<br />Thompson</h1>
+    <p class="tagline">Husband<span class="amp">,</span> Father <br class="lores"/><span class="amp">&amp;</span> Software Engineer</p>
+    <a class="bevel button lores" href="mailto:{contact-email}">Hire Me</a>
   </div>
 </div>
-<aside class="sidebar">
-  {% if site.blog_index_asides.size %}
-    {% include_array blog_index_asides %}
-  {% else %}
-    {% include_array default_asides %}
+
+<hr class="mtl" />
+
+<div class="line">
+  <section class="unit size-two-thirds">
+    {% for post in site.categories.blog limit:3 %}
+    <article class="module content post">
+      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      {{ post.content | excerpt }} 
+      <p><a href="{{ post.url }}" class="right">Continue Reading &raquo;</a></p>
+    </article>
+    {% endfor %}
+  </section>
+  {% if site.github_user %}
+  <div class="last unit size-one-third ptm">
+    <section class="mll">
+      <h1>Recent Work</h1>
+      <ul id="gh_repos" class="mhn">
+        <li class="loading"><p>Retrieving Repos...</p></li>
+      </ul>
+    </section>
+    <p class="more right"><a href="http://github.com/kevinthompson">View More on Github &raquo;</a></p>
+  </div>
   {% endif %}
-</aside>
+</div>
+
+<hr />
+
+<div class="module content">
+  <h1>Recommendations</h1>
+  <section id="recommendations" class="line divided">
+    {% assign recommendation_count = 0 %}
+    {% for recommendation in site.categories.recommendations %}
+    {% if recommendation.featured %}
+    <div class="{% if recommendation_count == '2' %}last {% endif %}unit size-one-third">
+      <article class="recommendation">
+        <p class="bevel bubble"><span class="quote-mark">&ldquo;</span>{{ recommendation.summary }}<span class="quote-mark">&rdquo;</span></p>
+        <div class="img">
+          <img src="/images/avatars/{{ recommendation.image }}" class="avatar" />
+        </div>
+        <div class="author">{{ recommendation.title }}</div>
+        <div class="position">{{ recommendation.position }}</div>
+        {% if recommendation.website != '' %}<a class="company" href="{{ recommendation.website }}">{% endif %}{{ recommendation.company }}{% if recommendation.website != '' %}</a>{% endif %}
+      </article>
+      <hr class="lores" />
+    </div>
+    {% capture recommendation_count %}{{ recommendation_count | plus:1 }}{% endcapture %}
+    {% endif %}
+    {% endfor %}
+  </section>
+  <p class="more right"><a href="http://linkedin.com/in/kevindthompson">View More on LinkedIn &raquo;</a></p>
+</div>
+
+<hr />

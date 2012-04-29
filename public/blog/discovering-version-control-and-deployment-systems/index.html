@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>	<html class="ie ie6 lte9 lte8 lte7"> <![endif]--> 
+<!--[if IE 7 ]>		<html class="ie ie7 lte9 lte8 lte7"> <![endif]--> 
+<!--[if IE 8 ]>		<html class="ie ie8 lte9 lte8"> <![endif]--> 
+<!--[if IE 9 ]>		<html class="ie ie9 lte9"> <![endif]--> 
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<head>
+<!--
+ _     _             _       
+| |   / /           (_)      
+| |_ / / ____ _   _ _ ____  
+|  _  | | ___ | | | | |  _ \ 
+| |  \ \| ____|\ V /| | | | |
+|_|   \_)_____) \_/ |_|_| |_|                        
+ _______ _                                        
+(__   __) |                                       
+   | |  | |__   ___  ____  ____   ___  ___  ____  
+   | |  |  _ \ / _ \|    \|  _ \ /___)/ _ \|  _ \ 
+   | |  | | | | |_| | | | | |_| |___ | |_| | | | |
+   |_|  |_| |_|\___/|_|_|_|  __/(___/ \___/|_| |_|
+                          |_|  
+-->
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Discovering Version Control & Deployment Systems | Kevin Thompson</title>
+<meta name="description" content="Kevin Thompson is an web application developer and user experience engineer from Oceanside, Ca"> 
+<meta name="keywords" content="Kevin Thompson, web development in san diego, web developer in san diego, san diego user experience, small business website, expressionengine developer"> 
+<meta name="author" content="Kevin Thompson"> 
+<meta name="copyright" content="Kevin Thompson">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"> 
+<link rel="icon" href="/favicon.ico" type="image/x-icon" /> 
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> 
+<link rel="stylesheet" href="/css/reset.css" media="all" />
+<link rel="stylesheet" href="/css/fonts.css" media="all" />
+<link rel="stylesheet" href="/css/screen.css" media="all" />
+<link rel="stylesheet" href="/css/print.css" media="print" />
+<script type="text/javascript">
+	var html = document.getElementsByTagName('html')[0];
+	html.className = (html.className != '' ? html.className + ' ' : '') + 'js';
+	/mobile/i.test(navigator.userAgent) && !location.hash && setTimeout(function () { window.scrollTo(0, 1); }, 1000);
+</script>
+<!--[if lt IE 9]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js">IE7_PNG_SUFFIX=".png";</script><![endif]-->
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24584832-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body class=" blog single-entry">
+<header>
+  <div class="module rounded-bottom dark">
+    <h1 class="logo h2"><a href="/">Kevin Thompson</a></h1>
+    <ul class="menu">
+      <li>
+        <a href="/blog/" data-icon="N" class="bevel" title="Blog">Blog</a> 
+        <a href="/blog/iphone-and-ipad-browser-testing-using-the-ios-simulator" class="latest-post">iPhone & iPad Browser Testing Using the iOS Simulator</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="page">
+  
+  <div class="line">
+  <div class="unit size-two-thirds pvn">
+    <article class="post">  
+      <div class="module">
+        <h1 class="title">Discovering Version Control & Deployment Systems</h1>
+        <span class="date">March  6, 2011</span>
+        <p>For the last few years, I&rsquo;ve managed and deployed my code using archaic, time consuming methods. Version control meant duplicating and renaming folders, and deployment was simply dragging and dropping files into an ftp client.</p>
+
+<!-- more -->
+
+
+<p>While I had worked with version control systems in the past, I had yet to reach a point where I felt particularly comfortable working with them and, at the time, they seemed to be more of an inconvenience than anything. I did however recognize the potential benefits of using a VCS, so I continued to follow the growth of systems such SVN and Git.</p>
+
+<h2>Enter Github</h2>
+
+<p>Although <a href="http://github.com">Github</a> has been around for several years, it was only recently that I found myself using the site on an almost daily basis, following links from various open source projects or for addons and applications being developed by my friends and colleagues. Once I realized how much I had come to enjoy following and exploring repositories on Github, I knew I needed to make a greater effort in adopting some sort of version control system myself.</p>
+
+<p>I began researching <a href="http://subversion.tigris.org/">SVN</a>, <a href="http://git-scm.com/">Git</a>, and <a href="http://mercurial.selenic.com/">Mercurial</a> in greater detail, but ultimately articles such as <a href="http://thenerdary.net/articles/entry/how_i_use_git">&ldquo;How I use Git&rdquo;</a> and <a href="http://nvie.com/posts/a-successful-git-branching-model/">&ldquo;A successful Git branching model&rdquo;</a>, along with my new found affinity for Github, lead me to use Git over the alternatives. I breezed through a <a href="http://learn.github.com/p/intro.html">few quick tutorials</a> on Git and before long I had created <a href="http://github.com/kevinthompson">a number of repositories on Github</a> and was thoroughly enjoying every <code>branch</code>, <code>commit</code>, and <code>merge</code>. For whatever reason, where previous version control systems had been difficult to adopt, Git just clicked.</p>
+
+<p>While this new found workflow made development a breeze, I was still fumbling my way through deployment. Since it was easy enough to clone a repository with Git, I decided to clone a repository on the production server, then shell into the server and issue a <code>git pull</code> when I needed to deploy. While this was simpler than manually transferring files via FTP, it still required a few too many steps to make deploying my code the casual process I wanted it to be. To further simplify things, I wrote a shell script and setup a dedicated user for deployment on each server so that I could easily issue a command on my local machine and off the code would go. This, again, was another degree simpler, but the maintenance and management of these scripts and users still stole time away from development.</p>
+
+<h2>Enter Beanstalk</h2>
+
+<p>While researching Git, <a href="http://bnst.lk/e3HdOt">Beanstalk</a> was also mentioned fairly frequently in more recent articles. Beanstalk is a service that, for a small fee, will quickly deploy code from a Git or SVN repository over FTP with little to no effort. I decided to give Beanstalk a shot and signed up for their trial account. If you&rsquo;re already familiar with Git or SVN, Beanstalk makes deployment a breeze. Once you&rsquo;ve started your account, you&rsquo;ll need to define your servers and configure deployment for each.</p>
+
+<p>In my case, I typically have a staging environment and a production environment (with development being done on my local machine). I configure Beanstalk to automatically deploy my <code>staging</code> branch to my staging server on each push, and my <code>master</code> branch to my production server manually from the Beanstalk interface, or when I append <code>[deploy:production]</code> to a commit message in my master branch (or on a commit message merged into the master branch). With this configuration, it&rsquo;s become trivial to deploy my code to either environment.</p>
+
+<p>The addition of <a href="http://git-scm.com/">Git</a> and <a href="http://bnst.lk/e3HdOt">Beanstalk</a> to my workflow has not only simplified the management and deployment of code, but it&rsquo;s also allowed me to spend more time doing what I truly enjoy, developing web applications.</p>
+
+      </div>
+    </article>
+  </div>
+  <div class="last unit size-one-third ptm">
+    
+    
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+    
+  
+  
+
+  
+  
+
+  
+
+  
+    
+  
+  
+
+  
+  
+
+  
+
+  
+    
+  
+  
+
+  
+  
+
+  
+
+  
+    
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+
+  
+  
+
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+
+<div class="post-nav sticky">
+  <ul class="article-nav mbn clear">
+    <li class="previous"><a href="/blog/completely-remove-index-php-from-expressionengine-urls" >&laquo; Previous Post</a></li> 
+    <li class="next"><a href="/blog/securing-your-staging-environment">Next Post &raquo;</a></li>
+  </ul>
+</div>
+  </div>
+  <div class="line">
+    <div class="unit size-two-thirds">
+      <hr class="hires" />
+      <section class="comments module">
+  <h1>Comments</h1>
+  
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'kevinthompson'; // required: replace example with your forum shortname
+
+      // The following are highly recommended additional parameters. Remove the slashes in front to use.
+      // var disqus_identifier = 'unique_dynamic_id_1234';
+      // var disqus_url = 'http://example.com/permalink-to-page.html';
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</section>
+
+<hr />
+    </div>
+    <div class="last unit size-one-third"></div>
+  </div>
+</div>
+
+  <div class="module dark footer">
+    <div class="divided line">
+      <div class="equal unit size-one-half">
+        <h3>Who's this Kevin Thompson character?</h3>
+        <p>Mild-mannered developer by day, caffeine-fueled autodidact by night. I leverage my talent and experience as a professional web developer to help people solve problems and build successful businesses.</p>
+        <p>You can glean more by perusing <a href="/blog/">my blog</a> or taking a look at <a href="http://github.com/kevinthompson">my code</a>, and if you have any questions <a href="mailto:kevin@kevinthompson.info">email me</a> and we can chat.</p>
+      </div>
+      <div class="equal unit size-one-fourth">
+        <hr class="lores" />
+        <dl>
+          <dt>Email</dt>
+          <dd><a href="mailto:{contact-email}">kevin@kevinthompson.info</a></dd>
+      
+          <dt>Skype</dt>
+          <dd><a href="skype:{contact-skype}?add">thompson.kevind</a></dd>
+        </dl>
+      </div>
+      <div class="last equal unit size-one-fourth">
+        <hr class="lores" />
+        <h3>Looking for more?</h3>
+        <ul class="social">
+          <li><a href="http://feeds.feedburner.com/kevinthompson?format=xml" class="rss-link">Subscribe to My Blog</a></li>
+          <li><a href="http://twitter.com/kevinthompson" class="twitter-link">Follow Me on Twitter</a><span class="twitter-follow-button"></span></li>
+          <li><a href="http://github.com/kevinthompson">Dissect My Code on Github</a></li>
+          <li><a href="http://linkedin.com/in/kevindthompson">View My Resume on LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <span class="small copyright">&copy; Kevin Thompson 2012 &mdash; Code, Content &amp; Design</span>
+  <a href="http://twitter.com/kevinthompson" class="twitter-follow-button" data-align="right" data-text-color="888888" data-link-color="3ba1b3">Follow @kevinthompson</a>
+  <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+</footer>
+
+<!-- Load jQuery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery.min.js"%3E%3C/script%3E'))</script>
+
+<!-- Load JavaScript -->
+<script src="/js/jquery.equalHeightColumns.js"></script>
+<script src="/js/jquery.sticky.js"></script>
+<script src="/js/jquery.touchSwipe.js"></script>
+<script src="/js/jquery.pjax.js"></script> 
+<script src="/js/github.js"></script> 
+<script src="/js/script.js"></script>
+  
+</body>
+</html>

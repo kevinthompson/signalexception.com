@@ -1,0 +1,14 @@
+/**
+ * Handheld Stylesheet
+ *
+ * @package	http://kevinthompson.info
+ * @author	Kevin Thompson <http://kevinthompson.info>
+ *
+ **/
+
+* {
+  float: none;       
+  font-size: 80%;     
+  background: #fff;  
+  color: #000;
+}

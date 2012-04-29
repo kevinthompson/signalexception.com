@@ -10,11 +10,13 @@ public_dir      = "public"    # compiled site directory
 source_dir      = "source"    # source file directory
 blog_index_dir  = 'source'    # directory for your blog's index page (if you put your index in source/blog/index.html, set this to 'source/blog')
 stash_dir       = "_stash"    # directory to stash posts for speedy generation
-posts_dir       = "_posts"    # directory for blog posts
+posts_dir       = "blog/_posts"    # directory for blog posts
 themes_dir      = ".themes"   # directory for blog files
 new_post_ext    = "md"        # default new post file extension when using the new_post task
 new_page_ext    = "md"        # default new page file extension when using the new_page task
 deploy_default  = "heroku"    # default deploy method
+editor          = "sub"
+auto_edit_new   = true
 
 
 # Jekyll
@@ -24,7 +26,7 @@ desc "Generate jekyll site"
 task :generate do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
   puts "## Generating Site with Jekyll"
-  system "compass compile --css-dir #{source_dir}/stylesheets"
+  system "compass compile --css-dir #{source_dir}/css"
   system "jekyll"
 end
 
@@ -32,7 +34,7 @@ desc "Watch the site and regenerate when it changes"
 task :watch do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
   puts "Starting to watch source with Jekyll and Compass."
-  system "compass compile --css-dir #{source_dir}/stylesheets" unless File.exist?("#{source_dir}/stylesheets/screen.css")
+  system "compass compile --css-dir #{source_dir}/css" unless File.exist?("#{source_dir}/css/screen.css")
   jekyllPid = Process.spawn({"OCTOPRESS_ENV"=>"preview"}, "jekyll --auto")
   compassPid = Process.spawn("compass watch")
 
@@ -48,22 +50,24 @@ end
 desc "Begin a new post in #{source_dir}/#{posts_dir}"
 task :post, :title do |t, args|
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  mkdir_p "#{source_dir}/#{posts_dir}"
-  args.with_defaults(:title => 'new-post')
-  title = args.title
-  filename = "#{source_dir}/#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
-  if File.exist?(filename)
-    abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
-  end
-  puts "Creating new post: #{filename}"
-  open(filename, 'w') do |post|
-    post.puts "---"
-    post.puts "layout: post"
-    post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
-    post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
-    post.puts "comments: true"
-    post.puts "categories: "
-    post.puts "---"
+  `mkdir -p #{source_dir}/#{posts_dir} >/dev/null`
+  title = args.title || ask("Post Title: ")
+  if title.nil? || title == ''
+    abort(' ! No Post Title Specified')
+  else
+    filename = "#{source_dir}/#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
+    if File.exist?(filename)
+      abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+    end
+    puts "Creating new post: #{filename}"
+    open(filename, 'w') do |post|
+      post.puts "---"
+      post.puts "layout: post"
+      post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+      post.puts "comments: true"
+      post.puts "---"
+    end
+    `#{editor} #{filename}` if auto_edit_new
   end
 end
 
@@ -157,7 +161,7 @@ def get_stdin(message)
   STDIN.gets.chomp
 end
 
-def ask(message, valid_options)
+def ask(message, valid_options = nil)
   if valid_options
     answer = get_stdin("#{message} #{valid_options.to_s.gsub(/"/, '').gsub(/, /,'/')} ") while !valid_options.include?(answer)
   else

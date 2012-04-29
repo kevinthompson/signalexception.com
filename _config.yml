@@ -1,39 +1,44 @@
-# ----------------------- #
-#      Main Configs       #
-# ----------------------- #
 
+# Main Config
+# -----------------------
+
+# Site Info
 url: http://kevinthompson.info
 title: Kevin Thompson
 subtitle: Mild-mannered developer by day, caffeine-fueled autodidact by night.
 author: Kevin Thompson
-simple_search: http://google.com/search
-description:
 
-# Default date format is "ordinal" (resulting in "July 22nd 2007")
-# You can customize the format as defined in
-# http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
-# Additionally, %o will give you the ordinal representation of the day
+# Contact Information
+skype: thompson.kevind
+email: kevin@kevinthompson.info
+phone: (760) 525-4041
+
+# Date Format (Default: "ordinal" = "July 22nd 2007")
 date_format: "ordinal"
 
-# RSS / Email (optional) subscription links (change if using something like Feedburner)
+# RSS
 subscribe_rss: /atom.xml
-subscribe_email:
-# RSS feeds can list your email address if you like
-email:
 
-# ----------------------- #
-#    Jekyll & Plugins     #
-# ----------------------- #
+# Github 
+github_user: "kevinthompson"
+github_repo_count: 10
+github_show_profile_link: true
+github_skip_forks: true
+
+# Jekyll & Plugins
+# -----------------------
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 root: /
-permalink: /blog/:year/:month/:day/:title/
+permalink: /:categories/:title
 source: source
 destination: public
 plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
 markdown: rdiscount
+rdiscount:
+  extensions: [smart]
 pygments: false # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index
@@ -52,48 +57,3 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 # blog_index_asides:
 # post_asides:
 # page_asides:
-
-# ----------------------- #
-#   3rd Party Settings    #
-# ----------------------- #
-
-# Github repositories
-github_user:
-github_repo_count: 0
-github_show_profile_link: true
-github_skip_forks: true
-
-# Twitter
-twitter_user:
-twitter_tweet_count: 4
-twitter_show_replies: false
-twitter_follow_button: true
-twitter_show_follower_count: false
-twitter_tweet_button: true
-
-# Google +1
-google_plus_one: false
-google_plus_one_size: medium
-
-# Google Plus Profile
-# Hidden: No visible button, just add author information to search results
-googleplus_user:
-googleplus_hidden: false
-
-# Pinboard
-pinboard_user:
-pinboard_count: 3
-
-# Delicious
-delicious_user:
-delicious_count: 3
-
-# Disqus Comments
-disqus_short_name:
-disqus_show_comment_count: false
-
-# Google Analytics
-google_analytics_tracking_id:
-
-# Facebook Like
-facebook_like: false
