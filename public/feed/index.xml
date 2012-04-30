@@ -4,13 +4,29 @@
  <title>Kevin Thompson</title>
  <link href="http://kevinthompson.info/feed" rel="self"/>
  <link href="http://kevinthompson.info/"/>
- <updated>2012-04-29T01:59:00-07:00</updated>
+ <updated>2012-04-30T08:52:56-07:00</updated>
  <id>http://warpspire.com/</id>
  <author>
    <name>Kevin Thompson</name>
    <email>kevin@kevinthompson.info</email>
  </author>
 
+ 
+ <entry>
+   <title>Moving Over to Jekyll</title>
+   
+     <link href="http://kevinthompson.info/blog/moving-over-to-jekyll" />
+   
+   <updated>2012-04-30T00:00:00-07:00</updated>
+   <id>http://kevinthompson.info/blog/moving-over-to-jekyll</id>
+   <content type="html">&lt;p&gt;Over the weekend I converted my blog over to &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, a flat-file blogging system built on Ruby.&lt;/p&gt;
+
+&lt;!&#8211; more &#8211;&gt;
+
+
+&lt;p&gt;I had originally considered using Octopress, but found that ultimately, I only needed Jekyll with a few additional plugins.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Start Required Processes on Pow Application Boot</title>
