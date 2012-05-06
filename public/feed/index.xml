@@ -4,7 +4,7 @@
  <title>Kevin Thompson</title>
  <link href="http://kevinthompson.info/feed" rel="self"/>
  <link href="http://kevinthompson.info/"/>
- <updated>2012-04-30T09:47:32-07:00</updated>
+ <updated>2012-05-06T11:08:10-07:00</updated>
  <id>http://warpspire.com/</id>
  <author>
    <name>Kevin Thompson</name>
@@ -84,7 +84,8 @@ fi
 &lt;p&gt;Getting up and running with the iOS Simulator is extremely simple and really takes just two quick steps:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://itunes.apple.com/us/app/xcode/id448457090?mt=12&amp;amp;partnerId=30&amp;amp;siteID=p8StJ7oxYpg-OcLxYt38ZD0gQu4327dDCg&quot;&gt;Install Xcode&lt;/a&gt; from the Mac App Store (Free)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/xcode/&quot;&gt;Install Xcode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Open Xcode, then click Preferences &gt; Downloads, and install the iOS Simulator&lt;/li&gt;
 &lt;li&gt;Launch iOS Simulator&lt;/li&gt;
 &lt;/ol&gt;
 
