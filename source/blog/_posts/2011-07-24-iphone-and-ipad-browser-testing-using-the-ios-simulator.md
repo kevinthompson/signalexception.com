@@ -20,8 +20,9 @@ Beyond simply being able to test websites on Mobile Safari without having a phys
 ## Getting Started
 Getting up and running with the iOS Simulator is extremely simple and really takes just two quick steps:
 
-1. [Install Xcode](http://itunes.apple.com/us/app/xcode/id448457090?mt=12&partnerId=30&siteID=p8StJ7oxYpg-OcLxYt38ZD0gQu4327dDCg) from the Mac App Store (Free)
-2. Launch iOS Simulator
+1. [Install Xcode](https://developer.apple.com/xcode/)
+2. Open Xcode, then click Preferences > Downloads, and install the iOS Simulator
+3. Launch iOS Simulator
 
 Once Xcode is in stalled, The iOS Simulator can be found at `/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app`
 
