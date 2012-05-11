@@ -4,7 +4,7 @@
  <title>Kevin Thompson</title>
  <link href="http://kevinthompson.info/feed" rel="self"/>
  <link href="http://kevinthompson.info/"/>
- <updated>2012-05-06T12:11:43-07:00</updated>
+ <updated>2012-05-10T18:53:56-07:00</updated>
  <id>http://warpspire.com/</id>
  <author>
    <name>Kevin Thompson</name>
@@ -90,9 +90,7 @@ fi
 &lt;/ol&gt;
 
 
-&lt;p&gt;Once Xcode is in stalled, The iOS Simulator can be found at &lt;code&gt;/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The iOS Simulator can also be found and launched through Spotlight,  &lt;code&gt;⌘ + space&lt;/code&gt;, but it may take time for Spotlight to index the new files. If you&amp;rsquo;re using an application launcher such &lt;a href=&quot;http://alfredapp.com&quot;&gt;Alfred&lt;/a&gt;, you might need to add &lt;code&gt;/Developer&lt;/code&gt; to the &lt;a href=&quot;http://help.alfredapp.com/indexing/&quot;&gt;applications scope&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once Xcode is in stalled, The iOS Simulator can be found at &lt;code&gt;~/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;After opening the iOS Simulator, simply launch Mobile Safari and direct the browser to your website of choice.&lt;/p&gt;
 

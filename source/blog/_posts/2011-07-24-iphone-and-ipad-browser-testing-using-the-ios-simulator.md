@@ -24,9 +24,7 @@ Getting up and running with the iOS Simulator is extremely simple and really tak
 2. Open Xcode, then click Preferences > Downloads, and install the iOS Simulator
 3. Launch iOS Simulator
 
-Once Xcode is in stalled, The iOS Simulator can be found at `/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app`
-
-The iOS Simulator can also be found and launched through Spotlight,  `⌘ + space`, but it may take time for Spotlight to index the new files. If you're using an application launcher such [Alfred](http://alfredapp.com), you might need to add `/Developer` to the [applications scope](http://help.alfredapp.com/indexing/).
+Once Xcode is in stalled, The iOS Simulator can be found at `~/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app`
 
 After opening the iOS Simulator, simply launch Mobile Safari and direct the browser to your website of choice.
 
