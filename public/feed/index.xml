@@ -4,7 +4,7 @@
  <title>Kevin Thompson</title>
  <link href="http://kevinthompson.info/feed" rel="self"/>
  <link href="http://kevinthompson.info/"/>
- <updated>2012-05-10T18:53:56-07:00</updated>
+ <updated>2012-05-10T18:59:43-07:00</updated>
  <id>http://warpspire.com/</id>
  <author>
    <name>Kevin Thompson</name>
@@ -90,7 +90,9 @@ fi
 &lt;/ol&gt;
 
 
-&lt;p&gt;Once Xcode is in stalled, The iOS Simulator can be found at &lt;code&gt;~/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Once Xcode is in stalled, The iOS Simulator can be found at &lt;code&gt;/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To create a shortcut, you can run the following command within terminal, which will give you an &amp;ldquo;iOS Simulator&amp;rdquo; app in your /Applications folder: &lt;code&gt;sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app /Applications/iOS\ Simulator.app&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;After opening the iOS Simulator, simply launch Mobile Safari and direct the browser to your website of choice.&lt;/p&gt;
 
