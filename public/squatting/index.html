@@ -201,25 +201,14 @@ p span {
 			<span id="said">That being said</span><span class="hidden">,</span> 
 			if you are genuinely interested in using this domain, email me 
 			and I will contact you to discuss the possibility of its transfer.
-			<?php /* complete the short form below and I will contact you 
-			to discuss its transfer. */ ?>
 		</p>
 		<div id="formContainer">
 			<p id="contactEmail">
-				<a href="mailto:kevin@kevinthompson.info?subject=Domain Inquiry - <?=$_SERVER['SERVER_NAME'];?>">Email Me</a>
-			<?php /* ?>	
-			<form action="" method="post" id="contactForm">
-				<p>
-				Hi Kevin, my name is <input type="text" name="name" id="name" />. 
-				I'm interested in using this domain for <input type="text" name="purpose" id="purpose" />. 
-				You can contact me by <input type="text" name="method" id="method" /> at <input type="text" name="contact" id="contact" />.
-				</p>
-			</form>
-			<?php */ ?>
+        <script type="text/javascript">document.write('<a href="mailto:kevin@kevinthompson.info?subject=Domain Inquiry - ' + document.domain + '">Email Me</a>');</script>
 			</p>
 		</div>
 		<p id="footer">
-			&copy; <a href="http://kevinthompson.info/">Kevin Thompson</a> <?=date('Y');?>. Don't steal my sh*t.
+			&copy; <a href="http://kevinthompson.info/">Kevin Thompson</a> <script type="text/javascript">d = new Date; document.write(d.getFullYear());</script>. Don't steal my sh*t.
 		</p>
 		<!--<div id="grunge"></div>-->
 	</div>
