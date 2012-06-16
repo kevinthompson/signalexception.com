@@ -21,7 +21,7 @@ var github = (function(){
           var repos = [];
           if (!response || !response.data) { return; }
           for (var i = 0; i < response.data.length; i++) {
-            if (options.skip_forks && response.data[i].fork) { continue; }
+            if ((options.skip_forks && response.data[i].fork) || response.data[i].name == 'kevinthompson.info') { continue; }
             repos.push(response.data[i]);
           }
           repos.sort(function(a, b) {
