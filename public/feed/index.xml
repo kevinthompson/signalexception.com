@@ -4,7 +4,7 @@
  <title>Kevin Thompson</title>
  <link href="http://kevinthompson.info/feed" rel="self"/>
  <link href="http://kevinthompson.info/"/>
- <updated>2012-05-24T10:26:36-07:00</updated>
+ <updated>2012-06-15T22:07:29-07:00</updated>
  <id>http://warpspire.com/</id>
  <author>
    <name>Kevin Thompson</name>
@@ -138,39 +138,6 @@ fi
 &lt;p&gt;&lt;a href=&quot;https://gist.github.com/1085836&quot;&gt;Available on Github &amp;raquo;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;By using this method, you&amp;rsquo;ve first verified that JavaScript is enabled before hiding content that your user may otherwise be deprived of.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Trevor Monk</title>
-   
-     <link href="http://kevinthompson.info/recommendations/trevor-monk-recommends-kevin-thompson" />
-   
-   <updated>2011-07-13T00:00:00-07:00</updated>
-   <id>http://kevinthompson.info/recommendations/trevor-monk-recommends-kevin-thompson</id>
-   <content type="html">&lt;p&gt;Kevin is a very talented developer who is exceptionally good at User Interface design. He keeps himself up-to-date with trends and advances in technology and has the demonstrable ability to apply those techniques effectively in the sites and pages he creates. An excellent thinker and a great resource.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Brian Gerry</title>
-   
-     <link href="http://kevinthompson.info/recommendations/brian-gerry-recommends-kevin-thompson" />
-   
-   <updated>2011-06-30T00:00:00-07:00</updated>
-   <id>http://kevinthompson.info/recommendations/brian-gerry-recommends-kevin-thompson</id>
-   <content type="html">&lt;p&gt;I&amp;rsquo;ve had the opportunity to work with Kevin on several fast turn web projects. Kevin is a unique and highly talented individual with a wealth of knowledge in web development and user interaction. In addition, he has an almost clairvoyant sense of how long it will take to put a site together.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Ania Potocki</title>
-   
-     <link href="http://kevinthompson.info/recommendations/ania-potocki-recommends-kevin-thompson" />
-   
-   <updated>2011-06-28T00:00:00-07:00</updated>
-   <id>http://kevinthompson.info/recommendations/ania-potocki-recommends-kevin-thompson</id>
-   <content type="html">&lt;p&gt;I&amp;rsquo;ve just recently began working with Kevin, and he is a breath of fresh air. As a developer he holds all the characteristics you would want / need. He is very knowledgeable, he works quickly, he knows how to communicate, he is a problem solver &amp;ndash; always finding the best solution, he is honest and trustworthy, he meets his deadlines, he is always responsive and has a great personality&amp;hellip; what more could you ask for?&lt;/p&gt;
 </content>
  </entry>
  
@@ -378,76 +345,6 @@ RewriteRule ^index&#46;php(.+) $1 [R=301,L]
 &lt;p&gt;I hope to avoid posting trivial links, photos, or comments to this blog (but you&amp;rsquo;re welcome to &lt;a href=&quot;http://twitter.com/kevinthompson&quot;&gt;follow me on twitter&lt;/a&gt; if you&amp;rsquo;re into that sort of thing), and I hope that over time it will serve as a valuable resource my peers and for fledgling designers and developers&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m excited to finally begin producing content for a community that has fostered my growth as a developer for the past five years, and I hope that you&amp;rsquo;ll enjoy what I have to offer.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Alex Munro Rankin</title>
-   
-     <link href="http://kevinthompson.info/recommendations/alex-munro-rankin-recommends-kevin-thompson" />
-   
-   <updated>2010-05-17T00:00:00-07:00</updated>
-   <id>http://kevinthompson.info/recommendations/alex-munro-rankin-recommends-kevin-thompson</id>
-   <content type="html">&lt;p&gt;Kevin is highly responsive in understanding and translating the needs of the many departments in our company. He is highly detail oriented as a web developer, and also knows how to properly design a website for prime functionality as well as aesthetics. I would highly recommend Kevin as a dependable, professional and dedicated developer.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Melissa Lopez</title>
-   
-     <link href="http://kevinthompson.info/recommendations/melissa-lopez-recommends-kevin-thompson" />
-   
-   <updated>2010-04-27T00:00:00-07:00</updated>
-   <id>http://kevinthompson.info/recommendations/melissa-lopez-recommends-kevin-thompson</id>
-   <content type="html">&lt;p&gt;Kevin is a bright man who&amp;rsquo;s able to develop solutions for projects when at times it seems there are none. He is able to take direction and run with it to develop great websites and programming. The one thing I truly appreciate and will always praise Kevin for is his ability to teach others. He&amp;rsquo;s very patient and explains his processes in a way that others understand quickly and easily. Overall he is an asset to any team.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Angela Bull</title>
-   
-     <link href="http://kevinthompson.info/recommendations/angela-bull-recommends-kevin-thompson" />
-   
-   <updated>2010-04-21T00:00:00-07:00</updated>
-   <id>http://kevinthompson.info/recommendations/angela-bull-recommends-kevin-thompson</id>
-   <content type="html">&lt;p&gt;I would recommend Kevin Thompson to anyone for almost anything, because he is a stand-up guy with integrity, a baffling array of skills, a fantastic sense of humor and an unbeatable work ethic.&lt;/p&gt;
-
-&lt;p&gt;I have worked directly with him on a number of projects related to graphic design, programming, user interface/user experience and general web development. His feedback has always been thorough and useful, his work always meets or exceeds expectations and he is incredibly fast and efficient. You can tell that he loves what he does, and that he&amp;rsquo;s been doing it for a long time.&lt;/p&gt;
-
-&lt;p&gt;Aside from being adept at all things web and design, Kevin is great to work with. He is easygoing, funny and a good communicator, and just an all around cool guy.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>BJ Cook</title>
-   
-     <link href="http://kevinthompson.info/recommendations/bj-cook-recommends-kevin-thompson" />
-   
-   <updated>2008-09-30T00:00:00-07:00</updated>
-   <id>http://kevinthompson.info/recommendations/bj-cook-recommends-kevin-thompson</id>
-   <content type="html">&lt;p&gt;Kevin has a knack for using his previous experience in SEO to create great templating systems that support long term strategy. You&amp;rsquo;ll also find him always pushing to make code, widgets and anything front end development better so that the user&amp;rsquo;s needs are always top of mind.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Adam Levenson</title>
-   
-     <link href="http://kevinthompson.info/recommendations/adam-levenson-recommends-kevin-thompson" />
-   
-   <updated>2008-09-29T00:00:00-07:00</updated>
-   <id>http://kevinthompson.info/recommendations/adam-levenson-recommends-kevin-thompson</id>
-   <content type="html">&lt;p&gt;Kevin is a web coding ninja. His knowledge of web standards, html, css and javascript make a valuable asset to our development team. This understanding of SEO and best practices put his abilities in a completely different class of developer. He is hard working, a great team player and a pleasure to work with.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Garry Grant</title>
-   
-     <link href="http://kevinthompson.info/recommendations/garry-grant-recommends-kevin-thompson" />
-   
-   <updated>2007-01-09T00:00:00-08:00</updated>
-   <id>http://kevinthompson.info/recommendations/garry-grant-recommends-kevin-thompson</id>
-   <content type="html">&lt;p&gt;Kevin is a super talented individual and capable or multitasking and coordinating multiple projects! Keving will be heading our Wed Dev team!&lt;/p&gt;
 </content>
  </entry>
  

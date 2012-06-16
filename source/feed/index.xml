@@ -14,7 +14,7 @@ layout: nil
    <email>{{ site.email }}</email>
  </author>
 
- {% for post in site.posts %}
+ {% for post in site.categories.blog %}
  <entry>
    <title>{{ post.title | xml_escape }}</title>
    {% if post.type == 'link' %}
