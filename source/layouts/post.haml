@@ -1,0 +1,19 @@
+---
+layout: layout
+class: blog single-entry
+---
+.line
+  .unit.size-two-thirds.pvn
+    %article.post
+      .module
+        %h1.title {{ page.title }}
+        %span.date {{ page.date | date: "%B %e, %Y" }}
+        {{ content }}
+  .last.unit.size-one-third.ptm
+    {% assign posts_in_category = site.categories.blog %}
+    {% include post-navigation.html %}
+  .line
+    .unit.size-two-thirds
+      %hr.hires/
+      {% include comments.html %}
+    .last.unit.size-one-third

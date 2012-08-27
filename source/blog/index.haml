@@ -1,0 +1,20 @@
+---
+title: Blog
+class: blog
+---
+.line
+  .unit.size-two-thirds
+    .module
+      %h1 Blog
+      %p While I don't expect I'll be writing a best-seller any time soon, I do like to showcase my work and offer tips for, and insights into, the world of web development from time to time.
+      %hr/
+      %section.articles
+      - articles_by_month.each_pair do |month,articles|
+        %h2= month
+        %ul
+          - articles.each do |article|
+            %li
+              %a{ href: article.url }= article.title
+    %hr/
+  .last.unit.size-one-third.pvm
+    .plm

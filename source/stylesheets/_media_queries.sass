@@ -1,0 +1,293 @@
+/* Smallest
+@media screen and (max-width: 320px)
+  .small
+    margin: 0
+    text-align: center
+    display: block
+  .comments h1
+    background: #fff
+    width: 85%
+
+/* Small Screens (Smart Phones & Tablets )
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 768px)
+  .gist
+    margin: 0 1.5em
+    .gist-file
+      overflow: hidden
+      .gist-data
+        width: 600%
+        overflow: hidden !important
+
+/* iPhone Only
+@media screen and (max-device-width: 480px), screen and (max-width: 500px)
+  html
+    -webkit-text-size-adjust: none
+    -ms-text-size-adjust: none
+
+/* Low Resolution Browser Windows >= 769px Wide
+@media screen and (min-width: 769px)
+
+/* iPad Only
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px)
+
+/* Average Screen Resolutions
+@media screen and (min-width: 768px)
+  /* Grid
+  .line:after, .last.unit:after, .module:after, nav:after
+    clear: both
+    display: block
+    visibility: hidden
+    overflow: hidden
+    height: 0 !important
+    line-height: 0
+    font-size: xx-large
+    content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x "
+  .line
+    *zoom: 1
+    &.divided 
+      & > .unit
+        border-right: 1px solid rgba(0, 0, 0, 0.1)
+        border-left: 1px solid rgba(255, 255, 255, 1)
+
+        &:first-child
+          border-left: 0
+        &:last-child
+          border-right: 0
+  .high-contrast
+    .line
+      &.divided 
+        & > .unit
+          border-right: 1px solid rgba(0, 0, 0, 0.5)
+          border-left: 1px solid rgba(255, 255, 255, 0.1)
+  .unit
+    float: left
+    margin: 0
+    position: relative
+    &:after
+      display: none
+      content: ""
+  .size-full
+    float: none
+  .size-one-half
+    width: 50%
+  .size-one-third
+    width: 33.33333%
+  .size-two-thirds
+    width: 66.66666%
+  .size-one-fourth
+    width: 25%
+  .size-three-fourths
+    width: 75%
+  .size-one-fifth
+    width: 20%
+  .size-two-fifths
+    width: 40%
+  .size-three-fifths
+    width: 60%
+  .size-four-fifths
+    width: 80%
+  .last.unit
+    display: table-cell
+    float: none
+    width: auto
+    *display: block
+    *zoom: 1
+    _position: relative
+    _left: -3px
+    _margin-right: -3px
+  /* Standard Elements
+  hr
+    margin: 3em 1.5em
+  /* Layout
+  body header
+    margin: 0 auto 3em
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8), 0 1px 1px rgba(255, 255, 255, 0.4)
+  /* Specific Elements
+  .intro
+    margin: 0 auto
+    .name
+      margin-top: .2em
+    .img
+      position: relative
+      margin: -5em 1em -4em -2em
+      margin-top: -2em
+      z-index: 20
+    .tagline
+      text-align: left
+      font-size: 1.8em
+      margin: .3em 0 0 .8333em
+  .title
+    font-size: 2.5em
+    margin: 0 .6em 1em
+  .module .more
+    position: absolute
+    top: 2.175em
+    right: 0
+  .lores
+    display: none
+  .hires, .twitter-follow-button
+    display: block
+  .latest-post
+    display: inline-block
+  .small
+    font-size: .8em
+    margin: 0 1.875em
+  .post-nav
+    margin: 0 1.5em 3em 3em
+    li
+      width: 50%
+  .gist a[style]
+    float: right !important
+    margin: 0 10px 0 0 !important
+    padding: 0
+    border-bottom: 0
+    &:first-child
+      position: static
+      right: auto
+      text-align: right
+      border: 0
+      padding: 0
+      margin: 0 !important
+  /* Spacing
+  .pan
+    padding: 0
+  .pas
+    padding: .5em
+  .pam
+    padding: 1.5em
+  .pal
+    padding: 2em
+  .ptn
+    padding-top: 0
+  .pts
+    padding-top: .5em
+  .ptm
+    padding-top: 1.5em
+  .ptl
+    padding-top: 2em
+  .prn
+    padding-right: 0
+  .prs
+    padding-right: .5em
+  .prm
+    padding-right: 1.5em
+  .prl
+    padding-right: 2em
+  .pbn
+    padding-bottom: 0
+  .pbs
+    padding-bottom: .5em
+  .pbm
+    padding-bottom: 1.5em
+  .pbl
+    padding-bottom: 2em
+  .pln
+    padding-left: 0
+  .pls
+    padding-left: .5em
+  .plm
+    padding-left: 1.5em
+  .pll
+    padding-left: 2em
+  .phn
+    padding-left: 0
+    padding-right: 0
+  .phs
+    padding-left: .5em
+    padding-right: .5em
+  .phm
+    padding-left: 1.5em
+    padding-right: 1.5em
+  .phl
+    padding-left: 2em
+    padding-right: 2em
+  .pvn
+    padding-top: 0
+    padding-bottom: 0
+  .pvs
+    padding-top: .5em
+    padding-bottom: .5em
+  .pvm
+    padding-top: 1.5em
+    padding-bottom: 1.5em
+  .pvl
+    padding-top: 2em
+    padding-bottom: 2em
+  .man
+    margin: 0
+  .mas
+    margin: .5em
+  .mam
+    margin: 1.5em
+  .mal
+    margin: 2em
+  .mtn
+    margin-top: 0
+  .mts
+    margin-top: .5em
+  .mtm
+    margin-top: 1.5em
+  .mtl
+    margin-top: 2em
+  .mrn
+    margin-right: 0
+  .mrs
+    margin-right: .5em
+  .mrm
+    margin-right: 1.5em
+  .mrl
+    margin-right: 2em
+  .mbn
+    margin-bottom: 0
+  .mbs
+    margin-bottom: .5em
+  .mbm
+    margin-bottom: 1.5em
+  .mbl
+    margin-bottom: 2em
+  .mln
+    margin-left: 0
+  .mls
+    margin-left: .5em
+  .mlm
+    margin-left: 1.5em
+  .mll
+    margin-left: 2em
+  .mhn
+    margin-left: 0
+    margin-right: 0
+  .mhs
+    margin-left: .5em
+    margin-right: .5em
+  .mhm
+    margin-left: 1.5em
+    margin-right: 1.5em
+  .mhl
+    margin-left: 2em
+    margin-right: 2em
+  .mvn
+    margin-top: 0
+    margin-bottom: 0
+  .mvs
+    margin-top: .5em
+    margin-bottom: .5em
+  .mvm
+    margin-top: 1.5em
+    margin-bottom: 1.5em
+  .mvl
+    margin-top: 2em
+    margin-bottom: 2em
+
+/* Large Screen Resolutions
+@media screen and (min-width: 70em)
+  .intro
+    text-transform: uppercase
+    font-size: 4em
+    font-weight: bold
+    margin: 0 -1em 0 0
+    padding: .5em 0 0 4em
+    line-height: 1em
+
+  .intro .name
+    font-size: 8.25em
+    margin-top: 0

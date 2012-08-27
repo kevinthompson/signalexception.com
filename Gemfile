@@ -1,19 +1,14 @@
-source "http://rubygems.org"
+source :rubygems
 
-group :development do
-  gem 'rake'
-  gem 'rack'
-  gem 'jekyll'
-  gem 'rdiscount'
-  gem 'pygments.rb'
-  gem 'RedCloth'
-  gem 'haml', '>= 3.1'
-  gem 'compass', '>= 0.11'
-  gem 'rubypants'
-  gem 'rb-fsevent'
-  gem 'stringex'
-  gem 'liquid', '2.2.2'
-  gem 'heroku'
-end
+gem 'bootstrap-sass'
+gem 'hashie'
 
-gem 'sinatra', '1.2.6'
+gem 'middleman', '~>3.0.0'
+gem 'middleman-blog'
+gem 'middleman-smusher'
+
+gem 'redcarpet'
+gem 'therubyracer'
+gem 'oj'
+
+gem 'rack-google_analytics'

@@ -1,0 +1,43 @@
+.intro.line
+  Sleep-deprived, caffeine-fueled autodidact
+%hr.mtl/
+.line
+  %section.unit.size-two-thirds
+    %article.module.content.post
+      %h1
+        %a{ href: blog.articles.first.url }= blog.articles.first.title
+      = blog.articles.first.summary
+      %p
+        %a.right{ href: blog.articles.first.url } Continue Reading »
+  .last.unit.size-one-third.ptm
+    %section.mll
+      %h1 Recent Work
+      %ul#gh_repos.mhn
+        %li.loading
+          %p Retrieving Repos...
+    %p.more.right
+      %a{ href: 'http://github.com/kevinthompson' } View More on Github »
+%hr/
+.module.content
+  %h1 Recommendations
+  %section#recommendations.line.divided
+    - recommendations = []
+    - recommendations.each do |recommendation|
+      .size-one-third{ class: "last unit" }
+        %article.recommendation
+          %p.bevel.bubble
+            %span.quote-mark “
+            = recommendation.summary
+            %span.quote-mark ”
+          .img
+            %img.avatar{ src: "/images/avatars/#{recommendation.image}" }/
+          .author= recommendation.title
+          .position= recommendation.position
+          - if recommendation.website != ''
+            %a.company{ href: recommendation.website }= recommendation.company
+          - else
+            recommendation.company
+      %hr.lores/
+  %p.more.right
+    %a{ href: 'http://linkedin.com/in/kevindthompson' } View More on LinkedIn »
+%hr/
