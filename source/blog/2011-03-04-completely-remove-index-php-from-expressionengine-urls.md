@@ -1,19 +1,36 @@
 ---
-layout: post
 title: Completely Remove index.php from ExpressionEngine URLs
 ---
-While there are a [number of known solutions](http://expressionengine.com/wiki/Remove_index.php_From_URLs/) for removing `index.php` from ExpressionEngine URLs, few developers realize that although URLs now resolve without `index.php`, the previous URLs including `index.php` also still exist.<!--more-->
-
-READMORE
+While there are a [number of known solutions](http://expressionengine.com/wiki/Remove_index.php_From_URLs/) for removing `index.php` from ExpressionEngine URLs, few developers realize that although URLs now resolve without `index.php`, the previous URLs including `index.php` also still exist.
 
 ##The Example
 
 At the time of this writing, if you were to visit [http://expressionengine.com/index.php/overview/](http://expressionengine.com/index.php/overview/) or [http://expressionengine.com/overview/](http://expressionengine.com/overview/), you'd be presented with the exact same page. Having the same content resolve at two distinct URLs can potentially harm [your search engine rankings](http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=66359) and disrupt your analytics.
 
 ##The Rules
+``` bash
+<IfModule mod_rewrite.c>
 
-<script src="https://gist.github.com/798018.js?file=.htaccess"></script>
-<p class="gist-link"><a href="https://gist.github.com/798018">Available on Github &raquo;</a></p>
+# Enable Rewrite Engine
+# ------------------------------
+RewriteEngine On
+RewriteBase /
+
+# Redirect index.php Requests
+# ------------------------------
+RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
+RewriteCond %{THE_REQUEST} !/system/.*
+RewriteRule (.*?)index\.php/*(.*) /$1$2 [R=301,L]
+
+# Standard ExpressionEngine Rewrite
+# ------------------------------
+RewriteCond $1 !\.(css|js|gif|jpe?g|png) [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php/$1 [L]
+
+</IfModule>
+```
 
 ##The Story
 
@@ -26,7 +43,7 @@ I asked my question and received a number of responses confirming the issue, but
 	RewriteCond %{THE_REQUEST} ^[^/]*/index\.php [NC]
 	RewriteRule ^index\.php(.+) $1 [R=301,L]
 
-I quickly modified my .htaccess file and sure enough, this new rule was able to catch URL requests beginning with index.php and issue a 301 redirect to the correct URL. The trick to circumventing the redirect loops I was encountering was using `%{THE_REQUEST}` to match the request string as opposed to the actual URL. 
+I quickly modified my .htaccess file and sure enough, this new rule was able to catch URL requests beginning with index.php and issue a 301 redirect to the correct URL. The trick to circumventing the redirect loops I was encountering was using `%{THE_REQUEST}` to match the request string as opposed to the actual URL.
 
 Thanks to Erik and Nevin my OCD has been suppressed, for now.
 

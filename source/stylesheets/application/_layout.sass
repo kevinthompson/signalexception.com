@@ -1,0 +1,45 @@
+//
+// Layout
+// --------------------
+
+html, body
+  height: 100%
+
+// Logo
+#logo
+  position: absolute
+  left: 40px
+  top: 0
+
+  a
+    display: block
+    padding: .25em .5em
+    background: $base03
+    color: $base3
+
+// Content Widths
+p, ul, ol
+  max-width: $maxContentWidth
+
+// Sticky Footer
+#wrapper
+  clear: both
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin-bottom: -$footerHeight
+
+#spacer
+  height: $footerHeight
+
+#footer
+  clear: both
+  position: relative
+  height: $footerHeight
+
+  a[href*="twitter.com"]
+    @extend .pull-right
+    color: $grayDarker
+
+    span
+      color: $linkColor

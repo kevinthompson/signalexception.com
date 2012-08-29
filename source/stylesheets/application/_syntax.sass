@@ -1,0 +1,91 @@
+//
+// Synax Hilighting
+// --------------------
+
+$syntax_background:         #fff
+$syntax_background_hilight: #f5f5f5
+$syntax_text_base:          $base02
+
+// Code Hilighting
+pre code
+  white-space: pre
+
+.codeblock
+  padding: .5em 1em
+  margin-bottom: 1em
+  span
+    color: $base00 !important
+
+.gist, pre, .codeblock
+  margin: 0 0 1em
+
+.gist .gist-file, pre, .codeblock
+  +border-radius(5px)
+
+.gist, pre
+  max-width: $maxContentWidth
+
+  .gist-file .gist-data
+    +border-top-radius(5px)
+    background: $syntax_background !important
+    color: $base2
+
+pre, .codeblock
+  +border-top-radius(5px)
+  background: $syntax_background !important
+  color: $base00
+
+.gist .gist-file
+  .gist-data .gist-highlight
+    padding: .75em .5em .5em .5em !important
+  .gist-meta
+    +border-bottom-radius(5px)
+    color: $syntax_text_base !important
+    background: $syntax_background_hilight !important
+    font-size: 90%
+    position: relative
+    padding: .5em 1em !important
+    a
+      color: #f6f588 !important
+      &[style]
+        color: #666 !important
+        display: block !important
+        float: none !important
+        margin: 0 0 .5em !important
+        padding: 0 0 .5em
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+        &:first-child
+          color: #f6f588 !important
+          position: absolute
+          right: 1em
+          text-align: right
+          border: 0
+          padding: 0
+          margin: 0 !important
+
+.gist-syntax
+  span
+    font-weight: normal !important
+  .nt, .na, .s, .nc
+    color: $base01 !important
+  .k
+    color: $base02 !important
+  .s1
+    color: $green !important
+  .s2, .m, .nf
+    color: $cyan !important
+  .cp
+    color: $magenta !important
+  .kd
+    color: $violet !important
+  .mi
+    color: $base02 !important
+  .nb
+    color: $base02 !important
+  .nd
+    color: $base02 !important
+  .o
+    color: $base03 !important
+
+.gist a, .gist-link
+  display: none

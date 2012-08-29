@@ -1,0 +1,15 @@
+!!!
+%html
+  = partial 'layouts/partials/head'
+  %body{ class: current_page.try(:data).try(:page_class) }
+    #wrapper
+      = partial 'layouts/partials/header'
+      #content.row-fluid
+        %article.article.offset1.span10
+          %h1= current_article.title
+          = yield
+          = partial 'blog/partials/comments' if current_page.data.comments
+        .span1
+      #spacer
+    = partial 'layouts/partials/footer'
+    = partial 'layouts/partials/scripts'

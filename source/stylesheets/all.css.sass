@@ -1,278 +1,39 @@
+//
+// All Styles
+// --------------------
+
+// External Stylesheets
+@import "http://fonts.googleapis.com/css?family=Lato:300,400,700|Merriweather:700,300"
+
+// Dependencies
 @import compass
-@import mixins
-@import theme
-@import reset
-@import typography
-@import layout
-@import media_queries
-@import utilities
 
-html
-  height: 100%
+// Application Configuration
+@import variables
 
-  &, &.light
-    +rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)
-  &.dark
-    +rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)
+// Core variables and mixins
+@import bootstrap/variables
+@import bootstrap/mixins
 
-body
-  padding: 0 1em 2em
+// CSS Reset
+@import bootstrap/reset
 
-hr
-  border-top: solid 1px rgba(0, 0, 0, 0.1)
-  border-bottom: solid 1px rgba(255, 255, 255, 1)
-  height: 0
-  margin: 1.5em
-  clear: both
+// Grid system and page structure
+@import bootstrap/scaffolding
+@import bootstrap/grid
+@import bootstrap/layouts
 
-img
-  width: 100%
-  display: block
-  &[width]
-    width: auto
+// Base CSS
+@import bootstrap/type
+@import bootstrap/code
+@import bootstrap/forms
+@import bootstrap/tables
 
-ul, dl, ol
-  margin: 0 1.5em 2em
+// Utility classes
+@import bootstrap/utilities
 
-ul, dl
-  list-style-type: none
+// Responsive Grid
+@import bootstrap/responsive
 
-dt
-  font-weight: bold
-
-dd
-  margin: 0 0 1.2em
-
-p
-  margin: 0 1.5em 1em
-  strong, code
-    background: $base3
-    display: inline-block
-    padding: .2em .5em
-    -webkit-border-radius: 5px
-    -moz-border-radius: 5px
-    border-radius: 5px
-    line-height: 1.1em
-    font-weight: normal
-    border-bottom: 1px solid $base2
-
-li code
-  background: #eee
-  display: inline-block
-  padding: .2em .5em
-  -webkit-border-radius: 5px
-  -moz-border-radius: 5px
-  border-radius: 5px
-  line-height: 1.1em
-  font-weight: normal
-  border-bottom: 1px solid #ddd
-
-p:last-child, a:last-child, li:last-child, ul:last-child, dl:last-child, dd:last-child
-  margin-bottom: 0
-
-li p:last-child
-  margin-bottom: 1.5em
-
-#header
-  & > .module
-    padding: .5em 0
-
-// Modules
-.module
-  +background(linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 75%, rgba(249, 249, 249, 1) 100%))
-  +border-radius(8px)
-  position: relative
-  border: solid 1px darken($base2,5)
-  margin: 0 -1px
-  padding: 1.5em 0
-
-  p strong
-    background: #eee
-  hr
-    margin: 1.5em
-    &.mtn
-      margin-top: 0
-
-.high-contrast
-  +background(linear-gradient(top, $base03 0%, $base03 100%))
-  color: $base3
-  border: none
-  h1, h2, h3
-    color: $base3
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8), 0 1px 1px rgba(255, 255, 255, 0.4)
-  hr
-    border-top: 1px solid rgba(0, 0, 0, 0.5)
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1)
-
-.rounded-bottom
-  +border-radius(0)
-  +border-bottom-radius($radius)
-
-// Recommendations
-.recommendation
-  .avatar
-    width: 4em
-    float: left
-    margin-right: 1em
-    border: solid 1px rgba(0, 0, 0, 0.1)
-    display: block
-    +border-radius(8px)
-    +box-shadow(rgba(40, 40, 40, 0.1) 0 0.1em 5px)
-  .author, .position, .company
-    line-height: 1.30em
-  .position
-    color: #aaa
-
-.quote-mark
-  display: inline-block
-  margin: .1em .1em 0 0
-  font-size: 1.5em
-  line-height: .6666em
-  -webkit-transform: rotate(-2deg)
-  -moz-transform: rotate(-2deg)
-  &:last-child
-    -webkit-transform: rotate(4deg)
-    -moz-transform: rotate(4deg)
-
-// Speech Bubbles
-.bubble
-  +border-radius(8px)
-  position: relative
-  padding: 15px
-  margin-bottom: 2em
-  &:after
-    content: ""
-    position: absolute
-    bottom: -15px
-    left: 4em
-    border-width: 15px 15px 0
-    border-style: solid
-    border-color: #3ba1b3 transparent
-    display: block
-    width: 0
-
-// Buttons
-.bevel
-  +border-radius(5px)
-  +background(linear-gradient(top, lighten($cyan,5) 0%, $cyan 100%))
-  color: $base03
-  text-decoration: none
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25)
-  border: 1px solid rgba(0, 0, 0, 0.1)
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3)
-
-// Code Hilighting
-pre code
-  white-space: pre
-
-.codeblock
-  padding: .5em 1em
-  margin-bottom: 1em
-  span
-    color: $base00 !important
-
-.gist, pre, .codeblock
-  margin: 0 1.5em 2em
-
-.gist .gist-file, pre, .codeblock
-  +border-radius(5px)
-  +box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.4))
-  border: 1px solid #1b1f21
-  border-bottom: 1px solid #2C3233
-  border-right: 1px solid #2C3233
-
-.gist
-  pre
-    +box-shadow(none)
-  .gist-file .gist-data
-    +border-top-radius(5px)
-    background: $base03 !important
-    color: $base2
-    border-bottom: 1px solid #2C3233 !important
-
-pre, .codeblock
-  +border-top-radius(5px)
-  background: $base03 !important
-  color: $base2
-  border-bottom: 1px solid darken($base03,10) !important
-
-.gist .gist-file
-  .gist-data .gist-highlight
-    padding: .75em .5em .5em .5em !important
-  .gist-meta
-    +border-bottom-radius(5px)
-    color: #eee !important
-    background: $base02 !important
-    font-size: 90%
-    position: relative
-    padding: .5em 1em !important
-    a
-      color: #f6f588 !important
-      &[style]
-        color: #666 !important
-        display: block !important
-        float: none !important
-        margin: 0 0 .5em !important
-        padding: 0 0 .5em
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05)
-        &:first-child
-          color: #f6f588 !important
-          position: absolute
-          right: 1em
-          text-align: right
-          border: 0
-          padding: 0
-          margin: 0 !important
-
-.gist-syntax
-  span
-    font-weight: normal !important
-  .nt, .na, .s, .nc
-    color: $base01 !important
-  .k
-    color: #F5F4AE !important
-  .s1
-    color: #9fac7d !important
-  .s2, .m, .nf
-    color: #6dacc3 !important
-  .cp
-    color: #726d73 !important
-  .kd
-    color: #f9f0a8 !important
-  .mi
-    color: #d77d5f !important
-  .nb
-    color: #aa96ac !important
-  .nd
-    color: #d5b67c !important
-  .o
-    color: #fff !important
-
-.gist a, .gist-link
-  display: none
-
-// Social Links
-.social a
-  padding: 5px 0 5px 25px
-  display: inline-block
-  &[href*="github.com"]
-    background: url('/images/icons/github_16.png') no-repeat left 8px
-  &[href*="twitter.com"]
-    background: url('/images/icons/twitter_16.png') no-repeat left 8px
-  &[href*="gowalla.com"]
-    background: url('/images/icons/gowalla_16.png') no-repeat left 8px
-  &[href*="linkedin.com"]
-    background: url('/images/icons/linkedin_16.png') no-repeat left 8px
-  &[href*="feed/index.xml"]
-    background: url('/images/icons/rss_16.png') no-repeat left 8px
-
-// Disqus
-#disqus_thread
-  margin: -1.15em 1.5em 0
-  position: relative
-
-#dsq-content #dsq-footer
-  margin-bottom: 0 !important
-
-.dsq-reply
-  margin-bottom: 1.5em
+// Application Styles
+@import application

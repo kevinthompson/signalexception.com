@@ -1,11 +1,8 @@
 ---
-layout: post
 title: Discovering Version Control & Deployment Systems
 ---
 
 For the last few years, I've managed and deployed my code using archaic, time consuming methods. Version control meant duplicating and renaming folders, and deployment was simply dragging and dropping files into an ftp client.
-
-READMORE
 
 While I had worked with version control systems in the past, I had yet to reach a point where I felt particularly comfortable working with them and, at the time, they seemed to be more of an inconvenience than anything. I did however recognize the potential benefits of using a VCS, so I continued to follow the growth of systems such SVN and Git.
 

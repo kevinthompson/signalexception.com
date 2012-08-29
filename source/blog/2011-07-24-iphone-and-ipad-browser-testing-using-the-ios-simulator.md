@@ -1,10 +1,7 @@
 ---
-layout: post
 title: iPhone & iPad Browser Testing Using the iOS Simulator
 ---
 On more than one occasion I've had clients, as well as fellow designers and developers, ask me to assist them in building a mobile (or iPhone specific) version of their website, following their request immediately with something like, "You do have an iPhone, right?"
-
-READMORE
 
 I do happen to have an iPhone (although no iPad), but I rarely need to pick it up when developing and testing websites for iOS devices. Instead, I use the iOS Simulator.
 

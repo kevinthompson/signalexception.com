@@ -1,80 +1,11 @@
 !!!
 %html
-  %head
-    %meta{charset: 'utf-8'}
-    %meta{content: 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible'}
-    -# %title= "#{page.title} | Kevin Thompson"
-    %meta{content: 'Kevin Thompson is an web application developer and user experience engineer from Oceanside, Ca', name: 'description'}
-    %meta{content: 'Kevin Thompson, web development in san diego, web developer in san diego, san diego user experience, small business website, expressionengine developer', name: 'keywords'}
-    %meta{content: 'Kevin Thompson', name: 'author'}
-    %meta{content: 'Kevin Thompson', name: 'copyright'}
-    %meta{content: 'width=device-width; initial-scale=1.0; maximum-scale=1.0;', name: 'viewport'}
-    = favicon_tag '/favicon.ico'
-    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,700'
-    = stylesheet_link_tag 'all'
-    :javascript
-      var html = document.getElementsByTagName('html')[0];
-      html.className = (html.className != '' ? html.className + ' ' : '') + 'js';
-      /mobile/i.test(navigator.userAgent) && !location.hash && setTimeout(function () { window.scrollTo(0, 1); }, 1000);
-    /[if lt IE 9] <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js">IE7_PNG_SUFFIX=".png";</script>
-
+  = partial 'layouts/partials/head'
   %body{ class: current_page.try(:data).try(:page_class) }
-    %header#header.container
-      .high-contrast.rounded-bottom.module.clear
-        %h1.logo.h2
-          %a{ href: '/' } Kevin Thompson
-        %ul.menu
-          %li
-            %a.bevel{ href: '/blog/', title: 'Blog' } Blog
-            %a.latest-post{ href: blog.articles[0].url }= blog.articles[0].title
-    .content.container
-      = yield
-    #footer.container
-      .module.high-contrast.mbl
-        .divided.line
-          .equal-height.unit.size-one-half
-            %h3 Who's this Kevin Thompson character?
-            %p Mild-mannered developer by day, caffeine-fueled autodidact by night. I leverage my talent and experience as a professional web developer to help people solve problems and build successful businesses.
-            %p
-              You can glean more by perusing
-              %a{ href: '/blog/'} my blog
-              or taking a look at
-              = succeed ',' do
-                %a{ href: 'http://github.com/kevinthompson' } my code
-              and if you have any questions
-              %a{ href: "mailto:#{settings.contact.email}" } email me
-              and we can chat.
-          .equal-height.unit.size-one-fourth
-            %hr.lores/
-            %dl
-              %dt Email
-              %dd
-                %a{ href: "mailto:#{settings.contact.email}" }= settings.contact.email
-              %dt Skype
-              %dd
-                %a{ href: "skype:#{settings.contact.skype}?add" }= settings.contact.skype
-          .last.equal-height.unit.size-one-fourth
-            %hr.lores/
-            %h3 Looking for more?
-            %ul.social
-              %li
-                %a.rss-link{ href: '/feed/index.xml' } Subscribe to My Blog
-              %li
-                %a.twitter-link{ href: 'http://twitter.com/kevinthompson' } Follow Me on Twitter
-                %span.twitter-follow-button
-              %li
-                %a{ href: 'http://github.com/kevinthompson' } Dissect My Code on Github
-              %li
-                %a{ href: 'http://linkedin.com/in/kevindthompson' } View My Resume
-    %footer.container
-      %span.small.copyright &copy; Kevin Thompson #{ Time.now.year } &mdash; Code, Content &amp; Design
-      %a.twitter-follow-button{ data: { align: 'right', 'link-color' => '3ba1b3', 'text-color' => '888888' }, href: 'http://twitter.com/kevinthompson' } Follow @kevinthompson
-
-    %script{ src: 'http://platform.twitter.com/widgets.js', type: 'text/javascript' }
-    %script{ src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', type: 'text/javascript' }
-    %script{ src: '/javascripts/jquery.equalHeightColumns.js' }
-    %script{ src: '/javascripts/jquery.sticky.js' }
-    %script{ src: '/javascripts/jquery.touchSwipe.js' }
-    %script{ src: '/javascripts/jquery.pjax.js' }
-    %script{ src: '/javascripts/github.js' }
-    %script{ src: '/javascripts/script.js' }
+    #wrapper
+      = partial 'layouts/partials/header'
+      #content.row-fluid
+        .offset1.span10= yield
+      #spacer
+    = partial 'layouts/partials/footer'
+    = partial 'layouts/partials/scripts'

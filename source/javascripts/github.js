@@ -13,11 +13,11 @@ var github = (function(){
           url: "https://api.github.com/users/"+options.user+"/repos?callback=?"
         , dataType: 'jsonp'
         , error: function (err) { 
-            console.log(err);
+            // console.log(err);
             $(options.target + ' li.loading').addClass('error').text("Error loading feed");
           }
         , success: function(response) {
-          console.log(response);
+          // console.log(response);
           var repos = [];
           if (!response || !response.data) { return; }
           for (var i = 0; i < response.data.length; i++) {

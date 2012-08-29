@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Start Required Processes on Pow Application Boot"
 comments: true
 ---
@@ -9,8 +8,6 @@ Using [Pow](http://pow.cx/) to serve your Rack apps makes managing multiple appl
 In the [Pow Manual](http://pow.cx/manual.html) under section 2.2, "[Customizing Environment Variables](http://pow.cx/manual.html#section_2.2)", we're given an overview of how we might customize the environment for our worker processes through the `.powrc` and `.powenv` files. However, because these files simply execute a series of bash commands, we can add much more than environment variable exports to our application boot process.
 
 For example, most of the projects I've been contributing to lately use MongoDB, and as such, I need to have an instance of the `mongod` process running in order to connect to my databases. To avoid the inevitable application startup error, or having to manually check for an existing MongoDB process, I can simply add the following code to my `.powrc` file:
-
-READMORE
 
     # Start MongoDB
     if ! ps ax | grep -v grep | grep 'mongod' > /dev/null

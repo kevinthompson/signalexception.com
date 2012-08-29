@@ -1,17 +1,16 @@
 ---
-layout: post
 title: Securing Your Staging Environment
 ---
 While working as a part of a team or with a remote client, it's often beneficial to have a staging environment accessible outside of your local office or VPN for quality assurance, editorial review, or client approval. However, when configuring your staging environment, there are several precautions you should take in order to guarantee the security and privacy of your work.
 
-READMORE
-
 ## Restrict Search Engine Access
 In order to stop users from finding your staging environment in search engines, and also to avoid any [duplicate content issues](http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=66359) that could negatively impact the rankings of your production site, you'll want add a restriction to the `robots.txt` file at the public root of our sites:
 
-	User-agent: *
-	Disallow: /
-	
+```
+User-agent: *
+Disallow: /
+```
+
 These two lines alone, when added to our `robots.txt` file, will tell search engines to ignore all content on the site beginning at the root URL.
 
 _**Note:** Be sure to remove these rules from the robots.txt file on your production site, otherwise it will not be indexed by search engines._

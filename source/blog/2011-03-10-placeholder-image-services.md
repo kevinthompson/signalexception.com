@@ -1,10 +1,7 @@
 ---
-layout: post
 title: Placeholder Image Services
 ---
 From time to time, I find myself needing to create a quick HTML document to exemplify a concept, or to explore and alternative layouts in an existing project. When these quick and dirty prototypes need to include some form of imagery, I turn to one of my favorite placeholder image services.
-
-READMORE
 
 Depending on the type of page I'm creating (wireframe, mockup, whimsical tomfoolery), I typically choose from one of three services.
 
@@ -13,7 +10,7 @@ Depending on the type of page I'm creating (wireframe, mockup, whimsical tomfool
 [Placehold.it](http://placehold.it) is a simple, yet versatile, solution that I often use when creating wireframes. When wireframing, I typically do not want to portray any particular visual aesthetic, so the bare, monochromatic images from Placehold.it are ideal.
 
 These images can be passed as little as the image width, or as much as the width, height, format, color, and text:
-	
+
 	<img src="http://placehold.it/300" />
 	<img src="http://placehold.it/400x200.png" />
 	<img src="http://placehold.it/200/09f/&text=Ad Unit" />
@@ -23,7 +20,7 @@ These images can be passed as little as the image width, or as much as the width
 
 ## FlickHoldr.com
 
-When I need images with a bit more substance, such as when I'm mocking up a new layout for an existing site, I'll often use [FlickHoldr.com](http://flickholdr.com), which can pull images based on a set of tags from [Flickr](http://flickr.com), to find images that suit the project. 
+When I need images with a bit more substance, such as when I'm mocking up a new layout for an existing site, I'll often use [FlickHoldr.com](http://flickholdr.com), which can pull images based on a set of tags from [Flickr](http://flickr.com), to find images that suit the project.
 
 FlickHoldr.com requires you send at least the width an height parameters of your image, but unlike Placehold.it, you can also specify tags, whether or not an image is black and white, and also an offset, which allows you to pull different images for the same size and tags:
 
@@ -41,7 +38,7 @@ Of the three, [Placekitten.com](http://placekitten.com) tends to get the least u
 	<img src="http://placekitten.com/300/" />
 	<img src="http://placekitten.com/300/100" />
 	<img src="http://placekitten.com/g/600/100" />
-	
+
 <div class="img"><img src="http://placekitten.com/g/600/100" /></div>
 
 ----------
