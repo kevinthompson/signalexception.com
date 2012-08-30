@@ -1,11 +1,10 @@
 !!!
 %html
   = partial 'layouts/partials/head'
-  %body{ class: current_page.try(:data).try(:page_class) }
+  %body{ body_attributes }
     #wrapper
       = partial 'layouts/partials/header'
-      #content.row-fluid
-        .offset1.span10= yield
+      #content.container
+        = yield
       #spacer
     = partial 'layouts/partials/footer'
-    = partial 'layouts/partials/scripts'

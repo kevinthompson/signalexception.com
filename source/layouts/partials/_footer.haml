@@ -1,7 +1,5 @@
+= #partial 'layouts/partials/nav'
 %footer#footer
-  %hr/
-  .row-fluid
-    .offset1.span10
-      %small &copy; Kevin Thompson #{ Time.now.year } &mdash; Code, Content &amp; Design
-      %a{ href: 'http://twitter.com/kevinthompson' }
-        %small Follow <span>@kevinthompson</span> on Twitter
+  %small &copy; Kevin Thompson #{ Time.now.year }
+  %span &mdash; Code, Content &amp; Design
+= partial 'layouts/partials/scripts'

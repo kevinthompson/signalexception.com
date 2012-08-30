@@ -1,0 +1,72 @@
+//
+// Layout
+// --------------------
+
+html, body
+  height: 100%
+
+// Body
+body
+  margin: 0
+  font-family: $baseFontFamily
+  font-size: $baseFontSize
+  line-height: $baseLineHeight
+  color: $textColor
+  border-top: 4px solid $accentColor
+  +background($bodyBackground)
+
+// Links
+a
+  color: $linkColor
+  text-decoration: none
+
+a:hover
+  color: $linkColorHover
+  text-decoration: underline
+
+// Header
+#header
+  border-top: 1px solid rgba($black,.25)
+
+#header, #intro, #footer
+  padding: 15px
+
+#logo
+  display: inline-block
+  margin: 0 auto
+
+  span
+    display: none
+
+  a
+    font-size: $logoSize
+    display: block
+    width: $logoSize * 1.382
+    height: $logoSize * 1.382
+    line-height: $logoSize * 1.382
+    vertical-align: middle
+    text-align: center
+    color: $white
+    background: $grayDarker
+    border: $logoSize * .18 solid #fff
+    +box-shadow(0 0 4px rgba($black,.5))
+    text-transform: lowercase
+    text-decoration: none
+
+// #wrapper
+//   clear: both
+//   min-height: 100%
+//   height: auto !important
+//   height: 100%
+//   margin-bottom: -$footerHeight
+
+// #spacer
+//   height: $footerHeight
+
+// #footer
+//   clear: both
+//   height: $footerHeight
+
+#footer
+  span
+    display: none

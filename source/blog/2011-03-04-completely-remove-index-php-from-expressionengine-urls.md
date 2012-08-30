@@ -7,6 +7,9 @@ While there are a [number of known solutions](http://expressionengine.com/wiki/R
 
 At the time of this writing, if you were to visit [http://expressionengine.com/index.php/overview/](http://expressionengine.com/index.php/overview/) or [http://expressionengine.com/overview/](http://expressionengine.com/overview/), you'd be presented with the exact same page. Having the same content resolve at two distinct URLs can potentially harm [your search engine rankings](http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=66359) and disrupt your analytics.
 
+:::ruby
+puts 'test' unless test.nil?
+
 ##The Rules
 ``` bash
 <IfModule mod_rewrite.c>

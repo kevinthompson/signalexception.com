@@ -16,8 +16,6 @@ These images can be passed as little as the image width, or as much as the width
 	<img src="http://placehold.it/200/09f/&text=Ad Unit" />
 	<img src="http://placehold.it/600x100/09f/fff.png&text=Big Blue Image!" />
 
-<div class="img"><img src="http://placehold.it/600x100/09f/fff.png&text=Big Blue Image!" alt="Placehold.it Example" /></div>
-
 ## FlickHoldr.com
 
 When I need images with a bit more substance, such as when I'm mocking up a new layout for an existing site, I'll often use [FlickHoldr.com](http://flickholdr.com), which can pull images based on a set of tags from [Flickr](http://flickr.com), to find images that suit the project.
@@ -29,8 +27,6 @@ FlickHoldr.com requires you send at least the width an height parameters of your
 	<img src="http://flickholdr.com/200/300/sea,sun/1/" />
 	<img src="http://flickholdr.com/400/200/kenny meyers,fetish/2/" />
 
-<div class="img"><img src="http://flickholdr.com/400/200/abstract,object/2/" /></div>
-
 ## Placekitten.com
 
 Of the three, [Placekitten.com](http://placekitten.com) tends to get the least use, but there's still that rare occasion where you just need pictures of kittens. Placekitten.com doesn't accept many parameters, in fact all they accept is width, height, and an option for black and white images:
@@ -38,8 +34,6 @@ Of the three, [Placekitten.com](http://placekitten.com) tends to get the least u
 	<img src="http://placekitten.com/300/" />
 	<img src="http://placekitten.com/300/100" />
 	<img src="http://placekitten.com/g/600/100" />
-
-<div class="img"><img src="http://placekitten.com/g/600/100" /></div>
 
 ----------
 

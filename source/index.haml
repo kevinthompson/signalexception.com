@@ -1,4 +1,8 @@
+%p#intro
+  Director of Engineering at #{link_to 'AppStack', 'http://appstack.com'}; sleep-deprived, caffeine-fueled autodidact; husband; and father of two beautiful little girls.
+
+%h2 Latest Blog Posts
 %ul#articles
-  - blog.articles.each do |article|
+  - blog.articles[0...3].each do |article|
     %li
       %a{ href: article.url }= article.title
