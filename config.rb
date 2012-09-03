@@ -13,7 +13,9 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :autolink => true
+set :markdown,
+  fenced_code_blocks: true,
+  autolink: true
 
 activate :directory_indexes
 activate :livereload
@@ -46,7 +48,20 @@ end
 # Google Analytics
 # ========================================
 require 'rack/google_analytics'
-use Rack::GoogleAnalytics, :web_property_id => 'UA-24584832-1'
+use Rack::GoogleAnalytics,
+  web_property_id: 'UA-24584832-1'
+
+# Syntax Highlighting
+# ========================================
+# require 'uv'
+# use Rack::Codehighlighter, :ultraviolet,
+#   theme: 'solarized',
+#   lines: false,
+#   element: 'pre>code',
+#   pattern: /\A```\s*+(\w+)\s*(\n|&#x000A;)/i,
+#   logging: false,
+#   markdown: true
+use Rack::SyntaxHighlighter
 
 # CoffeeScript filters in Haml
 # ========================================

@@ -13,7 +13,7 @@ $ ->
       target: '#gh_repos'
 
   # External Links in New Tab
-  $('a').not('[href^="/"],[href*="kevinthompson.info"]').attr('target','_blank')
+  $('a').not('[href^="#"],[href^="/"],[href*="kevinthompson.info"]').attr('target','_blank')
 
   # Syntax Highlighting
   window.prettyPrint && prettyPrint()

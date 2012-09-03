@@ -2,70 +2,85 @@
 // Variables
 // -------------------------
 
+// Numbers
+// -------------------------
+$ratio:               1.61803398875em
+
+// Colors
+// -------------------------
+$base03:              #002b36
+$base02:              #073642
+$base01:              #586e75
+$base00:              #657b83
+$base0:               #839496
+$base1:               #93a1a1
+$base2:               #eee8d5
+$base3:               #fdf6e3
+$magenta:             #d33682
+$violet:              #6c71c4
+$cyan:                #2aa198
+$blue:                #3ba1b3
+$blueDarker:          darken($blue,5)
+$green:               #859900
+$red:                 #dc322f
+$yellow:              #b58900
+$orange:              #cb4b16
+$pink:                $magenta
+$purple:              $violet
+
 // Grays
 // -------------------------
-$black:                 #111
-$grayDarker:            #222
-$grayDark:              #333
-$gray:                  #999
-$grayLight:             #ccc
-$grayLighter:           #eee
-$white:                 #fff
-
-
-// Accent colors
-// ----------------------------
-$blue:                  #3ba1b3
-$green:                 #46a546
-$red:                   #9d261d
-$yellow:                #ffc40d
-$orange:                #f89406
-$pink:                  #c3325f
-$purple:                #7a43b6
-$gold:                  #B58900
+$black:               #111
+$grayDarker:          $base03
+$grayDark:            $base02
+$gray:                $base00
+$grayLight:           $base1
+$grayLighter:         #f1f1f1
+$whiteDarker:         #f9f9f9
+$white:               #fff
 
 // Scaffolding
 // -------------------------
-$bodyBackground:        #fafafa
-$textColor:             $grayDarker
-$accentColor:           $blue
+$bodyBackground:      $white
+$textColor:           $grayDarker
+$accentColor:         $blue
 
 // Links
 // -------------------------
-$linkColor:             $accentColor
-$linkColorHover:        darken($linkColor, 15%)
+$linkColor:           $accentColor
+$linkColorHover:      darken($linkColor, 15%)
 
 // Typography
 // -------------------------
-$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif
-$serifFontFamily:       "Merriweather", Georgia, "Times New Roman", Times, serif
-$displayFontFamily:     "Lato", $sansFontFamily
-$monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace
+$sansFontFamily:      "Helvetica Neue", Helvetica, Arial, sans-serif
+$serifFontFamily:     "Merriweather", Georgia, "Times New Roman", Times, serif
+$displayFontFamily:   "Lato", $sansFontFamily
+$monoFontFamily:      Menlo, Monaco, Consolas, "Courier New", monospace
 
 // Base Fonts
 // -------------------------
-$baseFontSize:          18px
-$baseFontFamily:        $serifFontFamily
-$baseLineHeight:        1.62em
-$altFontFamily:         $sansFontFamily
+$baseFontSize:        15px
+$baseFontFamily:      $serifFontFamily
+$baseLineHeight:      $ratio
+$altFontFamily:       $sansFontFamily
 
 // Headings
 // -------------------------
-$headingsFontFamily:    $displayFontFamily
-$headingsFontWeight:    bold
-$headingsColor:         inherit
+$headingsFontFamily:  $displayFontFamily
+$headingsFontWeight:  bold
+$headingsColor:       inherit
 
 // Input placeholder text color
 // -------------------------
-$placeholderText:       $grayLight
+$placeholderText:     $grayLight
 
 // Hr border color
 // -------------------------
-$hrBorder:              $grayLighter
+$hrBorder:            $grayLighter
 
 // Layout
 // -------------------------
-$footerHeight:          63px
-$maxLineLength:         48rem
+$footerHeight:        63px
+$maxLineLength:       48rem
 
-$logoSize:              .875em
+$logoSize:            .875em

@@ -1,15 +1,24 @@
 source :rubygems
 
-gem 'hashie'
-
+# Middleman
 gem 'middleman', '~>3.0.0'
 gem 'middleman-blog'
 gem 'middleman-smusher'
 gem 'middleman-livereload'
 
+# Utilities
+gem 'hashie'
 gem 'coffee-filter'
 gem 'redcarpet'
+
+# Google Analytics
+gem 'rack-google_analytics'
+
+# Syntax Highlighting
+gem 'albino'
+gem 'pygmentize'
+gem 'rack-syntax-highlighter'
+
+# Performance
 gem 'therubyracer'
 gem 'oj'
-
-gem 'rack-google_analytics'

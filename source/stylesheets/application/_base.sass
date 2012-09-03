@@ -12,24 +12,41 @@ body
   font-size: $baseFontSize
   line-height: $baseLineHeight
   color: $textColor
-  border-top: 4px solid $accentColor
   +background($bodyBackground)
 
 // Links
 a
   color: $linkColor
   text-decoration: none
+  border-bottom: 1px dotted rgba($linkColor,.4)
 
 a:hover
   color: $linkColorHover
-  text-decoration: underline
+  text-decoration: none
+  border-bottom: 1px dotted rgba($linkColor,.5)
 
 // Header
 #header
-  border-top: 1px solid rgba($black,.25)
+  border-bottom: 1px solid $grayLighter
+  margin: 0 0 1rem
+  +background($whiteDarker)
+  position: relative
 
-#header, #intro, #footer
-  padding: 15px
+  a.menu
+    border: 1px solid $grayLighter
+    border-top: none
+    border-right: none
+    +background($white)
+    position: absolute
+    top: 10px
+    right: 0
+    padding: 0 15px 0 10px
+    display: block
+    height: 32px
+    line-height: 32px
+
+#header, #content, #footer
+  padding: 10px 15px
 
 #logo
   display: inline-block
@@ -49,7 +66,7 @@ a:hover
     color: $white
     background: $grayDarker
     border: $logoSize * .18 solid #fff
-    +box-shadow(0 0 4px rgba($black,.5))
+    outline: 1px solid $grayLighter
     text-transform: lowercase
     text-decoration: none
 
@@ -67,6 +84,32 @@ a:hover
 //   clear: both
 //   height: $footerHeight
 
+nav
+  & > a
+    float: right
+
+  h2
+    margin: 0 15px
+
+  ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+  li
+    a
+      +background($grayDark)
+      color: $white
+      display: block
+      padding: 1em 15px
+      border-top: 1px solid $grayLighter
+      border-top: 1px solid $grayDarker
+
 #footer
+  border-top: 1px solid $grayLighter
+  +background($whiteDarker)
+
   span
     display: none
+
+.follow
+  display: none

@@ -7,9 +7,6 @@ While there are a [number of known solutions](http://expressionengine.com/wiki/R
 
 At the time of this writing, if you were to visit [http://expressionengine.com/index.php/overview/](http://expressionengine.com/index.php/overview/) or [http://expressionengine.com/overview/](http://expressionengine.com/overview/), you'd be presented with the exact same page. Having the same content resolve at two distinct URLs can potentially harm [your search engine rankings](http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=66359) and disrupt your analytics.
 
-:::ruby
-puts 'test' unless test.nil?
-
 ##The Rules
 ``` bash
 <IfModule mod_rewrite.c>
@@ -43,8 +40,10 @@ Although duplicate content was no longer a concern, as search engines should no 
 
 I asked my question and received a number of responses confirming the issue, but not offering much in the way of a solution. I left the chat open and continued tinkering with my `.htaccess` file. After a while I decided to check back in on the EE Help Chat, and to my surprise, [Erick Reagan](http://twitter.com/erikreagan) and [Nevin Lyne](http://twitter.com/nevinlyne) had worked out a potential solution:
 
-	RewriteCond %{THE_REQUEST} ^[^/]*/index\.php [NC]
-	RewriteRule ^index\.php(.+) $1 [R=301,L]
+``` bash
+RewriteCond %{THE_REQUEST} ^[^/]*/index\.php [NC]
+RewriteRule ^index\.php(.+) $1 [R=301,L]
+```
 
 I quickly modified my .htaccess file and sure enough, this new rule was able to catch URL requests beginning with index.php and issue a 301 redirect to the correct URL. The trick to circumventing the redirect loops I was encountering was using `%{THE_REQUEST}` to match the request string as opposed to the actual URL.
 
@@ -54,4 +53,6 @@ Thanks to Erik and Nevin my OCD has been suppressed, for now.
 
 In the comments, [Manuel](http://kevinthompson.info/blog/completely-remove-index-php-from-expressionengine-urls/#comment-15) pointed out the fact that the rules suggested by Erik and Nevin would break any `POST` request sent to an `index.php` URL. To resolve this, he suggested adding the following condition to the rewrite (which has already been included in the example above) that would restrict it to only `GET` requests:
 
-	RewriteCond %{THE_REQUEST} ^GET
+``` bash
+RewriteCond %{THE_REQUEST} ^GET
+```
