@@ -1,115 +1,78 @@
 //
-// Layout
-// --------------------
+// Base Styles
+// ----------------------------------------
 
 html, body
   height: 100%
 
-// Body
 body
   margin: 0
-  font-family: $baseFontFamily
-  font-size: $baseFontSize
-  line-height: $baseLineHeight
-  color: $textColor
-  +background($bodyBackground)
+  font-family: $base-font-family
+  font-size: $base-font-size
+  line-height: $base-line-height
+  color: $base3
+  +background($base02)
 
-// Links
-a
-  color: $linkColor
+img
+  display: block
+  width: 100%
+
+a, a:visited, a:link, a:hover
+  color: $solar-cyan
   text-decoration: none
-  border-bottom: 1px dotted rgba($linkColor,.4)
+  border-bottom: 1px dotted $accent
 
-a:hover
-  color: $linkColorHover
-  text-decoration: none
-  border-bottom: 1px dotted rgba($linkColor,.5)
+.container
+  padding: 0 15px
 
-// Header
+#stripe
+  +background(linear-gradient(left, $solar-red, $solar-orange 100%))
+  height: 3px
+
 #header
-  border-bottom: 1px solid $grayLighter
-  margin: 0 0 1rem
-  +background($whiteDarker)
-  position: relative
+  padding: 12px 15px
 
-  a.menu
-    border: 1px solid $grayLighter
-    border-top: none
-    border-right: none
-    +background($white)
-    position: absolute
-    top: 10px
-    right: 0
-    padding: 0 15px 0 10px
-    display: block
-    height: 32px
-    line-height: 32px
-
-#header, #content, #footer
-  padding: 10px 15px
+  & > nav
+    +clearfix
+    a
+      float: right
+    a.back
+      float: left
+  & + hr
+    margin-top: 0
 
 #logo
-  display: inline-block
-  margin: 0 auto
+  position: absolute
+  top: 15px
+  left: 50%
+  display: block
+  width: 54px
+  border: 0
+  margin-left: -26px
+
+#content
+  padding-top: 10px
+
+#footer
+  padding: 10px 15px
 
   span
     display: none
 
-  a
-    font-size: $logoSize
-    display: block
-    width: $logoSize * 1.382
-    height: $logoSize * 1.382
-    line-height: $logoSize * 1.382
-    vertical-align: middle
-    text-align: center
-    color: $white
-    background: $grayDarker
-    border: $logoSize * .18 solid #fff
-    outline: 1px solid $grayLighter
-    text-transform: lowercase
-    text-decoration: none
-
-// #wrapper
-//   clear: both
-//   min-height: 100%
-//   height: auto !important
-//   height: 100%
-//   margin-bottom: -$footerHeight
-
-// #spacer
-//   height: $footerHeight
-
-// #footer
-//   clear: both
-//   height: $footerHeight
-
-nav
-  & > a
-    float: right
-
-  h2
-    margin: 0 15px
+#menu
+  padding: 10px
 
   ul
     list-style-type: none
-    margin: 0
     padding: 0
-  li
-    a
-      +background($grayDark)
-      color: $white
-      display: block
-      padding: 1em 15px
-      border-top: 1px solid $grayLighter
-      border-top: 1px solid $grayDarker
+    margin: 0 0 $base-line-height
 
-#footer
-  border-top: 1px solid $grayLighter
-  +background($whiteDarker)
+    li
+      margin: 0 0 10px
 
-  span
-    display: none
-
-.follow
-  display: none
+      &:last-child
+        margin: 0
+      a
+        @extend .button
+  & + hr
+    margin: 0

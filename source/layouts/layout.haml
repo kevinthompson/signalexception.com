@@ -2,9 +2,7 @@
 %html
   = partial 'layouts/partials/head'
   %body{ body_attributes }
-    #wrapper
-      = partial 'layouts/partials/header'
-      #content.container
-        = yield
-      #spacer
+    = partial 'layouts/partials/header'
+    #content
+      = yield
     = partial 'layouts/partials/footer'

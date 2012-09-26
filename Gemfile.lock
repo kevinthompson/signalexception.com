@@ -136,6 +136,9 @@ GEM
     sprockets-sass (0.8.0)
       sprockets (~> 2.0)
       tilt (~> 1.1)
+    susy (1.0.1)
+      compass (>= 0.12.2)
+      sass (>= 3.2.0)
     syntax (1.0.0)
     therubyracer (0.10.2)
       libv8 (~> 3.3.10)
@@ -163,4 +166,5 @@ DEPENDENCIES
   rack-google_analytics
   rack-syntax-highlighter
   redcarpet
+  susy
   therubyracer

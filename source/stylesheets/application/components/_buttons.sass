@@ -1,0 +1,42 @@
+.button, a.button
+  +border-radius(3px)
+  display: block
+  padding: 3px 10px
+  text-align: center
+  text-decoration: none
+  font-family: $sans
+  text-transform: uppercase
+  font-size: 13px
+  +background(linear-gradient($base3, $white 90%))
+  border: none
+  color: $base02
+
+  &.alt
+    color: $base01
+    border: 1px solid $accent
+    background: transparent
+
+  &.back
+    position: relative
+    display: inline-block
+    margin-left: 13px
+    margin-right: 2px
+    padding-left: 5px
+    background: $base02
+    border-left: 0 !important
+
+  &.back:before
+    border: solid $accent
+    border-width: 0 0 1px 1px
+    border-radius: 2px 0 2px 2px
+    content: ''
+    display: block
+    height: 23px
+    left: -10px
+    position: absolute
+    top: 3px
+    +rotate(45deg)
+    width: 21px
+
+  &.back span
+    position: relative

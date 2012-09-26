@@ -1,14 +1,8 @@
-!!!
-%html
-  = partial 'layouts/partials/head'
-  %body{ body_attributes }
-    #wrapper
-      = partial 'layouts/partials/header'
-      #content.row-fluid
-        %article.article.offset2.span7
-          %h1= current_article.title
-          %small by Kevin Thompson
-          = yield
-          = # partial 'blog/partials/comments' if current_page.data.comments
-      #spacer
-    = partial 'layouts/partials/footer'
+- wrap_layout :layout do
+  %article#post.container
+    %h1= current_article.title
+    %small 
+      by 
+      = link_to 'Kevin Thompson', '/about'
+    = yield
+    = # partial 'blog/partials/comments' if current_page.data.comments

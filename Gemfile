@@ -6,6 +6,10 @@ gem 'middleman-blog'
 gem 'middleman-smusher'
 gem 'middleman-livereload'
 
+# Performance
+gem 'therubyracer'
+gem 'oj'
+
 # Utilities
 gem 'hashie'
 gem 'coffee-filter'
@@ -19,6 +23,5 @@ gem 'albino'
 gem 'pygmentize'
 gem 'rack-syntax-highlighter'
 
-# Performance
-gem 'therubyracer'
-gem 'oj'
+# User Interface
+gem 'susy'

@@ -53,14 +53,6 @@ use Rack::GoogleAnalytics,
 
 # Syntax Highlighting
 # ========================================
-# require 'uv'
-# use Rack::Codehighlighter, :ultraviolet,
-#   theme: 'solarized',
-#   lines: false,
-#   element: 'pre>code',
-#   pattern: /\A```\s*+(\w+)\s*(\n|&#x000A;)/i,
-#   logging: false,
-#   markdown: true
 use Rack::SyntaxHighlighter
 
 # CoffeeScript filters in Haml

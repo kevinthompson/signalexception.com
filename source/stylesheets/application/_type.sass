@@ -6,16 +6,16 @@
 // ---------
 
 p
-  margin: 0 0 $baseLineHeight / 2
+  margin: 0 0 $base-line-height
   small
-    font-size: $baseFontSize - 2
-    color: $grayLight
+    font-size: $base-font-size - 2
+    color: $base01
 
 .lead
-  margin-bottom: $baseLineHeight
+  margin-bottom: $base-line-height
   font-size: 20px
   font-weight: 200
-  line-height: $baseLineHeight * 1.5
+  line-height: $base-line-height * 1.5
 
 // HEADINGS
 // --------
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6
   // Fix the character spacing for headings
   small
     font-weight: normal
-    color: $grayLight
+    color: $base01
 
 h1
   font-size: $ratio
@@ -40,18 +40,18 @@ h1
 
 h2
   font-size: 1.25em
-  line-height: $baseLineHeight * 2
+  line-height: $base-line-height * 2
   small
     font-size: 18px
 
 h3
   font-size: 18px
-  line-height: $baseLineHeight * 1.5
+  line-height: $base-line-height * 1.5
   small
     font-size: 14px
 
 h4, h5, h6
-  line-height: $baseLineHeight
+  line-height: $base-line-height
 
 h4
   font-size: 14px
@@ -63,14 +63,14 @@ h5
 
 h6
   font-size: 11px
-  color: $grayLight
+  color: $base01
   text-transform: uppercase
 
 // Page header
 .page-header
-  padding-bottom: $baseLineHeight - 1
-  margin: $baseLineHeight 0
-  border-bottom: 1px solid $grayLighter
+  padding-bottom: $base-line-height - 1
+  margin: $base-line-height 0
+  border-bottom: 1px solid $base02
 
 .page-header h1
   line-height: 1
@@ -81,7 +81,7 @@ h6
 // Unordered and Ordered lists
 ul, ol
   padding: 0
-  margin: 0 0 $baseLineHeight / 2 25px
+  margin: 0 0 $base-line-height / 2 25px
 
 ul ul, ul ol, ol ol, ol ul
   margin-bottom: 0
@@ -93,7 +93,7 @@ ol
   list-style: decimal
 
 li
-  line-height: $baseLineHeight
+  line-height: $base-line-height
 
 ul.unstyled, ol.unstyled
   margin-left: 0
@@ -101,18 +101,18 @@ ul.unstyled, ol.unstyled
 
 // Description Lists
 dl
-  margin-bottom: $baseLineHeight
+  margin-bottom: $base-line-height
 
 dt, dd
-  line-height: $baseLineHeight
+  line-height: $base-line-height
 
 dt
   font-weight: bold
-  line-height: $baseLineHeight - 1
+  line-height: $base-line-height - 1
   // fix jank Helvetica Neue font bug
 
 dd
-  margin-left: $baseLineHeight / 2
+  margin-left: $base-line-height / 2
 
 // Horizontal layout (like forms)
 .dl-horizontal
@@ -130,10 +130,10 @@ dd
 
 // Horizontal rules
 hr
-  margin: $baseLineHeight 0
+  margin: $base-line-height 0
   border: 0
-  border-top: 1px solid $hrBorder
-  border-bottom: 1px solid $white
+  border-top: 1px solid $base03
+  border-bottom: 1px solid $accent
 
 // Emphasis
 strong
@@ -143,12 +143,12 @@ em
   font-style: italic
 
 .muted
-  color: $grayLight
+  color: $base01
 
 // Abbreviations and acronyms
 abbr[title]
   cursor: help
-  border-bottom: 1px dotted $grayLight
+  border-bottom: 1px dotted $base01
 
 abbr.initialism
   font-size: 90%
@@ -157,15 +157,15 @@ abbr.initialism
 // Blockquotes
 blockquote
   padding: 0 0 0 15px
-  margin: 0 0 $baseLineHeight
-  border-left: 5px solid $grayLighter
+  margin: 0 0 $base-line-height
+  border-left: 5px solid $base02
   p
     margin-bottom: 0
-    +font-shorthand(16px, 300, $baseLineHeight * 1.25)
+    +font-shorthand(16px, 300, $base-line-height * 1.25)
   small
     display: block
-    line-height: $baseLineHeight
-    color: $grayLight
+    line-height: $base-line-height
+    color: $base01
     &:before
       content: '\2014 \00A0'
   // Float right with text-align: right
@@ -173,7 +173,7 @@ blockquote
     float: right
     padding-right: 15px
     padding-left: 0
-    border-right: 5px solid $grayLighter
+    border-right: 5px solid $base02
     border-left: 0
     p, small
       text-align: right
@@ -185,14 +185,14 @@ q:before, q:after, blockquote:before, blockquote:after
 // Addresses
 address
   display: block
-  margin-bottom: $baseLineHeight
+  margin-bottom: $base-line-height
   font-style: normal
-  line-height: $baseLineHeight
+  line-height: $base-line-height
 
 // Misc
 small
   font-size: .875em
-  color: $gray
+  color: $base0
 
 cite
   font-style: normal
