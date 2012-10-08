@@ -1,5 +1,4 @@
 /.bundle
-/.env
 /.sass-cache
-
 /build
+/tmp

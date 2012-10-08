@@ -1,4 +1,5 @@
-plugins
-sass
+helpers
+lib
+resources
 source
-.themes
+spec
