@@ -11,10 +11,16 @@ tinker with the code locally, you're welcome to clone this repo, but I stress ag
 the content, code or design should be re-used without my permission.*
 
 ### Clone The Repo
-`git clone https://github.com/kevinthompson/kevinthompson.info.git`
+``` bash
+git clone https://github.com/kevinthompson/kevinthompson.info.git
+```
 
 ### Prep the Project
-`bundle install`
+``` bash
+bundle install
+```
 
 ### Start the Middleman Server
-`bundle exec middleman`
+``` bash
+bundle exec middleman
+```
