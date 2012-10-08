@@ -1,9 +1,7 @@
 #stripe
 %header#header
   %nav
-    = link_to '/', class: 'alt back button' do
-      %span Home
+    = back_link class: 'alt back button'
     = link_to 'Menu', '#menu', class: 'alt button'
-%hr
 = link_to '/', id: 'logo' do
   = image_tag 'logo.png', alt: 'Kevin Thompson'

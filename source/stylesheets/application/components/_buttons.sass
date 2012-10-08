@@ -1,20 +1,29 @@
 .button, a.button
+  +background(linear-gradient($base03, lighten($base03,.5) 90%))
   +border-radius(3px)
+  +box-shadow(inset 0 1px 0 rgba($white, .1))
+  +text-shadow(none)
+  border: none
+  border-bottom: 1px solid darken($base03,1)
+  color: $base2
   display: block
-  padding: 3px 10px
+  font-family: $sans
+  font-size: 14px
+  padding: 5px 10px 4px
   text-align: center
   text-decoration: none
-  font-family: $sans
   text-transform: uppercase
-  font-size: 13px
-  +background(linear-gradient($base3, $white 90%))
-  border: none
-  color: $base02
+
+  span
+    position: relative
+    z-index: 2
 
   &.alt
-    color: $base01
+    +box-shadow(none)
+    background: $background-color
     border: 1px solid $accent
-    background: transparent
+    color: $base00
+    padding: 4px 10px 5px
 
   &.back
     position: relative
@@ -22,10 +31,11 @@
     margin-left: 13px
     margin-right: 2px
     padding-left: 5px
-    background: $base02
+    background: $background-color
     border-left: 0 !important
 
   &.back:before
+    background: $background-color
     border: solid $accent
     border-width: 0 0 1px 1px
     border-radius: 2px 0 2px 2px
@@ -37,6 +47,3 @@
     top: 3px
     +rotate(45deg)
     width: 21px
-
-  &.back span
-    position: relative

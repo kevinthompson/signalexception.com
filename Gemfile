@@ -25,3 +25,11 @@ gem 'rack-syntax-highlighter'
 
 # User Interface
 gem 'susy'
+
+# Content
+gem 'highline'
+
+# Testing
+group :test do
+  gem 'rspec'
+end

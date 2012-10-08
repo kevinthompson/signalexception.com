@@ -1,0 +1,81 @@
+#stripe
+  +background(linear-gradient(left, $solar-red, $solar-orange 100%))
+  +box-shadow(inset 0 -1px 1px rgba(0,0,0,.1))
+  height: 4px
+
+#header
+  @extend .divided
+  padding: 12px 15px
+
+  & > nav
+    +clearfix
+    .button
+      padding: 3px 10px
+    a
+      float: right
+    a.back
+      float: left
+  & + hr
+    margin-top: 0
+
+#logo
+  position: absolute
+  top: 10px
+  left: 50%
+  display: block
+  width: 40px
+  border: 0
+  margin-left: -20px
+
+#content
+  padding-top: 10px
+
+#footer
+  +clearfix
+  padding: 10px 15px
+
+  span
+    display: none
+
+  a
+    float: right
+
+#menu
+
+  ul
+    +clearfix
+    list-style-type: none
+    padding: 0
+    margin: 0 0 $base-line-height
+
+    li
+      margin: 0 0 10px
+
+      &:nth-child(-n+2) a
+        @extend .button
+      &:last-child
+        margin: 0
+
+  a[href*=".com"]
+    background-position: 12px 9px
+    background-repeat: no-repeat
+    text-align: left
+    padding-left: 39px
+
+    &:after
+      text-transform: lowercase
+      content: "\203A"
+      font-size: 2.5em
+      line-height: .55em
+      color: $base03
+      text-shadow: 1px 0 0 $accent
+      float: right
+  a[href*="github.com"]
+    background-image: url('/images/icons/github_16.png')
+  a[href*="twitter.com"]
+    background-image: url('/images/icons/twitter_16.png')
+  a[href*="linkedin.com"]
+    background-image: url('/images/icons/linkedin_16.png')
+
+  & + hr
+    margin: 0

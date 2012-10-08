@@ -1,8 +1,9 @@
 !!!
 %html
   = partial 'layouts/partials/head'
-  %body{ body_attributes }
-    = partial 'layouts/partials/header'
-    #content
-      = yield
-    = partial 'layouts/partials/footer'
+  %body
+    #main{ class: page_class, data: { 'ajax-container' => '' } }
+      = partial 'layouts/partials/header'
+      #content
+        = yield
+      = partial 'layouts/partials/footer'

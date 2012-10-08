@@ -1,8 +1,5 @@
-%p#intro
-  Kevin Thompson is a web designer and developer, building attractive, flexible solutions for the web and mobile devices.
-
-/ %h2 Latest Blog Posts
-/ %ul#articles
-/   - blog.articles[0...3].each do |article|
-/     %li
-/       %a{ href: article.url }= article.title
+%section#intro= partial 'sections/intro'
+/ %hr
+/ %section#technologies= partial 'sections/technologies'
+/ %section#blog= partial 'sections/recent_posts'
+/ %section#recommendations= partial 'sections/recommendations'

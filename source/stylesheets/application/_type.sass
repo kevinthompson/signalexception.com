@@ -1,15 +1,12 @@
 //
 // Type
-// ----------------------------------------------------------------------------------------
+// ----------------------------------------
 
-// BODY TEXT
-// ---------
-
+// Body Text
 p
   margin: 0 0 $base-line-height
   small
     font-size: $base-font-size - 2
-    color: $base01
 
 .lead
   margin-bottom: $base-line-height
@@ -17,15 +14,14 @@ p
   font-weight: 200
   line-height: $base-line-height * 1.5
 
-// HEADINGS
-// --------
-
+// Headings
 h1, h2, h3, h4, h5, h6
   margin: 0
   font-family: $headingsFontFamily
   font-weight: $headingsFontWeight
   color: $headingsColor
   text-rendering: optimizelegibility
+  text-transform: uppercase
   // Fix the character spacing for headings
   small
     font-weight: normal
@@ -75,10 +71,7 @@ h6
 .page-header h1
   line-height: 1
 
-// LISTS
-// -----
-
-// Unordered and Ordered lists
+// Lists
 ul, ol
   padding: 0
   margin: 0 0 $base-line-height / 2 25px
@@ -99,7 +92,6 @@ ul.unstyled, ol.unstyled
   margin-left: 0
   list-style: none
 
-// Description Lists
 dl
   margin-bottom: $base-line-height
 
@@ -114,8 +106,7 @@ dt
 dd
   margin-left: $base-line-height / 2
 
-// Horizontal layout (like forms)
-.dl-horizontal
+dl.horizontal
   dt
     float: left
     width: 120px
@@ -124,9 +115,6 @@ dd
     +text-overflow
   dd
     margin-left: 130px
-
-// MISC
-// ----
 
 // Horizontal rules
 hr
@@ -192,7 +180,7 @@ address
 // Misc
 small
   font-size: .875em
-  color: $base0
+  color: $base00
 
 cite
   font-style: normal
