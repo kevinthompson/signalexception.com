@@ -107,7 +107,7 @@ p, li {
   pre code { font-size: 1em !important; background: none; border: none; }
 }
 
-.pre-code {
+.pre-code, .highlighted {
   @include selection(adjust-color($base03, $lightness: 23%, $saturation: -65%), $text-shadow: $base03 0 1px);
   font-family: $mono !important;
   overflow: scroll;
