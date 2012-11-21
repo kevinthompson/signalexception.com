@@ -12,22 +12,12 @@ gem 'oj'
 
 # Utilities
 gem 'hashie'
-gem 'coffee-filter'
 gem 'redcarpet'
 
-# Google Analytics
-gem 'rack-google_analytics'
-
-# Syntax Highlighting
+# Middleware
 gem 'albino'
-gem 'pygmentize'
 gem 'rack-syntax-highlighter'
-
-# User Interface
-gem 'susy'
-
-# Content
-gem 'highline'
+gem 'rack-google_analytics'
 
 # Testing
 group :test do

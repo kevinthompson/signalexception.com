@@ -2,7 +2,6 @@
 # ========================================
 Dir[File.dirname(__FILE__) + '/lib/**/*.rb'].each { |file| require file }
 require 'rack/google_analytics'
-require 'coffee-filter'
 
 # Helpers
 # ========================================
@@ -17,7 +16,7 @@ end
 config = {
   contact: {
     email: 'kevin@kevinthompson.info',
-    skype: 'thompson.kevind' 
+    skype: 'thompson.kevind'
   },
   date: {
     format: '%B %e, %Y'

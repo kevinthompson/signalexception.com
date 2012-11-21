@@ -8,9 +8,6 @@ GEM
     albino (1.3.3)
       posix-spawn (>= 0.3.6)
     chunky_png (1.2.6)
-    coffee-filter (0.1.1)
-      coffee-script (>= 2.2.0)
-      haml (>= 3.0.18)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -30,7 +27,6 @@ GEM
     fssm (0.2.9)
     haml (3.1.7)
     hashie (1.2.0)
-    highline (1.6.15)
     hike (1.2.1)
     http_router (0.10.2)
       rack (>= 1.0.0)
@@ -144,9 +140,6 @@ GEM
     sprockets-sass (0.8.0)
       sprockets (~> 2.0)
       tilt (~> 1.1)
-    susy (1.0.1)
-      compass (>= 0.12.2)
-      sass (>= 3.2.0)
     syntax (1.0.0)
     therubyracer (0.10.2)
       libv8 (~> 3.3.10)
@@ -164,18 +157,14 @@ PLATFORMS
 
 DEPENDENCIES
   albino
-  coffee-filter
   hashie
-  highline
   middleman (~> 3.0.0)
   middleman-blog
   middleman-livereload
   middleman-smusher
   oj
-  pygmentize
   rack-google_analytics
   rack-syntax-highlighter
   redcarpet
   rspec
-  susy
   therubyracer
