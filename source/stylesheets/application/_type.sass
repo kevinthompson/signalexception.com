@@ -17,15 +17,15 @@ p
 // Headings
 h1, h2, h3, h4, h5, h6
   margin: 0
-  font-family: $headingsFontFamily
-  font-weight: $headingsFontWeight
-  color: $headingsColor
+  font-family: $heading-font-family
+  font-weight: $heading-font-weight
+  color: $heading-color
   text-rendering: optimizelegibility
   text-transform: uppercase
   // Fix the character spacing for headings
   small
     font-weight: normal
-    color: $base01
+    color: $syntax-base01
 
 h1
   font-size: $ratio
@@ -59,14 +59,14 @@ h5
 
 h6
   font-size: 11px
-  color: $base01
+  color: $syntax-base01
   text-transform: uppercase
 
 // Page header
 .page-header
   padding-bottom: $base-line-height - 1
   margin: $base-line-height 0
-  border-bottom: 1px solid $base02
+  border-bottom: 1px solid $syntax-base02
 
 .page-header h1
   line-height: 1
@@ -120,8 +120,8 @@ dl.horizontal
 hr
   margin: $base-line-height 0
   border: 0
-  border-top: 1px solid $base03
-  border-bottom: 1px solid $accent
+  border-top: 1px solid $accent-dark
+  border-bottom: 1px solid $accent-light
 
 // Emphasis
 strong
@@ -131,12 +131,12 @@ em
   font-style: italic
 
 .muted
-  color: $base01
+  color: $syntax-base01
 
 // Abbreviations and acronyms
 abbr[title]
   cursor: help
-  border-bottom: 1px dotted $base01
+  border-bottom: 1px dotted $syntax-base01
 
 abbr.initialism
   font-size: 90%
@@ -146,14 +146,14 @@ abbr.initialism
 blockquote
   padding: 0 0 0 15px
   margin: 0 0 $base-line-height
-  border-left: 5px solid $base02
+  border-left: 5px solid $syntax-base02
   p
     margin-bottom: 0
     +font-shorthand(16px, 300, $base-line-height * 1.25)
   small
     display: block
     line-height: $base-line-height
-    color: $base01
+    color: $syntax-base01
     &:before
       content: '\2014 \00A0'
   // Float right with text-align: right
@@ -161,7 +161,7 @@ blockquote
     float: right
     padding-right: 15px
     padding-left: 0
-    border-right: 5px solid $base02
+    border-right: 5px solid $syntax-base02
     border-left: 0
     p, small
       text-align: right
@@ -180,7 +180,7 @@ address
 // Misc
 small
   font-size: .875em
-  color: $base00
+  color: $syntax-base00
 
 cite
   font-style: normal

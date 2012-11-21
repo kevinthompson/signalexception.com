@@ -11,8 +11,7 @@ body
   font-size: $base-font-size
   font-weight: $base-font-weight
   line-height: $base-line-height
-  color: $base1
-  +text-shadow(1px 1px 0 $base03)
+  color: $syntax-base0
   +background($background-color)
 
 img
@@ -22,19 +21,19 @@ img
 a, a:visited, a:link, a:hover
   color: $link-color
   text-decoration: none
-  border-bottom: 1px dotted $accent
+  border-bottom: 1px dotted $accent-dark
 
 .container
-  padding-right: 15px
   padding-left: 15px
+  padding-right: 15px
   max-width: 45em
   margin: 0 auto
 
 .divided
-  border-bottom: 1px solid $base03
-  +box-shadow(0 1px 0 $accent)
+  border-bottom: 1px solid $accent-dark
+  +box-shadow(0 1px 0 $accent-light)
 
   &.top
-    +box-shadow(0 -1px 0 $base03)
+    +box-shadow(0 -1px 0 $syntax-base03)
     border-bottom: 0
-    border-top: 1px solid $accent
+    border-top: 1px solid $accent-dark

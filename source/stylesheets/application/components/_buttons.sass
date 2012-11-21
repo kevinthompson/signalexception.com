@@ -1,11 +1,10 @@
 .button, a.button
-  +background(linear-gradient($base03, lighten($base03,.5) 90%))
+  +background(linear-gradient(lighten($syntax-base02,5), $syntax-base02 95%))
   +border-radius(3px)
   +box-shadow(inset 0 1px 0 rgba($white, .1))
   +text-shadow(none)
-  border: none
-  border-bottom: 1px solid darken($base03,1)
-  color: $base2
+  border: 1px solid darken($background-color,8)
+  color: $syntax-base01
   display: block
   font-family: $sans
   font-size: 14px
@@ -13,6 +12,7 @@
   text-align: center
   text-decoration: none
   text-transform: uppercase
+  text-shadow: 0 -1px 0 rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.8)
 
   span
     position: relative
@@ -21,8 +21,7 @@
   &.alt
     +box-shadow(none)
     background: $background-color
-    border: 1px solid $accent
-    color: $base00
+    color: $syntax-base00
     padding: 4px 10px 5px
 
   &.back
@@ -36,7 +35,7 @@
 
   &.back:before
     background: $background-color
-    border: solid $accent
+    border: solid $accent-dark
     border-width: 0 0 1px 1px
     border-radius: 2px 0 2px 2px
     content: ''

@@ -1,0 +1,50 @@
+//
+// Solarized Color Scheme
+// ----------------------------------------
+
+// Config
+// --------------------
+$syntax-type: light
+
+// Solarized Theme
+// --------------------
+$syntax-base03:  #002b36  //  darkest blue
+$syntax-base02:  #073642  //  dark blue
+$syntax-base01:  #586e75  //  darkest gray
+$syntax-base00:  #657b83  //  dark gray
+$syntax-base0:   #839496  //  medium gray
+$syntax-base1:   #93a1a1  //  medium light gray
+$syntax-base2:   #eee8d5  //  cream
+$syntax-base3:   #fefefe  //  white
+$syntax-yellow:  #b58900
+$syntax-orange:  #cb4b16
+$syntax-red:     #dc322f
+$syntax-magenta: #d33682
+$syntax-violet:  #6c71c4
+$syntax-blue:    #268bd2
+$syntax-cyan:    #2aa198
+$syntax-green:   #859900
+
+@if $syntax-type == light
+
+  $_base03: $syntax-base03
+  $_base02: $syntax-base02
+  $_base01: $syntax-base01
+  $_base00: $syntax-base00
+  $_base0:  $syntax-base0
+  $_base1:  $syntax-base1
+  $_base2:  $syntax-base2
+  $_base3:  $syntax-base3
+
+  $syntax-base03:  $_base3
+  $syntax-base02:  $_base2
+  $syntax-base01:  $_base1
+  $syntax-base00:  $_base0
+  $syntax-base0:   $_base00
+  $syntax-base1:   $_base01
+  $syntax-base2:   $_base02
+  $syntax-base3:   $_base03
+
+$pre-bg: $syntax-base03
+$pre-border: darken($syntax-base03, 10)
+$pre-color: $syntax-base1
