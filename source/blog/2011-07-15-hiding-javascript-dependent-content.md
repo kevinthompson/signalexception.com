@@ -9,11 +9,22 @@ In order to ensure that your content remains visible when users happen to encoun
 ## Example
 
 ### HTML
-<script src="https://gist.github.com/1085836.js?file=index.html"></script>
-<a href="https://gist.github.com/1085836">Available on Github &raquo;</a>
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hiding JavaScript-Dependent Content</title>
+<script type="text/javascript">
+var html = document.getElementsByTagName('html')[0];
+html.className = (html.className != '' ? html.className + ' ' : '') + 'js';
+</script>
+</head>
+```
 
 ### CSS
-<script src="https://gist.github.com/1085836.js?file=style.css"></script>
-<a href="https://gist.github.com/1085836">Available on Github &raquo;</a>
+``` css
+.js .slide { display:none; }
+.js .slide:first-child { display:block; }
+```
 
 By using this method, you've first verified that JavaScript is enabled before hiding content that your user may otherwise be deprived of.
