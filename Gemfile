@@ -12,6 +12,7 @@ gem 'oj'
 
 # Utilities
 gem 'hashie'
+gem 'coffee-filter'
 gem 'redcarpet'
 
 # Middleware
