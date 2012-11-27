@@ -74,12 +74,11 @@ html .gist .gist-file {
 pre {
   background: $pre-bg;
   @include border-radius(.4em);
-  @extend .mono;
+  font-family: $mono;
   border: 1px solid $pre-border;
   line-height: 1.45em;
   font-size: 13px;
   margin-bottom: 2.1em;
-  padding: .8em 1em;
   color: $pre-color;
   overflow: auto;
 }
@@ -90,16 +89,17 @@ h3.filename {
 
 p, li {
   code {
-    @extend .mono;
+    font-family: $mono;
     display: inline-block;
     white-space: nowrap;
     background: $syntax-base03;
-    font-size: .8em;
+    font-weight: normal;
+    font-size: .85em;
     line-height: 1.5em;
     color: $syntax-base2;
-    border: 1px solid darken($syntax-base03,10);
+    border: 1px solid $pre-border;
     @include border-radius(.4em);
-    padding: .2em .4em;
+    padding: 0 .4em;
     margin: 0 .2em;
     top: -1px;
     position: relative;
@@ -107,7 +107,7 @@ p, li {
   pre code { font-size: 1em !important; background: none; border: none; }
 }
 
-.pre-code, .highlighted {
+pre > code {
   @include selection(adjust-color($syntax-base03, $lightness: 23%, $saturation: -65%), $text-shadow: $syntax-base03 0 1px);
   font-family: $mono !important;
   overflow: scroll;

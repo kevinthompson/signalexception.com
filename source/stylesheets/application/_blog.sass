@@ -14,3 +14,19 @@ p, pre, .gist, .img, img
 
   *:last-child
     margin-bottom: 0 !important
+
+  img
+    position: relative
+
+    &:before
+      content: ''
+      left: 0
+      top: 0
+      bottom: 0
+      position: absolute
+      width: 1px
+      +background(rgba(#fff,.2))
+
+  @media screen and (min-width: $breakpoint-large)
+    h1
+      font-size: 36px

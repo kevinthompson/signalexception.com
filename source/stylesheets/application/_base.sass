@@ -26,14 +26,13 @@ a, a:visited, a:link, a:hover
 .container
   padding-left: 15px
   padding-right: 15px
-  max-width: 45em
   margin: 0 auto
 
 .divided
   border-bottom: 1px solid $accent-dark
   +box-shadow(0 1px 0 $accent-light)
 
-  &.top
-    +box-shadow(0 -1px 0 $syntax-base03)
-    border-bottom: 0
-    border-top: 1px solid $accent-dark
+  @media screen and (min-width: $breakpoint-large)
+    border: 0
+    border-right: 1px solid $accent-dark
+    +box-shadow(1px 0 0 $accent-light)

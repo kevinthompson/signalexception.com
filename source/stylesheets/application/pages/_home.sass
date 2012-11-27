@@ -2,20 +2,26 @@
 // Home Page Styles
 // ----------------------------------------
 
-.home
-  #logo
-    top: 32px
-    width: 80px
-    margin-left: -40px
+@media screen and (max-width: $breakpoint-large - 1)
+  .home
+    #logo
+      top: 32px
+      width: 80px
+      margin-left: -40px
 
-  #content
-    padding-top: 0
+      @media screen and (min-width: $breakpoint-large)
+        top: auto
+        left: auto
+        margin: 0 auto
 
-    & > section
-      @extend .container
+    #content
+      padding-top: 0
 
-#intro
-  text-align: center
-  padding: 4em 15px 0
-  font-size: 1.25em
-  font-weight: 300
+      & > section
+        @extend .container
+
+    #intro
+      text-align: center
+      padding: 4em 15px 0
+      font-size: 1.25em
+      font-weight: 300
