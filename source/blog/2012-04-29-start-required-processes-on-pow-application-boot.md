@@ -9,21 +9,25 @@ In the [Pow Manual](http://pow.cx/manual.html) under section 2.2, "[Customizing 
 
 For example, most of the projects I've been contributing to lately use MongoDB, and as such, I need to have an instance of the `mongod` process running in order to connect to my databases. To avoid the inevitable application startup error, or having to manually check for an existing MongoDB process, I can simply add the following code to my `.powrc` file:
 
-    # Start MongoDB
-    if ! ps ax | grep -v grep | grep 'mongod' > /dev/null
-    then
-      mongod -port 27017 </dev/null &>/dev/null &
-    fi
+``` bash
+# Start MongoDB
+if ! ps ax | grep -v grep | grep 'mongod' > /dev/null
+then
+  mongod -port 27017 </dev/null &>/dev/null &
+fi
+```
 
 These few lines are all I need to check for a `mongod` process, and automatically start it if it's not already running when my application is booted.
 
 If you want to test the functionality in your `.rvmrc` file, you can run the files directly from your project directory: `./.rvmrc`. If you're going to be executing this file directly, I would recommend rounding out your code with a few echos for clarity:
 
-    if ! ps ax | grep -v grep | grep 'mongod' > /dev/null
-    then
-      echo "Starting MongoDB server..."
-      mongod -port 27017 </dev/null &>/dev/null &
-      echo "MongoDB is now up and running."
-    else
-      echo "Relax bro. MongoDB is already running."
-    fi
+``` bash
+if ! ps ax | grep -v grep | grep 'mongod' > /dev/null
+then
+  echo "Starting MongoDB server..."
+  mongod -port 27017 </dev/null &>/dev/null &
+  echo "MongoDB is now up and running."
+else
+  echo "Relax bro. MongoDB is already running."
+fi
+```

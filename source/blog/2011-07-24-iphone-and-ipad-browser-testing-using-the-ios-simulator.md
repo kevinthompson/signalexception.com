@@ -21,13 +21,13 @@ Getting up and running with the iOS Simulator is extremely simple and really tak
 2. Open Xcode, then click Preferences > Downloads, and install the iOS Simulator
 3. Launch iOS Simulator
 
-Once Xcode is in stalled, The iOS Simulator can be found at: 
+Once Xcode is in stalled, The iOS Simulator can be found at:
 
-```
+``` bash
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app
 ```
 
-To create a shortcut, you can run the following command within terminal, which will give you an "iOS Simulator" app in your /Applications folder: 
+To create a shortcut, you can run the following command within terminal, which will give you an "iOS Simulator" app in your /Applications folder:
 
 ``` bash
 sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app /Applications/iOS\ Simulator.app
