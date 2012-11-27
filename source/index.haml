@@ -1,5 +1,4 @@
-%section#intro= partial 'sections/intro'
-/ %hr
-/ %section#technologies= partial 'sections/technologies'
-/ %section#blog= partial 'sections/recent_posts'
-/ %section#recommendations= partial 'sections/recommendations'
+%ul.article-list
+  - blog.articles[0...3].each do |article|
+    %li
+      %a{ href: article.url }= article.title

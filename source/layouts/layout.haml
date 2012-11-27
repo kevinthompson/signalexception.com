@@ -2,7 +2,8 @@
 %html
   = partial 'layouts/partials/head'
   %body
-    #main{ class: page_class, data: { 'ajax-container' => '' } }
+    #stripe
+    #main{ class: page_class }
       = partial 'layouts/partials/header'
       #content
         ~ yield

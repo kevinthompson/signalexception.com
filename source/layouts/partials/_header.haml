@@ -1,7 +1,9 @@
-#stripe
 %header#header
+  = link_to '/', id: 'logo' do
+    = image_tag 'logo.png', alt: 'Kevin Thompson'
+    %h1 Kevin Thompson
+  #intro
+    Kevin is a developer from San Diego, CA, who crafts attractive, intelligent solutions for the web and mobile devices.
   %nav
     = back_link class: 'alt back button'
     = link_to 'Menu', '#menu', class: 'alt button'
-= link_to '/', id: 'logo' do
-  = image_tag 'logo.png', alt: 'Kevin Thompson'
