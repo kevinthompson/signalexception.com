@@ -1,17 +1,19 @@
 #= require jquery.pjax
 
 $(document)
-  .on 'click', (event) ->
-    $target = $(event.target)
+  .on 'click', 'a', (event) ->
+    $target = $(event.currentTarget)
 
     # PJAX Page Loading
     if $target.is('a[href^="/"]')
       event.preventDefault()
-      $.pjax
-        url: $target.attr 'href'
-        container: '#content'
-        fragment: '#content'
-        timeout: 5000
+      href = $target.attr('href')
+      unless href == window.location.pathname
+        $.pjax
+          url: href
+          container: '#content'
+          fragment: '#content'
+          timeout: 5000
 
     # Open External Links in New Tab/Window
     else if $target.is($('a').not('[href^="#"],[href^="/"],[href*="#{document.domain}"]'))
