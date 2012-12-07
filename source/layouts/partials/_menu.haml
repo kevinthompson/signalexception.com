@@ -1,8 +1,17 @@
-%nav#menu.container
-  %hr
+%nav.menu
   %ul
     %li= link_to 'Blog', '/blog/'
-    %li= link_to 'About', '/about/'
-    %li= link_to 'Fork My Code on Github', 'http://github.com/kevinthompson', class: 'alt button'
-    %li= link_to 'View My Resume on LinkedIn', 'http://linkedin.com/in/kevindthompson', class: 'alt button'
-    %li= link_to 'Follow Me on Twitter', 'http://twitter.com/kevinthompson', class: 'alt button'
+    / %li= link_to 'About', '/about/'
+  %ul.external
+    %li
+      = link_to 'http://github.com/kevinthompson', class: 'alt button' do
+        %span Fork My Code on
+        Github
+    %li
+      = link_to 'http://linkedin.com/in/kevindthompson', class: 'alt button' do
+        %span View My Resume on
+        LinkedIn
+    %li
+      = link_to 'http://twitter.com/kevinthompson', class: 'alt button' do
+        %span Follow Me on
+        Twitter

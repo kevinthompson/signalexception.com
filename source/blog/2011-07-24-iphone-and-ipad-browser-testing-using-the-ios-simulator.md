@@ -5,7 +5,7 @@ On more than one occasion I've had clients, as well as fellow designers and deve
 
 I do happen to have an iPhone (although no iPad), but I rarely need to pick it up when developing and testing websites for iOS devices. Instead, I use the iOS Simulator.
 
-<div class="img"><img src="/images/blog/ios-browser-testing.jpg" /></div>
+<figure><img src="ios-browser-testing.jpg" /></figure>
 
 ## Why Should You Use iOS Simulator?
 Beyond simply being able to test websites on Mobile Safari without having a physical device, iOS Simulator has a few other advantages.

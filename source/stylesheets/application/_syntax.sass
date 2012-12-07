@@ -1,0 +1,390 @@
+//
+// Syntax Highlighting Styles
+// ----------------------------------------
+
+// Config
+// --------------------
+$syntax-type: light
+
+// Solarized Scheme
+// --------------------
+$syntax-base03:  #002b36  //  darkest blue
+$syntax-base02:  #073642  //  dark blue
+$syntax-base01:  #586e75  //  darkest gray
+$syntax-base00:  #657b83  //  dark gray
+$syntax-base0:   #839496  //  medium gray
+$syntax-base1:   #93a1a1  //  medium light gray
+$syntax-base2:   #eee8d5  //  cream
+$syntax-base3:   #fefefe  //  white
+$syntax-yellow:  #b58900
+$syntax-orange:  #cb4b16
+$syntax-red:     #dc322f
+$syntax-magenta: #d33682
+$syntax-violet:  #6c71c4
+$syntax-blue:    #268bd2
+$syntax-cyan:    #2aa198
+$syntax-green:   #859900
+
+@if $syntax-type == light
+
+  $_base03: $syntax-base03
+  $_base02: $syntax-base02
+  $_base01: $syntax-base01
+  $_base00: $syntax-base00
+  $_base0:  $syntax-base0
+  $_base1:  $syntax-base1
+  $_base2:  $syntax-base2
+  $_base3:  $syntax-base3
+
+  $syntax-base03:  $_base3
+  $syntax-base02:  $_base2
+  $syntax-base01:  $_base1
+  $syntax-base00:  $_base0
+  $syntax-base0:   $_base00
+  $syntax-base1:   $_base01
+  $syntax-base2:   $_base02
+  $syntax-base3:   $_base03
+
+$pre-bg: $syntax-base03
+$pre-border: darken(#faf9f6, 10)
+$pre-color: $syntax-base1
+
+$syntax-scroll-bg: rgba(#fff, .15)
+$syntax-scroll-thumb: rgba(#fff, .2)
+
+@if $syntax-type == light
+  $syntax-scroll-bg: rgba(#000, .15)
+  $syntax-scroll-thumb: rgba(#000, .15)
+
+// Element Styles
+// --------------------
+
+// Inline Code
+p, li
+  code
+    font-family: $mono
+    display: inline-block
+    white-space: nowrap
+    background: $syntax-base03
+    font-weight: normal
+    font-size: .85em
+    line-height: 1.5em
+    color: $syntax-base2
+    border: 1px solid $pre-border
+    padding: 0 .4em
+    margin: 0 .2em
+    top: -1px
+    position: relative
+  pre code
+    font-size: 1em !important
+    background: none
+    border: none
+
+// Syntax Hilighting
+pre
+  background: $pre-bg
+  font-family: $mono
+  border: 1px solid $pre-border
+  line-height: $ratio
+  font-size: 14px
+  margin-bottom: 2em
+  color: $pre-color
+  overflow: auto
+  &::-webkit-scrollbar
+    height: .5em
+    background: $syntax-scroll-bg
+  &::-webkit-scrollbar-thumb:horizontal
+    background: $syntax-scroll-thumb
+    -webkit-border-radius: 4px
+    border-radius: 4px
+
+pre > code
+  +selection(adjust-color($syntax-base03, $lightness: 23%, $saturation: -65%), $text_shadow: $syntax-base03 0 1px)
+  font-family: $mono !important
+  overflow: scroll
+  overflow-y: hidden
+  display: block
+  padding: .8em !important
+  overflow-x: auto
+  line-height: 1.45em
+  background: $syntax-base03 !important
+  color: $syntax-base1 !important
+  span
+    color: $syntax-base1 !important
+  span
+    font-style: normal !important
+    font-weight: normal !important
+
+  // Commentt
+  .c
+    color: $syntax-base01 !important
+    font-style: italic !important
+
+  // Comment.Multiline
+  .cm
+    color: $syntax-base01 !important
+    font-style: italic !important
+
+  // Comment.Preproc
+  .cp
+    color: $syntax-base01 !important
+    font-style: italic !important
+
+  // Comment.Single
+  .c1
+    color: $syntax-base01 !important
+    font-style: italic !important
+
+  // Comment.Special
+  .cs
+    color: $syntax-base01 !important
+    font-weight: bold !important
+    font-style: italic !important
+
+  // Error
+  .err
+    color: $syntax-red !important
+    background: none !important
+
+  // Keyword
+  .k
+    color: $syntax-orange !important
+
+  // Operator
+  .o
+    color: $syntax-base1 !important
+    font-weight: bold !important
+
+  // Operator
+  .p
+    color: $syntax-base1 !important
+
+  // Operator.Word
+  .ow
+    color: $syntax-cyan !important
+    font-weight: bold !important
+
+  // Generic.Deleted
+  .gd
+    color: $syntax-base1 !important
+    background-color: mix($syntax-red, $syntax-base03, 25%) !important
+    display: inline-block
+
+  // Generic.Deleted.Specific
+  .gd .x
+    color: $syntax-base1 !important
+    background-color: mix($syntax-red, $syntax-base03, 35%) !important
+    display: inline-block
+
+  // Generic.Emph
+  .ge
+    color: $syntax-base1 !important
+    font-style: italic !important
+
+  // Generic.Error
+  // .gr
+  //   color: #aa0000
+
+  // Generic.Heading
+  .gh
+    color: $syntax-base01 !important
+
+  // Generic.Inserted
+  .gi
+    color: $syntax-base1 !important
+    background-color: mix($syntax-green, $syntax-base03, 20%) !important
+    display: inline-block
+
+  // Generic.Inserted.Specific
+  .gi .x
+    color: $syntax-base1 !important
+    background-color: mix($syntax-green, $syntax-base03, 40%) !important
+    display: inline-block
+
+  // Generic.Output
+  // .go
+  //   color: #888888
+
+  // Generic.Prompt
+  // .gp
+  //   color: #555555
+
+  // Generic.Strong
+  .gs
+    color: $syntax-base1 !important
+    font-weight: bold !important
+
+  // Generic.Subheading
+  .gu
+    color: $syntax-violet !important
+
+  // Generic.Traceback
+  //.gt
+  //  color: #aa0000
+
+  // Keyword.Constant
+  .kc
+    color: $syntax-green !important
+    font-weight: bold !important
+
+  // Keyword.Declaration
+  .kd
+    color: $syntax-blue !important
+
+  // Keyword.Pseudo
+  .kp
+    color: $syntax-orange !important
+    font-weight: bold !important
+
+  // Keyword.Reserved
+  .kr
+    color: $syntax-magenta !important
+    font-weight: bold !important
+
+  // Keyword.Type
+  .kt
+    color: $syntax-cyan !important
+  .n
+    color: $syntax-blue !important
+
+  // Name.Attribute
+  .na
+    color: $syntax-blue !important
+
+  // Name.Builtin
+  .nb
+    color: $syntax-green !important
+
+  // Name.Class
+  .nc
+    color: $syntax-magenta !important
+
+  // Name.Constant
+  .no
+    color: $syntax-yellow !important
+
+  // Name.Entity
+  //.ni
+  // color: #800080
+  .nl
+    color: $syntax-green !important
+
+  // Name.Exception
+  .ne
+    color: $syntax-blue !important
+    font-weight: bold !important
+
+  // Name.Function
+  .nf
+    color: $syntax-blue !important
+    font-weight: bold !important
+
+  // Name.Namespace
+  .nn
+    color: $syntax-yellow !important
+
+  // Name.Tag
+  .nt
+    color: $syntax-blue !important
+    font-weight: bold !important
+  .nx
+    color: $syntax-yellow !important
+
+  // Name.Builtin.Pseudo
+  //.bp     { color: #999999 }
+
+  // Name.Variable.Class
+  //.vc     { color: #008080 }
+
+  // Name.Variable.Global
+  .vg
+    color: $syntax-blue !important
+
+  // Name.Variable.Instance
+  .vi
+    color: $syntax-blue !important
+
+  // Name.Variable
+  .nv
+    color: $syntax-blue !important
+
+  // Text.Whitespace
+  .w
+    color: #bbbbbb
+
+  // Literal.Number.Float
+  .mf
+    color: $syntax-cyan !important
+
+  // Literal.Number
+  .m
+    color: $syntax-cyan !important
+
+  // Literal.Number.Hex
+  .mh
+    color: $syntax-cyan !important
+
+  // Literal.Number.Integer
+  .mi
+    color: $syntax-cyan !important
+
+  // Literal.Number.Oct
+  //.mo
+  //  color: #009999
+
+  // Literal.String
+  .s
+    color: $syntax-cyan !important
+
+  // Literal.String.Backtick
+  //.sb
+  //  color: #d14
+
+  // Literal.String.Char
+  //.sc
+  //  color: #d14
+
+  // Literal.String.Doc
+  .sd
+    color: $syntax-cyan !important
+
+  // Literal.String.Double
+  .s2
+    color: $syntax-cyan !important
+
+  // Literal.String.Escape
+  .se
+    color: $syntax-red !important
+
+  // Literal.String.Heredoc
+  //.sh
+  //  color: #d14
+
+  // Literal.String.Interpol
+  .si
+    color: $syntax-blue !important
+
+  // Literal.String.Other
+  //.sx
+  //  color: #d14
+
+  // Literal.String.Regex
+  .sr
+    color: $syntax-cyan !important
+
+  // Literal.String.Single
+  .s1
+    color: $syntax-cyan !important
+
+  // Literal.String.Symbol
+  //.ss
+  //  color: #990073
+
+  // Literal.Number.Integer.Long
+  //.il
+  //  color: #009999
+
+  div
+    .gd, .gd .x, .gi, .gi .x
+      display: inline-block
+      width: 100%

@@ -1,9 +1,9 @@
 - wrap_layout :layout do
-  %article#post.container
+  %article.post
     %h1= current_article.title
-    %small 
-      by 
-      = link_to 'Kevin Thompson', '/about'
-      .date= current_article.date.strftime date.format
+    %p.author
+      by
+      = link_to 'Kevin Thompson', 'http://linkedin.com/in/kevindthompson'
+    %p.date= current_article.date.strftime date.format
     = yield
     =# partial 'blog/partials/comments' if current_page.data.comments

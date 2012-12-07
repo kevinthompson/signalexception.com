@@ -28,11 +28,7 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :markdown_engine, :redcarpet
-set :markdown,
-  fenced_code_blocks: true,
-  autolink: true
-
-activate :directory_indexes
+set :markdown, fenced_code_blocks: true, autolink: true
 activate :livereload
 
 # Compass
@@ -43,7 +39,7 @@ end
 # Blog
 activate :blog do |blog|
   blog.layout     = 'blog'
-  blog.permalink  = ':title'
+  blog.permalink  = ':title/index.html'
   blog.prefix     = 'blog'
 end
 

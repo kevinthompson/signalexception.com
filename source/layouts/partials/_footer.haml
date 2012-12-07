@@ -1,8 +1,8 @@
 = partial 'layouts/partials/menu'
-%footer#footer
-  %hr
-  %small
+%hr
+%footer
+  .copyright
     &copy; Kevin Thompson #{ Time.now.year }
     %span &mdash; Code, Content &amp; Design
-    = link_to 'Top &uarr;', '#top'
+  = link_to 'Top &uarr;', '#top'
 = partial 'layouts/partials/scripts'

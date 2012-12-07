@@ -1,12 +1,16 @@
 source :rubygems
 
+# Server
+gem 'unicorn'
+
 # Middleman
-gem 'middleman', '~>3.0.0'
+gem 'middleman'
 gem 'middleman-blog'
 gem 'middleman-smusher'
 gem 'middleman-livereload'
 
 # Performance
+gem 'libv8'
 gem 'therubyracer'
 gem 'oj'
 
@@ -17,6 +21,7 @@ gem 'redcarpet'
 
 # Middleware
 gem 'albino'
+gem 'rack-rewrite'
 gem 'rack-syntax-highlighter'
 gem 'rack-google_analytics'
 

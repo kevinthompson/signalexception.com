@@ -1,8 +1,3 @@
-#stripe
-  +background(linear-gradient(left, $syntax-red, $syntax-orange 100%))
-  +box-shadow(inset 0 -1px 1px rgba(0,0,0,.1))
-  height: 4px
-
 #main
   position: relative
 
@@ -20,7 +15,7 @@
       float: left
   & + hr
     margin-top: 0
-  #intro
+  .title
     display: none
 
 #logo
@@ -41,8 +36,9 @@
   h1
     margin-top: 1em
 
-#footer
+#main > footer
   +clearfix
+  color: lighten($text-color, 25%)
   padding: 10px 15px
 
   span
@@ -51,88 +47,55 @@
   a
     float: right
 
-#menu
-
-  ul
-    +clearfix
-    list-style-type: none
-    padding: 0
-    margin: 0 0 $base-line-height
-
-    li
-      margin: 0 0 10px
-
-      &:nth-child(-n+2) a
-        @extend .button
-      &:last-child
-        margin: 0
-
-  a[href*=".com"]
-    background-position: 12px 9px
-    background-repeat: no-repeat
-    text-align: left
-    padding-left: 39px
-
-    &:after
-      text-transform: lowercase
-      content: "\203A"
-      font-size: 2.5em
-      line-height: .55em
-      color: $syntax-base01
-      text-shadow: 1px 0 0 $accent-dark
-      float: right
-  a[href*="github.com"]
-    background-image: url('/images/icons/github_16.png')
-  a[href*="twitter.com"]
-    background-image: url('/images/icons/twitter_16.png')
-  a[href*="linkedin.com"]
-    background-image: url('/images/icons/linkedin_16.png')
-
-  & + hr
-    margin: 0
-
 // Desktop
 @media screen and (min-width: $breakpoint-large)
-  .container
-    padding: 0 80px
-  #stripe
-    position: fixed
-    width: 100%
-    top: 0
-    left: 381px
-    z-index: 10
-    +box-shadow(inset 1px 0 rgba(255,255,255,.2))
   #main
-    margin: 0 0 0 380px
-    padding-bottom: 40px
-  #header, #menu
+    margin: 0 auto
+    max-width: 1180px
+    padding: 40px 0
+  #header
     padding: 0 40px
     position: fixed
-    width: 300px
-    left: 0
+    width: 220px
   #header
-    +background(darken($background-color,3))
-    border-right: 1px solid darken($syntax-base03,3)
-    height: 100%
     padding-top: 40px
     top: 0
+    text-align: center
+
     nav
       display: none
-    #intro
-      color: $syntax-base00
-      display: block
+
+    .title
+      color: lighten($syntax-base01,10)
+      display: inline-block
+      font-size: 14px
+      line-height: 1.5em
       +opacity(.9)
       text-align: center
-      +text-shadow(0 -1px 0 rgba(0,0,0,.2), 0 1px 0 rgba(255,255,255,.1))
+      text-transform: uppercase
+      position: relative
+      background: $background-color
+      padding: 0 6px
+
+    &:before
+      bottom: 8px
+      position: absolute
+      content: ''
+      height: 1px
+      border-top: 1px solid $accent-dark
+      width: 50%
+      display: block
+      left: 50%
+      margin-left: -25%
   #logo
     position: static
     top: auto
     left: auto
     width: auto
-    margin: 0 auto
+    margin: 0 auto 6px
     text-align: center
     img
-      width: 50%
+      width: 96px
       margin: 0 auto 20px
     h1
       color: $syntax-base1
@@ -140,11 +103,33 @@
       font-weight: 300
       text-transform: uppercase
       letter-spacing: 2px
-      margin: 0 0 20px
+      margin: 0 0 10px
+      font-size: 18px
       -webkit-font-smoothing: antialiased
-  #menu
-    bottom: 0
-    hr
+
+  #content
+    +border(1px solid #fff, 1px solid darken($background-color, 8), 1px solid darken($background-color, 4), 1px solid #fff)
+    +box-shadow(0 0 10px rgba(0,0,0,.05))
+    padding-top: 40px
+    padding-bottom: 40px
+
+    h1
+      margin-top: 0
+  #main > footer
+    +border(1px solid #fff, 1px solid darken($background-color, 8), 1px solid darken($background-color, 8), 1px solid #fff)
+    +box-shadow(0 5px 10px rgba(0,0,0,.02))
+    padding: 10px 40px 10px 0
+    font-size: .85em
+    span
+      display: inline
+    .copyright
+      float: right
+
+    & > a
       display: none
-  #content, #footer
+
+  #content, #main > footer
+    +background($container-color)
+    margin-left: 300px
+    margin-right: 40px
     max-width: 60em
