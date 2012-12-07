@@ -12,8 +12,8 @@ def path_array
 end
 
 def link_text(arg = '')
-  raise Exceptions::InvalidInputType unless [String, Array].include? arg.class
-  arg = 'Home' if arg == ''
+  arg = 'Home' if arg.nil? || arg == ''
   arg = arg[-1] if arg.is_a? Array
+  raise Exceptions::InvalidInputType unless [String, Array].include? arg.class
   arg.capitalize
 end
