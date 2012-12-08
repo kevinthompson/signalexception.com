@@ -1,1 +1,1 @@
-web: bundle exec middleman build && unicorn -p $PORT -c ./config/unicorn.rb
+web: unicorn -p $PORT -c ./config/unicorn.rb
