@@ -38,9 +38,8 @@ end
 
 # Blog
 activate :blog do |blog|
-  blog.layout     = 'blog'
-  blog.permalink  = ':title/index.html'
-  blog.prefix     = 'blog'
+  blog.layout = 'blog'
+  blog.prefix = 'blog'
 end
 
 # Build

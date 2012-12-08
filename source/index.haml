@@ -1,1 +1,9 @@
-%h1 This is not the page you are looking for...
+%section.article-list
+  - articles_by_month.each_pair do |month,articles|
+    .article-group
+      %h2= month
+      %ul
+        - articles.each do |article|
+          %li
+            %span= link_to article.title, article.url
+            %span.date= article.date.strftime date.format

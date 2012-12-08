@@ -2,7 +2,7 @@ require 'rack/rewrite'
 
 # Redirects
 use ::Rack::Rewrite do
-  r301 '/', '/blog/'
+  r301 %r{^\/blog(\/\d+){0,3}\/?$}, '/'
 end
 
 # Static Routes
