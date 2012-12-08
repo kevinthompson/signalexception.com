@@ -4,17 +4,21 @@
 
 require 'pty'
 
-def edit_post
-  system("open http://localhost:4567/blog/#{@filename}/")
-  system("subl #{@pathname}:5")
+@editing = false
 
-  puts "Editing Post: \"#{@title}\""
+def edit_post
+  unless @editing
+    system("open http://localhost:4567/blog/#{@date.gsub(/-/,'/')}/#{@filename}.html")
+    system("subl #{@pathname}:5")
+    puts "Editing Post: \"#{@title}\""
+    @editing = true
+  end
 end
 
 if (@title = ARGV.join(' ')) != ''
-  date      = Time.now.strftime('%Y-%m-%d')
+  @date     = Time.now.strftime('%Y-%m-%d')
   @filename = @title.downcase.gsub(/[^\da-z]/i,'-').gsub(/-+/,'-')
-  @pathname = "/Users/kevinthompson/code/kevinthompson.info/source/blog/#{date}-#{@filename}.md"
+  @pathname = "/Users/kevinthompson/code/kevinthompson.info/source/blog/#{@date}-#{@filename}.md"
 
   `cd ~/code/kevinthompson.info`
 
