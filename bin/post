@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+# Usage: post <title>
+# Summary: Create a new Middleman blog post.
+
+require 'pty'
+
+def edit_post
+  system("open http://localhost:4567/blog/#{@filename}/")
+  system("subl #{@pathname}:5")
+
+  puts "Editing Post: \"#{@title}\""
+end
+
+if (@title = ARGV.join(' ')) != ''
+  date      = Time.now.strftime('%Y-%m-%d')
+  @filename = @title.downcase.gsub(/[^\da-z]/i,'-').gsub(/-+/,'-')
+  @pathname = "/Users/kevinthompson/code/kevinthompson.info/source/blog/#{date}-#{@filename}.md"
+
+  `cd ~/code/kevinthompson.info`
+
+  unless File.exist?(@pathname)
+    File.open(@pathname, 'w') do |file|
+      file.puts "---"
+      file.puts "title: #{@title}"
+      file.puts "---\n\n"
+    end
+  end
+
+  if `ps aux | grep middlema[n]`.empty?
+    PTY.spawn( 'bundle exec middleman' ) do |read, w, pid|
+      begin
+        read.each do |line|
+          if line.include? 'standing watch'
+            edit_post
+            puts 'Press CTRL+C to exit the Middleman server.'
+          end
+        end
+      rescue Interrupt
+        puts ' Exiting Middleman server...'
+      end
+    end
+  else
+    edit_post
+  end
+else
+  puts "  ! Post title is required."
+end
