@@ -26,10 +26,6 @@ a, a:visited, a:link, a:hover
   text-decoration: none
   border-bottom: 1px dotted $accent-dark
 
-.divided
-  border-bottom: 1px solid $accent-dark
-  +box-shadow(0 1px 0 $accent-light)
-
 #content
   h1
     a
@@ -47,6 +43,3 @@ a, a:visited, a:link, a:hover
 @media screen and (min-width: $breakpoint-large)
   *:last-child
     margin-bottom: 0 !important
-  .divided
-    border: 0
-    +box-shadow(none)
