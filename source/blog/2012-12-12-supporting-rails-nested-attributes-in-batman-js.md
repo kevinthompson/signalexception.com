@@ -55,7 +55,7 @@ class App.Storage extends Batman.RailsStorage
     if env.subject.constructor.encodeAttributesForKeys?
       for key in env.subject.constructor.encodeAttributesForKeys
         if obj[key]
-          obj["#{key}_attributes"] = obj[key]
+          obj["#{key}_attributes"] = obj[key] if obj[key].length
           delete obj[key]
     next()
 ```
