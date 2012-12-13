@@ -29,7 +29,6 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, autolink: true
-activate :livereload
 
 # Compass
 compass_config do |config|
@@ -51,6 +50,11 @@ configure :build do
   activate :minify_javascript
   activate :relative_assets
   activate :smusher
+end
+
+# Development
+configure :development do
+  activate :livereload
 end
 
 # Middleware
