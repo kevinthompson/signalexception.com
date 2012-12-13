@@ -1,5 +1,5 @@
 ---
-title: Supporting Rails Nested Resources in Batman.js
+title: Supporting Rails Nested Attributes in Batman.js
 ---
 
 I've recently begun working with [Batman.js](http://batmanjs.org), and while it goes a long way to be very Rails-like, there are a few instances which aren't yet accounted for. Once such instance is returning nested resources.
