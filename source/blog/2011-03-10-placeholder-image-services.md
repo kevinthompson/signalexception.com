@@ -11,10 +11,12 @@ Depending on the type of page I'm creating (wireframe, mockup, whimsical tomfool
 
 These images can be passed as little as the image width, or as much as the width, height, format, color, and text:
 
-	<img src="http://placehold.it/300" />
-	<img src="http://placehold.it/400x200.png" />
-	<img src="http://placehold.it/200/09f/&text=Ad Unit" />
-	<img src="http://placehold.it/600x100/09f/fff.png&text=Big Blue Image!" />
+``` html
+<img src="http://placehold.it/300" />
+<img src="http://placehold.it/400x200.png" />
+<img src="http://placehold.it/200/09f/&text=Ad Unit" />
+<img src="http://placehold.it/600x100/09f/fff.png&text=Big Blue Image!" />
+```
 
 ## FlickHoldr.com
 
@@ -22,19 +24,21 @@ When I need images with a bit more substance, such as when I'm mocking up a new 
 
 FlickHoldr.com requires you send at least the width an height parameters of your image, but unlike Placehold.it, you can also specify tags, whether or not an image is black and white, and also an offset, which allows you to pull different images for the same size and tags:
 
-	<img src="http://flickholdr.com/300/300/" />
-	<img src="http://flickholdr.com/300/300/2/" />
-	<img src="http://flickholdr.com/200/300/sea,sun/1/" />
-	<img src="http://flickholdr.com/400/200/kenny meyers,fetish/2/" />
+``` html
+<img src="http://flickholdr.com/300/300/" />
+<img src="http://flickholdr.com/300/300/2/" />
+<img src="http://flickholdr.com/200/300/sea,sun/1/" />
+<img src="http://flickholdr.com/400/200/kenny meyers,fetish/2/" />
+```
 
 ## Placekitten.com
 
 Of the three, [Placekitten.com](http://placekitten.com) tends to get the least use, but there's still that rare occasion where you just need pictures of kittens. Placekitten.com doesn't accept many parameters, in fact all they accept is width, height, and an option for black and white images:
 
-	<img src="http://placekitten.com/300/" />
-	<img src="http://placekitten.com/300/100" />
-	<img src="http://placekitten.com/g/600/100" />
-
-----------
+``` html
+<img src="http://placekitten.com/300/" />
+<img src="http://placekitten.com/300/100" />
+<img src="http://placekitten.com/g/600/100" />
+```
 
 All three of these are great services that can help expedite your workflow, and while I've given you a few examples here, I'd recommend clicking through to each of them and reviewing their options. Figure out what works for you and have fun. If you know of any other placeholder image services, let me know in comments below!
