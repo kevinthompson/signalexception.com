@@ -46,7 +46,12 @@
 
   p, pre, figure, img, ul, dl, ol
     & + h2, & + h3, & + h4
-      margin: 1rem 0 0
+      margin: 2rem 0 0
+
+  p
+    & + ul, & + ol, & + dl
+      position: relative
+      margin-top: -1em
 
   .author, .summary
     margin-bottom: 0
