@@ -14,7 +14,7 @@ task :publish do
   puts 'Building Middleman site...'
   `bundle exec middleman build`
   `git checkout publish`
-  `mv .git .gitbackup`
+  `mv .git .git-source`
   `git init`
   `git remote add heroku git@heroku.com:kevinthompson.git`
   `git add --all && git commit -m "Middleman Site Built"`
@@ -25,7 +25,7 @@ task :publish do
 
   # Remove Generated Static Files
   `rm -rf build .git`
-  `mv .gitbackup .git`
+  `mv .git-source .git`
   `git reset --hard HEAD`
   `git checkout master`
 
