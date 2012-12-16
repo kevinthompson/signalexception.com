@@ -48,7 +48,6 @@ configure :build do
   activate :gzip
   activate :minify_css
   activate :minify_javascript
-  activate :relative_assets
   activate :smusher
 end
 
