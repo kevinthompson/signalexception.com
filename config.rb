@@ -1,7 +1,6 @@
 # Dependencies
 # ========================================
 Dir[File.dirname(__FILE__) + '/lib/**/*.rb'].each { |file| require file }
-require 'rack/google_analytics'
 
 # Helpers
 # ========================================
@@ -43,6 +42,8 @@ end
 
 # Build
 configure :build do
+  require 'rack/google_analytics'
+  use Rack::GoogleAnalytics, web_property_id: 'UA-24584832-1'
   activate :asset_hash
   activate :cache_buster
   activate :gzip
@@ -57,7 +58,6 @@ configure :development do
 end
 
 # Middleware
-use Rack::GoogleAnalytics, web_property_id: 'UA-24584832-1'
 use Rack::SyntaxHighlighter
 
 # Setup
