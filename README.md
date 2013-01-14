@@ -2,7 +2,7 @@ Kevin Thompson
 ====================
 
 This repository contains the content for [http://kevinthompson.info](http://kevinthompson.info). 
-All content (including images) are copyright Kevin Thompson unless stated otherwise, and **may not**
+All content (including images) are copyright Kevin Thompson, unless stated otherwise, and **may not**
 be used without permission.
 
 ## Running This Site Locally
