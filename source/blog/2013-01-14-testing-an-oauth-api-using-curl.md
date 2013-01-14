@@ -4,9 +4,7 @@ title: Testing An OAuth API Using cURL
 
 I'm in the process of updating the API documentation over at [Planning Center Online](http://get.planningcenteronline.com) and I wanted to be sure that the sample JSON I was providing our users in the documentation matched the actual JSON returned. I didn't want to create an entire sample OAuth app to test this, so I did a little research into how I might test OAuth requests using cURL.
 
-It turns our theres a nice OAuth Proxy server written by Seth Fitzsimmons called, surprisingly, [OAuth Proxy](https://github.com/mojodna/oauth-proxy).
-
-To get started, you need to first install OAuth Proxy, preferrably using a package manager such as [pip](http://pypi.python.org/pypi/pip) using the following command:
+It turns our theres a nice OAuth Proxy server written by Seth Fitzsimmons called, surprisingly, [OAuth Proxy](https://github.com/mojodna/oauth-proxy). To get started, you need to first install OAuth Proxy, preferrably using a package manager such as [pip](http://pypi.python.org/pypi/pip) using the following command:
 
 ``` bash
 pip install oauth-proxy
