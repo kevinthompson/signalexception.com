@@ -32,8 +32,8 @@ class App.Model extends Batman.Model
 
   @persist App.Storage
 
-  @encodeAttributesForKeys: []
   @encodeAttributesFor: ->
+    @encodeAttributesForKeys ?= []
     for key in arguments
       if typeof key == 'string'
         @encodeAttributesForKeys.splice(index,1) if (index = @encodeAttributesForKeys.indexOf(key)) > 0
@@ -89,7 +89,7 @@ class App.Storage extends Batman.RailsStorage
     if env.subject and env.subject.constructor.encodeAttributesForKeys?
       for key in env.subject.constructor.encodeAttributesForKeys
         objects = env.subject.get(key)
-        if objects.constructor.name == 'AssociationSet'
+        if objects?.constructor.name == 'AssociationSet'
           objects.forEach (object) ->
             if object.get('_destroy')
               objects.remove(object) 
