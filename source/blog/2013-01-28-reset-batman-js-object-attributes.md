@@ -20,19 +20,20 @@ After a bit of tinkering, [Jeff Berg](https://twitter.com/theberg) and I eventua
 ``` coffeescript
 class App.Model extends Batman.Model
   # ...
-  reset: ->
+  reset: -> 
     @get('dirtyKeys').forEach (key, val) => @set(key,val)
-    associations = @constructor._batman.associations
-    associations.forEach (associationName) =>
-      association = associations.get(associationName)
-      if association instanceof Batman.HasManyAssociation
-        className = association.options.name
-        relatedModel = Batman.currentApp?[className]
-        objects = relatedModel.get('loaded').indexedBy(association.foreignKey).get(@get('id'))
-        objects.forEach (object) => object.reset()
+    associations = @constructor._batman.get('associations')
+    hasAssociations = new Batman.SimpleSet
+    hasAssociations = hasAssociations.merge(associations.getByType('hasMany')) if associations.getByType('hasMany')?
+    hasAssociations = hasAssociations.merge(associations.getByType('hasOne')) if associations.getByType('hasOne')?
+    hasAssociations.forEach (association) =>
+      className = association.options.name
+      relatedModel = Batman.currentApp?[className]
+      objects = relatedModel.get('loaded').indexedBy(association.foreignKey).get(@get('id'))
+      objects.forEach (object) => object.reset()
 ```
 
-The additional block of code here starts by grabbing all associations on the object, then iterating over them looking for any `HasManyAssociation`. For each relevant association found, we then get all loaded objects for that association's model (as to avoid loading objects that have not yet been retrieved or modified) and reset those child objects as well.
+The additional block of code here starts by grabbing all associations on the object that create either a `hasMany` or a `hasOne` relationship. For each relevant association found, we then get all loaded objects for that association's model (as to avoid loading objects that have not yet been retrieved or modified) and reset those child objects as well.
 
 Once our reset method is in place, we simply need to call the method on a loaded object:
 
