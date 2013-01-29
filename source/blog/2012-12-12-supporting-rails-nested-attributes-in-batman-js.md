@@ -68,3 +68,36 @@ class App.Store extends App.Model
   @hasMany 'products'
   @encodeAttributesFor 'products'
 ```
+
+----------
+
+## Update – January 29, 2013
+
+After spending a bit more time working with this technique, I realized that there were a few actions that also needed to be taken on these nested objects after a successful updated:
+
+1. If objects are flagged for deletion using the `_destroy` flag, they should be removed after update.
+2. A nested object's `dirtyKeys` should be cleared after update so that the updated values are now the "original" values.
+
+Both of these updates have been added in a single `@::after` callback on the storage class exemplified below.
+
+``` coffeescript
+class App.Storage extends Batman.RailsStorage
+
+  # ...
+
+  @::after 'update', @skipIfError (env, next) ->
+    if env.subject and env.subject.constructor.encodeAttributesForKeys?
+      for key in env.subject.constructor.encodeAttributesForKeys
+        objects = env.subject.get(key)
+        if objects.constructor.name == 'AssociationSet'
+          objects.forEach (object) ->
+            if object.get('_destroy')
+              objects.remove(object) 
+            else
+              object.get('dirtyKeys').clear()
+              object.get('_dirtiedKeys').clear()
+```
+
+----------
+
+A complete gist of this example is available on Github here: [https://gist.github.com/4219217](https://gist.github.com/4219217)
