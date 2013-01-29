@@ -15,7 +15,7 @@ class App.Model extends Batman.Model
 
 This method works great for resetting a single object, but I quickly realized that I often edit related objects within the same modal as their parent (an example being multiple email address objects belonging to a person object). To expand the reset functionality, I started looking into how I might crawl the tree of relationships for a given model.
 
-After a bit of tinkering [Jeff Berg](https://twitter.com/theberg) and I eventually came up with the following solution:
+After a bit of tinkering, [Jeff Berg](https://twitter.com/theberg) and I eventually came up with the following solution:
 
 ``` coffeescript
 class App.Model extends Batman.Model
@@ -33,8 +33,6 @@ class App.Model extends Batman.Model
 ```
 
 The additional block of code here starts by grabbing all associations on the object, then iterating over them looking for any `HasManyAssociation`. For each relevant association found, we then get all loaded objects for that association's model (as to avoid loading objects that have not yet been retrieved or modified) and reset those child objects as well.
-
-----------
 
 Once our reset method is in place, we simply need to call the method on a loaded object:
 
