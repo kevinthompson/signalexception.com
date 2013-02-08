@@ -20,9 +20,10 @@ After a bit of tinkering, [Jeff Berg](https://twitter.com/theberg) and I eventua
 ``` coffeescript
 class App.Model extends Batman.Model
   # ...
-  reset: -> 
+  reset: ->
     @get('dirtyKeys').forEach (key, val) => @set(key,val)
     associations = @constructor._batman.get('associations')
+    return unless associations?
     hasAssociations = new Batman.SimpleSet
     hasAssociations = hasAssociations.merge(associations.getByType('hasMany')) if associations.getByType('hasMany')?
     hasAssociations = hasAssociations.merge(associations.getByType('hasOne')) if associations.getByType('hasOne')?
