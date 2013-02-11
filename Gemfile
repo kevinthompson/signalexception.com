@@ -15,8 +15,9 @@ gem 'therubyracer'
 gem 'oj'
 
 # Utilities
-gem 'hashie'
+gem 'builder'
 gem 'coffee-filter'
+gem 'hashie'
 gem 'redcarpet'
 
 # Middleware
