@@ -45,6 +45,7 @@ activate :blog do |blog|
   blog.prefix = 'blog'
 end
 page '/feed.xml', layout: false
+page '/sitemap.xml', layout: false
 
 # Build
 configure :build do
