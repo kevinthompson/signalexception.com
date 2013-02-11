@@ -1,3 +1,8 @@
+# ========================================
+# Blog Settings
+# ========================================
+Time.zone = 'Pacific Time (US & Canada)'
+
 # Dependencies
 # ========================================
 Dir[File.dirname(__FILE__) + '/lib/**/*.rb'].each { |file| require file }
@@ -39,6 +44,7 @@ activate :blog do |blog|
   blog.layout = 'blog'
   blog.prefix = 'blog'
 end
+page '/feed.xml', layout: false
 
 # Build
 configure :build do

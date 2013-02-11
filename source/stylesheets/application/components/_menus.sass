@@ -19,12 +19,13 @@
         +border-radius(0)
 
     &.external
-      a[href*=".com"]
+      a[href*=".com"], a[href*="feed.xml"]
         background-position: 12px 9px
         background-repeat: no-repeat
         text-align: left
         padding-left: 39px
 
+      a[href*=".com"]
         &:after
           text-transform: lowercase
           content: "\203A"
@@ -38,6 +39,8 @@
         background-image: url('/images/icons/twitter_16.png')
       a[href*="linkedin.com"]
         background-image: url('/images/icons/linkedin_16.png')
+      a[href*="feed.xml"]
+        background-image: url('/images/icons/rss_16.png')
 
 
     li, &.external li
