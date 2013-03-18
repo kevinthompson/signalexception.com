@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 # Server
 gem 'unicorn'
@@ -16,7 +16,6 @@ gem 'oj'
 
 # Utilities
 gem 'builder'
-gem 'coffee-filter'
 gem 'hashie'
 gem 'redcarpet'
 
