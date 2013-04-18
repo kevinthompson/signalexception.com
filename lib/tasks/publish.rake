@@ -14,6 +14,8 @@ task :publish do
   puts 'Building Middleman site...'
   `bundle exec middleman build`
   `git checkout publish`
+  `git checkout master config.ru`
+  `git commit -am "Update config."`
   `mv .git .git-source`
   `git init`
   `git remote add heroku git@heroku.com:kevinthompson.git`
