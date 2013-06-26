@@ -11,12 +11,13 @@ task :deploy do
   `git push origin master`
 
   # Switch to Orphaned Branch
+  `git branch -D deploy`
   `git checkout --orphan deploy`
 
   # Build Static Site
   puts 'Building Middleman site...'
   `bundle exec middleman build`
-  `git add --all && git commit -m "Middleman Site Built"`
+  `git add build && git commit -m "Middleman Site Built"`
 
   # Push Code
   puts 'Deploying to Heroku...'
@@ -24,5 +25,6 @@ task :deploy do
 
   # Return to Master Branch
   `git checkout master`
+  `git branch -D deploy`
 
 end
