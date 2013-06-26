@@ -10,10 +10,6 @@ task :deploy do
   # Ensure Current State has been Pushed to Github
   `git push origin master`
 
-  # Switch to Orphaned Branch
-  `git branch -D deploy`
-  `git checkout --orphan deploy`
-
   # Build Static Site
   puts 'Building Middleman site...'
   `bundle exec middleman build`
@@ -25,6 +21,5 @@ task :deploy do
 
   # Return to Master Branch
   `git checkout master`
-  `git branch -D deploy`
 
 end
