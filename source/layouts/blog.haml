@@ -1,6 +1,6 @@
 - wrap_layout :layout do
   %article.post
-    %h1= current_article.title
+    %h1= article_title(current_article.title)
     %p.author
       by
       = link_to 'Kevin Thompson', 'http://linkedin.com/in/kevindthompson'
