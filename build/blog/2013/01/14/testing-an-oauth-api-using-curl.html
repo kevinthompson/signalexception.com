@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title>Testing An OAuth API Using cURL | Kevin Thompson</title>
+    <meta content="Web Application Developer from Oceanside, CA" name="description">
+    <meta content="Kevin Thompson, web development in san diego, web developer in san diego, san diego user experience, ruby developer, responsive design, php, ruby, javascript" name="keywords">
+    <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" name="viewport">
+    <link href="http://kevinthompson.info/feed.xml" rel="alternate" title="Kevin Thompson's Blog" type="application/rss+xml">
+    <link href="https://plus.google.com/115586748098657149997" rel="author">
+    <link href="/stylesheets/all-748bf9c3.css" media="screen" rel="stylesheet" type="text/css">
+    <script>
+      var html = document.getElementsByTagName('html')[0];
+      html.className = (html.className != '' ? html.className + ' ' : '') + 'js';
+      /mobile/i.test(navigator.userAgent) && !location.hash && setTimeout(function () { window.scrollTo(0, 1); }, 1000);
+    </script>
+    <!--[if lt IE 9]> <script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js">IE7_PNG_SUFFIX=".png";</script> <![endif]-->
+  </head>
+  <body>
+    <div class="blog 2013 01 14 testing-an-oauth-api-using-curl.html" id="main">
+      <header id="header">
+          <a id="logo" href="/"><img alt="Kevin Thompson" src="/images/logo-cyan-89700747.png">
+        <h1>Kevin Thompson</h1>
+        </a>
+      
+        <div class="title">
+          Developer
+        </div>
+        <nav>
+              <a class="alt button back" href="/"><span>Home</span>
+          </a>
+      
+          <a class="alt button" href="#menu">Menu</a>
+        </nav>
+      </header>
+      <hr>
+      <div id="content">
+        <article class="post">
+          <h1>Testing An OAuth API Using cURL</h1>
+          <p class="author">
+            by
+            <a href="http://linkedin.com/in/kevindthompson">Kevin Thompson</a>
+          </p>
+          <p class="date">January 14, 2013</p>
+          <p>I'm in the process of updating the API documentation over at <a href="http://get.planningcenteronline.com">Planning Center Online</a> and I wanted to be sure that the sample JSON I was providing our users in the documentation matched the actual JSON returned. I didn't want to create an entire sample OAuth app to test this, so I did a little research into how I might test OAuth requests using cURL.</p>
+          
+          <p>It turns our theres a nice OAuth Proxy server written by Seth Fitzsimmons called, surprisingly, <a href="https://github.com/mojodna/oauth-proxy">OAuth Proxy</a>. To get started, you need to first install OAuth Proxy, preferrably using a package manager such as <a href="http://pypi.python.org/pypi/pip">pip</a> using the following command:</p>
+          
+          <pre><code class="highlighted">pip install oauth-proxy
+</code></pre>
+          
+          <p>Once you've got OAuth Proxy installed, you can run it in a terminal session using:</p>
+          
+          <pre><code class="highlighted">oauth-proxy --consumer-key &lt;consumer key&gt; --consumer-secret &lt;consumer secret&gt;
+</code></pre>
+          
+          <p>While this was a great start, it still didn't get me where I wanted to be. For starters, I not only needed to create a consumer application to use our API, I also needed a user with a token and token secret so that my cURL requests were sent as an authenticated user. This meant that I needed also pass the <code>--token</code> and <code>--token-secret</code> parameters as well. </p>
+          
+          <p>Since I didn't yet have a token or token secret yet for my development users, I dove into the development database for our Rails application and added a record to our <code>oauth_tokens</code> table for a seeded user with simlpiefied values such as 'foo' and 'bar'. With values seeded in my database for the client application and oauth token, I was then able to invoke the OAuth Proxy with a command such as:</p>
+          
+          <pre><code class="highlighted">oauth-proxy --consumer-key foo --consumer-secret bar --token foo --token-secret bar
+</code></pre>
+          
+          <p>Easy to remember, or better yet, create an alias for. With the OAuth Proxy running, I can then begin issuing curl requests to API enpoints:</p>
+          
+          <pre><code class="highlighted">curl -x localhost:8001 localhost:3000/users.json
+</code></pre>
+          
+          <p>My next step is going to be to add the client application and oauth token records the seed for our Rails apps so that any developer can fire up OAuth Proxy using a simplified, common set of credentials, and begin firing off cURL requests to our API.</p>
+          
+          <hr>
+          
+          <p>Another library that I'd like to recommend with setup would be <a href="https://github.com/jkbr/httpie">HTTPie</a>. HTTPie simplifies cURLs CLI letting you easily specify HTTP verbs and post data. With HTTPie, the cURL request above would be written as:</p>
+          
+          <pre><code class="highlighted">http --proxy<span class="o">=</span>http:localhost:8001 localhost:3000/users.json
+</code></pre>
+          
+          <p>I strongly recommend you take a look at HTTPie if you use command line cURL at all.</p>
+          
+        </article>
+      </div>
+      <hr>
+      <nav class="menu" id="menu">
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <!-- %li= link_to 'About', '/about/' -->
+        </ul>
+        <ul class="external">
+          <li>
+                  <a class="alt button" href="http://github.com/kevinthompson"><span>Fork My Code on</span>
+            Github
+            </a>
+      
+          </li>
+          <li>
+                  <a class="alt button" href="http://linkedin.com/in/kevindthompson"><span>View My Resume on</span>
+            LinkedIn
+            </a>
+      
+          </li>
+          <li>
+                  <a class="alt button" href="http://twitter.com/kevinthompson"><span>Follow Me on</span>
+            Twitter
+            </a>
+      
+          </li>
+          <li>
+                  <a class="alt button" href="https://plus.google.com/115586748098657149997?rel=author">Google
+            </a>
+      
+          </li>
+        </ul>
+        <ul class="external">
+          <li>
+                  <a class="alt button" href="http://kevinthompson.info/feed.xml">Subscribe
+            <span>to my Blog</span>
+            </a>
+      
+          </li>
+        </ul>
+      </nav>
+      <hr>
+      <footer>
+        <div class="copyright">
+          © Kevin Thompson 2013
+          <span>— Code, Content &amp; Design</span>
+        </div>
+        <a href="#header">Top ↑</a>
+      </footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="/javascripts/all-9b489943.js" type="text/javascript"></script>
+    </div>
+  <script type="text/javascript">
+if (typeof gaJsHost == 'undefined') {
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-24584832-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
