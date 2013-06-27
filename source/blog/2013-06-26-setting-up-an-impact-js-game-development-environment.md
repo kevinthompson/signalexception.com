@@ -43,7 +43,7 @@ require 'rack'
 require 'rack-legacy'
 require 'rack-rewrite'
 
-INDEXES = ['index.html','index.php', 'index.cgi']
+INDEXES = ['index.html','index.php']
 
 use Rack::Rewrite do
   rewrite %r{^/edit$}, '/weltmeister.html'
@@ -59,7 +59,6 @@ use Rack::Rewrite do
 end
 
 use Rack::Legacy::Php, Dir.getwd
-use Rack::Legacy::Cgi, Dir.getwd
 run Rack::File.new Dir.getwd
 ```
 
