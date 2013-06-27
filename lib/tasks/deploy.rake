@@ -13,7 +13,8 @@ task :deploy do
   # Build Static Site
   puts 'Building Middleman site...'
   `bundle exec middleman build`
-  `git add build && git commit -m "Deploying to production..."`
+  `git add build && git commit -m "Build site for production."`
+  `git push origin master`
 
   # Push Code
   puts 'Deploying to Heroku...'
