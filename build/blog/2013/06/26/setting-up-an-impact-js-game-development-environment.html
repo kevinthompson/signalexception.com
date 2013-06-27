@@ -81,7 +81,7 @@
   <span class="nb">require</span> <span class="s1">'rack-legacy'</span>
   <span class="nb">require</span> <span class="s1">'rack-rewrite'</span>
   
-  <span class="no">INDEXES</span> <span class="o">=</span> <span class="o">[</span><span class="s1">'index.html'</span><span class="p">,</span><span class="s1">'index.php'</span><span class="p">,</span> <span class="s1">'index.cgi'</span><span class="o">]</span>
+  <span class="no">INDEXES</span> <span class="o">=</span> <span class="o">[</span><span class="s1">'index.html'</span><span class="p">,</span><span class="s1">'index.php'</span><span class="o">]</span>
   
   <span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Rewrite</span> <span class="k">do</span>
     <span class="n">rewrite</span> <span class="sr">%r{^/edit$}</span><span class="p">,</span> <span class="s1">'/weltmeister.html'</span>
@@ -97,7 +97,6 @@
   <span class="k">end</span>
   
   <span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Legacy</span><span class="o">::</span><span class="no">Php</span><span class="p">,</span> <span class="no">Dir</span><span class="o">.</span><span class="n">getwd</span>
-  <span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Legacy</span><span class="o">::</span><span class="no">Cgi</span><span class="p">,</span> <span class="no">Dir</span><span class="o">.</span><span class="n">getwd</span>
   <span class="n">run</span> <span class="no">Rack</span><span class="o">::</span><span class="no">File</span><span class="o">.</span><span class="n">new</span> <span class="no">Dir</span><span class="o">.</span><span class="n">getwd</span>
 </code></pre>
           

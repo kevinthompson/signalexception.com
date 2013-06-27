@@ -58,7 +58,7 @@ require &amp;#39;rack&amp;#39;
 require &amp;#39;rack-legacy&amp;#39;
 require &amp;#39;rack-rewrite&amp;#39;
 
-INDEXES = [&amp;#39;index.html&amp;#39;,&amp;#39;index.php&amp;#39;, &amp;#39;index.cgi&amp;#39;]
+INDEXES = [&amp;#39;index.html&amp;#39;,&amp;#39;index.php&amp;#39;]
 
 use Rack::Rewrite do
   rewrite %r{^/edit$}, &amp;#39;/weltmeister.html&amp;#39;
@@ -74,7 +74,6 @@ use Rack::Rewrite do
 end
 
 use Rack::Legacy::Php, Dir.getwd
-use Rack::Legacy::Cgi, Dir.getwd
 run Rack::File.new Dir.getwd
 &lt;/code&gt;&lt;/pre&gt;
 
