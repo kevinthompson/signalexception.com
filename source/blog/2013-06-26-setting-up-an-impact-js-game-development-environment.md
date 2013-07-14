@@ -25,7 +25,6 @@ To solve both of these issues, I decided to add a `config.ru` file to my project
 `/edit`. Below are the two files you need to create in order to duplicate my setup:
 
 ``` ruby
-
 # ./Gemfile
 source 'https://rubygems.org'
 
@@ -36,7 +35,6 @@ gem 'rack-rewrite'
 ```
 
 ``` ruby
-
 # ./config.ru
 require 'rubygems'
 require 'rack'
