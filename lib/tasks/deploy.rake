@@ -20,7 +20,4 @@ task :deploy do
   puts 'Deploying to Heroku...'
   `git push -f heroku master`
 
-  # Return to Master Branch
-  `git checkout master`
-
 end
