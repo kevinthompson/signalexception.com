@@ -26,7 +26,7 @@ class API::V1::BaseController < ApplicationController
   rescue_from(ActionController::ParameterMissing) do |parameter_missing_exception|
     error = {}
     error[parameter_missing_exception.param] = ['parameter is required']
-    response = { errors: [errors] }
+    response = { errors: [error] }
     respond_to do |format|
       format.json { render response, status: :unprocessable_entity }
     end
