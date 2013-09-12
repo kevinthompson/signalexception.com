@@ -45,7 +45,7 @@ I strongly recommend you take a look at HTTPie if you use command line cURL at a
 
 ----------
 
-## Update
+### Update (9/12/2013)
 
 Some people are having issues with oauth-proxy returning an unknown command
 error within twisted. In order to resolve this (on Mac) you'll need to run the
@@ -53,8 +53,6 @@ following commands (changing he path of the `mkdir` command to the path of your
 python framework):
 
 ``` bash
-
-```
 pip install -d /tmp/ oauth-proxy
 mkdir -p
 /usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/Current/lib/python2.7/twisted/plugins
