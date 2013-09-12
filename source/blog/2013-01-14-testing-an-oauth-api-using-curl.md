@@ -16,7 +16,7 @@ Once you've got OAuth Proxy installed, you can run it in a terminal session usin
 oauth-proxy --consumer-key <consumer key> --consumer-secret <consumer secret>
 ```
 
-While this was a great start, it still didn't get me where I wanted to be. For starters, I not only needed to create a consumer application to use our API, I also needed a user with a token and token secret so that my cURL requests were sent as an authenticated user. This meant that I needed also pass the `--token` and `--token-secret` parameters as well. 
+While this was a great start, it still didn't get me where I wanted to be. For starters, I not only needed to create a consumer application to use our API, I also needed a user with a token and token secret so that my cURL requests were sent as an authenticated user. This meant that I needed also pass the `--token` and `--token-secret` parameters as well.
 
 Since I didn't yet have a token or token secret yet for my development users, I dove into the development database for our Rails application and added a record to our `oauth_tokens` table for a seeded user with simlpiefied values such as 'foo' and 'bar'. With values seeded in my database for the client application and oauth token, I was then able to invoke the OAuth Proxy with a command such as:
 
@@ -41,3 +41,22 @@ http --proxy=http:localhost:8001 localhost:3000/users.json
 ```
 
 I strongly recommend you take a look at HTTPie if you use command line cURL at all.
+
+
+----------
+
+## Update
+
+Some people are having issues with oauth-proxy returning an unknown command
+error within twisted. In order to resolve this (on Mac) you'll need to run the
+following commands (changing he path of the `mkdir` command to the path of your
+python framework):
+
+``` bash
+
+```
+pip install -d /tmp/ oauth-proxy
+mkdir -p
+/usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/Current/lib/python2.7/twisted/plugins
+cp /tmp/pip-build-root/oauth-proxy/twisted/plugins/proxy.py twisted/plugins
+```
