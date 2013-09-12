@@ -54,7 +54,6 @@ python framework):
 
 ``` bash
 pip install -d /tmp/ oauth-proxy
-mkdir -p
-/usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/Current/lib/python2.7/twisted/plugins
+mkdir -p /usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/Current/lib/python2.7/twisted/plugins
 cp /tmp/pip-build-root/oauth-proxy/twisted/plugins/proxy.py twisted/plugins
 ```
