@@ -49,7 +49,7 @@ I strongly recommend you take a look at HTTPie if you use command line cURL at a
 
 Some people are having issues with oauth-proxy returning an unknown command
 error within twisted. In order to resolve this (on Mac) you'll need to run the
-following commands (changing he path of the `mkdir` command to the path of your
+following commands (changing the path of the `mkdir` command to the path of your
 python framework):
 
 ``` bash
