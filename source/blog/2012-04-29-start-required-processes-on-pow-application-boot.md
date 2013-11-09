@@ -1,6 +1,5 @@
 ---
 title: "Start Required Processes on Pow Application Boot"
-comments: true
 ---
 
 Using [Pow](http://pow.cx/) to serve your Rack apps makes managing multiple applications a breeze, but you may still find yourself manually starting up additional processes that your apps depend on. Luckily, Pow provides us with a few hooks to automate these processes as well.

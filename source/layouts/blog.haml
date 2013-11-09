@@ -3,8 +3,8 @@
     %h1= article_title(current_article.title)
     %p.author
       by
-      = link_to 'Kevin Thompson', 'http://linkedin.com/in/kevindthompson'
+      = link_to 'Kevin Thompson', 'http://kevinthompson.info/'
     %p.date= current_article.date.strftime date.format
     = find_and_preserve do
       = yield
-    =# partial 'blog/partials/comments' if current_page.data.comments
+    = partial 'layouts/partials/comments' unless current_page.data.comments == false

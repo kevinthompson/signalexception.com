@@ -35,8 +35,8 @@ set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, autolink: true
 
 # Compass
-compass_config do |config|
-  config.output_style = :compact
+compass_config do |compass|
+  compass.output_style = :compact
 end
 
 # Blog
