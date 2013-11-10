@@ -47,25 +47,23 @@ end
 page '/feed.xml', layout: false
 page '/sitemap.xml', layout: false
 
+# Syntax Highlighting
+activate :syntax
+
 # Build
 configure :build do
-  require 'rack/google_analytics'
-  use Rack::GoogleAnalytics, web_property_id: 'UA-24584832-1'
+  use Rack::GoogleAnalytics, tracker: 'UA-24584832-1'
   activate :asset_hash
   activate :cache_buster
   activate :gzip
   activate :minify_css
   activate :minify_javascript
-  activate :smusher
 end
 
 # Development
 configure :development do
   activate :livereload
 end
-
-# Middleware
-use Rack::SyntaxHighlighter
 
 # Setup
 # ========================================

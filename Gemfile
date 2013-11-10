@@ -9,8 +9,8 @@ gem 'unicorn'
 # Middleman
 gem 'middleman'
 gem 'middleman-blog'
-gem 'middleman-smusher'
 gem 'middleman-livereload'
+gem 'middleman-syntax'
 
 # Performance
 gem 'libv8'
@@ -20,14 +20,12 @@ gem 'oj'
 # Utilities
 gem 'builder'
 gem 'hashie'
+gem 'nokogiri'
 gem 'redcarpet'
 
 # Middleware
-gem 'pygmentize', git: 'git://github.com/zimbatm/pygmentize.git', branch: 'pygments-1.5'
-gem 'albino'
 gem 'rack-rewrite'
-gem 'rack-syntax-highlighter'
-gem 'rack-google_analytics'
+gem 'rack-google-analytics'
 
 # Testing
 group :test do
