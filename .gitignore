@@ -1,4 +1,5 @@
-/.bundle
-/.sass-cache
-/tmp
+.bundle
+.powder
+.sass-cache
 /build
+/tmp
