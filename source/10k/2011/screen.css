@@ -5,7 +5,7 @@ body { background:#ede8df; font-size:62.5%; line-height:1.5; color:#F2E1AC; text
 #h { background:url('stripe.png') center top; height:16px; position:absolute; top:0; left:5%; right:5%; z-index:4; -webkit-box-shadow:0 0 5px rgba(0,0,0,.4); border-bottom-left-radius:8px; border-bottom-right-radius:8px; }
 #m { position:absolute !important; width:100%; top:0; opacity:.5; }
 #m > img { display:block; width:100%; }
-#m:after { 
+#m:after {
   position:absolute; bottom:0; width:100%;
   height:25%;
   background: -moz-linear-gradient(top, rgba(237,232,223,0) 0%, rgba(237,232,223,1) 100%);
@@ -17,11 +17,11 @@ body { background:#ede8df; font-size:62.5%; line-height:1.5; color:#F2E1AC; text
   content:"";
 }
 #w { margin:0 auto; max-width:50em; padding:0 5%; }
-.t { font-size:3rem; letter-spacing:-2px; text-align:center; color:#fff; margin:0 auto -1.5em; 
+.t { font-size:3rem; letter-spacing:-2px; text-align:center; color:#fff; margin:0 auto -1.5em;
 position:relative; top:-1.25em; width:260px;
 text-shadow:
 -1px -1px 0 rgba(0,0,0,.2),
-1px 1px 0 rgba(2255,255,255,.4),
+1px 1px 0 rgba(255,255,255,.4),
 0 1px 0 #2A593B,
 0 2px 0 #2A593B,
 0 3px 0 #2A593B,
@@ -86,10 +86,10 @@ select { font-size:1rem; border-radius:5px; }
 #f { border-top:1px solid rgba(255,255,255,.1); background:#3C734F; padding:1em; font-size:.8rem; text-align:center; position:relative; line-height:1; }
 #f img { position: relative; margin: 0 0 -6px -2px; }
 .h {
-  height:70px; 
+  height:70px;
   -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.2);
   background: #3c734f;
-  border-top:1px solid rgba(255,255,255,.2); 
+  border-top:1px solid rgba(255,255,255,.2);
   border-bottom:1px solid rgba(0,0,0,.4);
   cursor:pointer;
   -webkit-transition: background .8s ease-in-out;
@@ -106,7 +106,7 @@ select { font-size:1rem; border-radius:5px; }
   -webkit-background-origin: padding-box;
   -webkit-background-clip: border-box;
   width:92%;
-  border:1px solid rgba(0,0,0,.5); 
+  border:1px solid rgba(0,0,0,.5);
   cursor:pointer;
   display:block;
   text-align:center;
@@ -143,7 +143,7 @@ a.y:hover {
 }
 
 .r { -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; }
-.rt { 
+.rt {
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   -moz-border-radius-topleft: 5px;
@@ -151,7 +151,7 @@ a.y:hover {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.rb { 
+.rb {
   -webkit-border-bottom-left-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
   -moz-border-radius-bottomleft: 5px;
@@ -165,7 +165,7 @@ a.y:hover {
 
 /* iPhone Only */
 @media screen and (max-device-width: 480px), screen and (max-width: 500px) {
-	html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; }	
+	html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; }
 }
 
 /* Small Screen Resolutions */
@@ -193,7 +193,7 @@ a.y:hover {
     border-width:15px 15px 0;
     border-style:solid;
     border-color:#2A593B transparent;
-    display:block; 
+    display:block;
     width:0;
   }
   body > .d .inner:after {
@@ -205,7 +205,7 @@ a.y:hover {
     border-width:15px 15px 0;
     border-style:solid;
     border-color:#3C734F transparent;
-    display:block; 
+    display:block;
     width:0;
   }
   .d h1 { font-size:1.5rem; line-height:1.2; color:#fff; display: block; margin-bottom:4px; padding:.4em 4%; margin:0 0 4px; position: relative; background:#3C734F; border-bottom:1px solid rgba(0,0,0,.4); font-weight:bold; }
