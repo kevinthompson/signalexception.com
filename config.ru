@@ -1,4 +1,8 @@
+require 'rubygems'
+require 'rack'
+require 'middleman/rack'
 require 'rack/rewrite'
+require 'rack/contrib/try_static'
 
 # Redirects
 use ::Rack::Rewrite do
@@ -13,13 +17,12 @@ use ::Rack::Rewrite do
   r301 %r{^\/blog(\/\d+){0,3}\/?$}, '/'
 end
 
-# Static Routes
-require File.expand_path('../lib/rack/static_file_server', __FILE__)
-use ::Rack::StaticFileServer, root: 'build', urls: ['/'], try: ['.html', 'index.html', '/index.html']
+use Rack::Head
+use Rack::TryStatic, root: 'tmp', urls: %w[/], try: ['.html', 'index.html', '/index.html']
 
 # Display 404
 run lambda {
-  not_found_page = File.expand_path("../build/404.html", __FILE__)
+  not_found_page = File.expand_path('../tmp/404.html', __FILE__)
   if File.exist?(not_found_page)
     [ 404, { 'Content-Type' => 'text/html'}, [File.read(not_found_page)] ]
   else

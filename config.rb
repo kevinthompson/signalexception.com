@@ -28,6 +28,7 @@ config = {
 }
 
 # Framework
+set :build_dir, 'tmp'
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
@@ -52,7 +53,7 @@ activate :syntax
 
 # Build
 configure :build do
-  use Rack::GoogleAnalytics, tracker: 'UA-24584832-1'
+  use Rack::GoogleAnalytics, tracker: ENV['GOOGLE_ANALYTICS_TRACKER_ID'] if ENV['GOOGLE_ANALYTICS_TRACKER_ID']
   activate :asset_hash
   activate :cache_buster
   activate :gzip
