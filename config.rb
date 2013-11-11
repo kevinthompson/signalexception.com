@@ -4,24 +4,15 @@
 Time.zone = 'Pacific Time (US & Canada)'
 
 # Dependencies
-# ========================================
 Dir[File.dirname(__FILE__) + '/lib/**/*.rb'].each { |file| require file }
 
 # Helpers
-# ========================================
 helpers do
   Dir[File.dirname(__FILE__) + '/helpers/**/*.rb'].each { |file| require file }
 end
 
-# Settings
-# ========================================
-
 # Content
 config = {
-  contact: {
-    email: 'kevin@kevinthompson.info',
-    skype: 'thompson.kevind'
-  },
   date: {
     format: '%B %e, %Y'
   }
@@ -53,7 +44,7 @@ activate :syntax
 
 # Build
 configure :build do
-  use Rack::GoogleAnalytics, tracker: ENV['GOOGLE_ANALYTICS_TRACKER_ID'] if ENV['GOOGLE_ANALYTICS_TRACKER_ID']
+  use Rack::GoogleAnalytics, tracker: 'UA-24584832-1'
   activate :asset_hash
   activate :cache_buster
   activate :gzip
@@ -66,6 +57,5 @@ configure :development do
   activate :livereload
 end
 
-# Setup
-# ========================================
+# Setup Config
 config.each{ |k,v| set k, v.is_a?(Hash) ? Hashie::Mash.new(v) : v }
