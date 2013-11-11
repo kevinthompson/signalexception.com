@@ -26,6 +26,12 @@
   border: 0
   margin-left: -20px
 
+  .image
+    +text-shadow(0 0 10px rgba(0,0,0,.2))
+    background: #fff
+    border: 1px solid $accent-dark
+    padding: 1px
+
   h1
     display: none
 
@@ -62,10 +68,11 @@
     margin: 0 auto
     max-width: 1180px
     padding: 40px 0
+
   #header
     position: fixed
     width: 220px
-    padding: 40px 40px 0
+    padding: 80px 40px 0
     top: 0
     text-align: center
 
@@ -94,6 +101,7 @@
       display: block
       left: 50%
       margin-left: -25%
+
   #logo
     position: static
     top: auto
@@ -101,9 +109,22 @@
     width: auto
     margin: 0 auto 6px
     text-align: center
-    img
-      width: 96px
+
+    .image-container
+      position: relative
       margin: 0 auto 20px
+      width: 128px
+      height: 128px
+
+      .image
+        -webkit-animation: greeting 1.5s 1s 1 normal forwards
+        -webkit-animation-timing-function: ease
+        position: absolute
+        padding: 3px
+
+      img
+        +border-radius(2px)
+
     h1
       color: $heading-color
       display: block
@@ -123,7 +144,7 @@
 
     & + hr
       display: none
-  
+
   #main > footer
     +border(1px solid #fff, 1px solid darken($background-color, 8), 1px solid darken($background-color, 8), 1px solid #fff)
     +box-shadow(0 5px 10px rgba(0,0,0,.02))
@@ -142,3 +163,28 @@
     margin-left: 300px
     margin-right: 40px
     max-width: 60em
+
+
+@-webkit-keyframes greeting
+  0%
+    top: 0
+  10%
+    top: -10px
+  20%
+    top: 0px
+  30%
+    top: -10px
+  40%
+    top: 0px
+  45%
+    +rotate(0deg)
+  60%
+    +rotate(-4deg)
+  70%
+    +rotate(4deg)
+  80%
+    +rotate(-4deg)
+  90%
+    +rotate(4deg)
+  100%
+    +rotate(0deg)
