@@ -18,3 +18,14 @@ $(document)
     # Open External Links in New Tab/Window
     else if $target.is($('a').not('[href^="#"],[href^="/"],[href*="#{document.domain}"]'))
       $target.attr('target','_blank')
+
+  .on 'pjax:complete', ->
+
+    # Reload Comments
+    if window.location.pathname.match(/^\/blog/)
+      identifier = window.location.pathname.match(/\/([a-z0-9-]+)\.html$/)[1]
+      DISQUS.reset
+        reload: true
+        config: ->
+          this.page.identifier = identifier
+          this.page.url = document.URL
