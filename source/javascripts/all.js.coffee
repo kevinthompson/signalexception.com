@@ -1,6 +1,20 @@
 #= require jquery.pjax
 
+@disqusLoaded = false
+loadDisqus = ->
+  unless disqusLoaded == true
+    $.ajax
+      type: 'GET',
+      url: 'http://kevinthompson.disqus.com/embed.js',
+      dataType: 'script',
+      cache: true
+      success: ->
+        disqusLoaded = true
+
+# Events
 $(document)
+  .on 'ready', ->
+    loadDisqus() if $('#disqus_thread').length
   .on 'click', 'a', (event) ->
     $target = $(event.currentTarget)
 
@@ -22,10 +36,13 @@ $(document)
   .on 'pjax:complete', ->
 
     # Reload Comments
-    if window.location.pathname.match(/^\/blog/)
-      identifier = window.location.pathname.match(/\/([a-z0-9-]+)\.html$/)[1]
-      DISQUS.reset
-        reload: true
-        config: ->
-          this.page.identifier = identifier
-          this.page.url = document.URL
+    if $('#disqus_thread').length && window.location.pathname.match(/^\/blog/)
+      if disqusLoaded == true
+        identifier = window.location.pathname.match(/\/([a-z0-9-]+)\.html$/)[1]
+        DISQUS.reset
+          reload: true
+          config: ->
+            this.page.identifier = identifier
+            this.page.url = document.URL
+      else
+        loadDisqus()
