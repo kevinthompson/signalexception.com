@@ -40,7 +40,7 @@ These commands clone the project template into a new directory named `new-projec
 and assign the remote named `source` to the original project template (which makes
 it easy for me to merge in changes to the original template). Then after `cd`ing into
 the new project directory, the `git create` command (which we have access to through
-the Hub library) creates a new repo on Github within
+the [Hub](https://github.com/github/hub) library) creates a new repo on Github within
 my account, and sets the `origin` remote to that newly created repo.
 
 From there, I can start work on my new project in its own repo, and easily pull in any
