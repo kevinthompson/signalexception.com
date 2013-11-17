@@ -14,7 +14,7 @@ either way.
 ## Three Simple Commands
 
 ``` shell
-$ git clone --origin source project-template new-project
+$ git clone --depth 1 --origin source project-template new-project
 $ cd new-project
 $ git create new-project
 ```
@@ -27,16 +27,19 @@ in my github account. On [Github](http://github.com) this would technically be
 machine, I just need to run a few commands:
 
 ``` shell
-$ git clone -origin source project-template new-project
+$ git clone --depth 1 --origin source project-template new-project
 Cloning into 'new-project'...
 done.
 $ cd new-project
 $ git create new-project
 Updating origin
 created repository: kevinthompson/new-project
+$ git log
+abfe202 Project Template v0.0.1
+$
 ```
 
-These commands clone the project template into a new directory named `new-project`
+These commands clone the project template into a new directory named `new-project` truncating its history
 and assign the remote named `source` to the original project template (which makes
 it easy for me to merge in changes to the original template). Then after `cd`ing into
 the new project directory, the `git create` command (which we have access to through
