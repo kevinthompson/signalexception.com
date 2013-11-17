@@ -19,13 +19,4 @@ end
 
 use Rack::Head
 use Rack::TryStatic, root: 'tmp', urls: %w[/], try: ['.html', 'index.html', '/index.html']
-
-# Display 404
-run lambda {
-  not_found_page = File.expand_path('../tmp/404.html', __FILE__)
-  if File.exist?(not_found_page)
-    [ 404, { 'Content-Type' => 'text/html'}, [File.read(not_found_page)] ]
-  else
-    [ 404, { 'Content-Type' => 'text/html' }, ['Page Not Found'] ]
-  end
-}
+run Rack::NotFound.new 'tmp/404.html'
