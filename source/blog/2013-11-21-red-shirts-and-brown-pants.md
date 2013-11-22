@@ -36,3 +36,7 @@ dust settles is this:
 >  The next day, the lookout informs the Captain that he has spotted over fifty
 >  Pirate ships about ten miles out. The Captain turns to his First Mate and calmly
 >  says, "Go fetch my brown pants."
+
+Fear, stress, and anxiety are all natural in these situations. Don't fret the
+feelings; focus on channeling that energy into something productive, and when
+all else fails, put on your brown pants.
