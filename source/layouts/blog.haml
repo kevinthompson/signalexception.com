@@ -7,4 +7,3 @@
     %p.date= current_article.date.strftime date.format
     = find_and_preserve do
       = yield
-    = partial 'layouts/partials/comments' unless current_page.data.comments == false

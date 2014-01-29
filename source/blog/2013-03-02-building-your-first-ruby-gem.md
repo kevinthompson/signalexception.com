@@ -1,6 +1,5 @@
 ---
 title: Building Your First Ruby Gem
-published: true
 ---
 
 I recently gave a talk at the first [Full Stack

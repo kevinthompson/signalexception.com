@@ -1,6 +1,5 @@
 ---
 title: Red Shirts and Brown Pants
-published: true
 ---
 
 One of the most important things I've learned about leadership, and I suppose

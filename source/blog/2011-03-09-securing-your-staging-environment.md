@@ -26,5 +26,3 @@ If you're not using a platform that's already capable of restricting user access
 To create your HTTP authentication files, first create a file named `.htpasswd` and place it in your site root (take note of the full server path to this file as you'll need it in the next step). Next, use the [htaccesstools.com htpassword generator](http://www.htaccesstools.com/htpasswd-generator/) to create username and password pairs that will be added to your `.htpasswd` file. After adding each username and password pair to your `.htpasswd` file, use the [htaccess authentication generator](http://www.htaccesstools.com/htaccess-authentication/) to create the authentication rules that will be added to your website's `.htaccess` file.
 
 Once these steps have been completed, when accessing a secure area of your site, you should be prompted to enter your username and password.
-
-What steps do you take to secure your staging or beta environments? Share your tips in the comments below!

@@ -1,6 +1,5 @@
 ---
 title: Writing Regular Expressions with Comments in Ruby
-published: true
 ---
 
 I don't think it's any secret that regular expressions are essentially magic to

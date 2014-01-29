@@ -49,10 +49,6 @@ I quickly modified my .htaccess file and sure enough, this new rule was able to 
 
 Thanks to Erik and Nevin my OCD has been suppressed, for now.
 
-##The Update
-
-In the comments, [Manuel](http://kevinthompson.info/blog/completely-remove-index-php-from-expressionengine-urls/#comment-15) pointed out the fact that the rules suggested by Erik and Nevin would break any `POST` request sent to an `index.php` URL. To resolve this, he suggested adding the following condition to the rewrite (which has already been included in the example above) that would restrict it to only `GET` requests:
-
 ``` bash
 RewriteCond %{THE_REQUEST} ^GET
 ```

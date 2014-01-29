@@ -1,6 +1,5 @@
 ---
 title: Play The Supporting Role
-published: true
 ---
 
 I wrote a post on [Medium](https://medium.com/architecting-a-life/aebd9a8772f0) a few days ago about my thoughts related to my career

@@ -130,9 +130,9 @@ abbr.initialism
 
 // Blockquotes
 blockquote
-  +background($background-color)
-  border-left: 3px solid $gray
-  color: $light-gray
+  +background(darken($background-color, 2))
+  border-left: 1px solid rgba($gray, .2)
+  color: lighten($light-gray, 4)
   padding: 1.5em 0
   small
     display: block
