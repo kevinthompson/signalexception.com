@@ -4,10 +4,10 @@ title: Testing An OAuth API Using cURL
 
 I'm in the process of updating the API documentation over at [Planning Center Online](http://get.planningcenteronline.com) and I wanted to be sure that the sample JSON I was providing our users in the documentation matched the actual JSON returned. I didn't want to create an entire sample OAuth app to test this, so I did a little research into how I might test OAuth requests using cURL.
 
-It turns our theres a nice OAuth Proxy server written by Seth Fitzsimmons called, surprisingly, [OAuth Proxy](https://github.com/mojodna/oauth-proxy). To get started, you need to first install OAuth Proxy, preferrably using a package manager such as [pip](http://pypi.python.org/pypi/pip) using the following command:
+It turns our theres a nice OAuth Proxy server written by Seth Fitzsimmons called, surprisingly, [OAuth Proxy](https://github.com/mojodna/node-oauth-proxy). To get started, you need to first install OAuth Proxy using the following command:
 
 ``` bash
-pip install oauth-proxy
+npm install -g oauth-proxy
 ```
 
 Once you've got OAuth Proxy installed, you can run it in a terminal session using:
@@ -41,19 +41,3 @@ http --proxy=http:localhost:8001 localhost:3000/users.json
 ```
 
 I strongly recommend you take a look at HTTPie if you use command line cURL at all.
-
-
-----------
-
-### Update (9/12/2013)
-
-Some people are having issues with oauth-proxy returning an unknown command
-error within twisted. In order to resolve this (on Mac) you'll need to run the
-following commands (changing the path of the `mkdir` command to the path of your
-python framework):
-
-``` bash
-pip install -d /tmp/ oauth-proxy
-mkdir -p /usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/Current/lib/python2.7/twisted/plugins
-cp /tmp/pip-build-root/oauth-proxy/twisted/plugins/proxy.py twisted/plugins
-```
