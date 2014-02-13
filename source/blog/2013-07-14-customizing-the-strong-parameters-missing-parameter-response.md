@@ -28,7 +28,7 @@ class API::V1::BaseController < ApplicationController
     error[parameter_missing_exception.param] = ['parameter is required']
     response = { errors: [error] }
     respond_to do |format|
-      format.json { render response, status: :unprocessable_entity }
+      format.json { render json: response, status: :unprocessable_entity }
     end
   end
 
