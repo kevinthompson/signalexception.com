@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.1'
 
 # Server
 gem 'rack-contrib'
-gem 'rack-rewrite'
 gem 'unicorn'
 
 # Middleman
