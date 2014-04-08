@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.1'
 
 # Server
 gem 'rack-contrib'
@@ -25,7 +25,6 @@ gem 'nokogiri'
 gem 'redcarpet'
 
 # Middleware
-gem 'rack-rewrite'
 gem 'rack-google-analytics'
 
 # Testing
