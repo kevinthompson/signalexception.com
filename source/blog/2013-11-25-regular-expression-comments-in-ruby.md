@@ -20,8 +20,8 @@ def email_pattern
 end
  
 'a@b.com'.match(email_pattern) # => #<MatchData "a@b.com">
-'kevin@kevinthompson.info'.match(email_pattern) # => #<MatchData "kevin@kevinthompson.info">
-'kevinthompson.info'.match(email_pattern) # => nil
+'email@madebykevin.com'.match(email_pattern) # => #<MatchData "email@madebykevin.com">
+'madebykevin.com'.match(email_pattern) # => nil
 ```
 
 For simpler regular expression statements this is probably overkill, but if

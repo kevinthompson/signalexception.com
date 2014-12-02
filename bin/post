@@ -7,7 +7,7 @@ require 'pty'
 if (@title = ARGV.join(' ')) != ''
   @date     = Time.now.strftime('%Y-%m-%d')
   @filename = @title.downcase.gsub(/[^\da-z]/i,'-').gsub(/-+/,'-')
-  @pathname = "/Users/kevinthompson/code/kevinthompson.info/source/blog/#{@date}-#{@filename}.md"
+  @pathname = "/Users/kevinthompson/code/madebykevin.com/source/blog/#{@date}-#{@filename}.md"
 
   unless File.exist?(@pathname)
     File.open(@pathname, 'w') do |file|

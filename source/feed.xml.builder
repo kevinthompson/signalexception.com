@@ -2,9 +2,9 @@ xml.instruct!
 xml.feed 'xmlns' => 'http://www.w3.org/2005/Atom' do
   xml.title 'Kevin Thompson'
   xml.subtitle 'Developer'
-  xml.id 'http://kevinthompson.info/'
-  xml.link 'href' => 'http://kevinthompson.info/'
-  xml.link 'href' => 'http://kevinthompson.info/feed.xml', 'rel' => 'self'
+  xml.id 'http://madebykevin.com/'
+  xml.link 'href' => 'http://madebykevin.com/'
+  xml.link 'href' => 'http://madebykevin.com/feed.xml', 'rel' => 'self'
   xml.updated blog.articles.first.date.to_time.iso8601
   xml.author { xml.name 'Kevin Thompson' }
 

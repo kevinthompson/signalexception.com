@@ -17,4 +17,4 @@ Allow: /*
 
 
 # Sitemap
-Sitemap: http://kevinthompson.info/sitemap.xml
+Sitemap: http://madebykevin.com/sitemap.xml
