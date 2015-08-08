@@ -1,10 +1,10 @@
 xml.instruct!
 xml.feed 'xmlns' => 'http://www.w3.org/2005/Atom' do
-  xml.title 'Kevin Thompson'
-  xml.subtitle 'Developer'
-  xml.id 'http://madebykevin.com/'
-  xml.link 'href' => 'http://madebykevin.com/'
-  xml.link 'href' => 'http://madebykevin.com/feed.xml', 'rel' => 'self'
+  xml.title 'SignalException'
+  xml.subtitle 'By Kevin Thompson'
+  xml.id 'http://signalexception.com/'
+  xml.link 'href' => 'http://signalexception.com/'
+  xml.link 'href' => 'http://signalexception.com/feed.xml', 'rel' => 'self'
   xml.updated blog.articles.first.date.to_time.iso8601
   xml.author { xml.name 'Kevin Thompson' }
 

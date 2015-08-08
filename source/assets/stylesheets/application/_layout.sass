@@ -1,0 +1,186 @@
+#main
+  position: relative
+
+#header
+  padding: 12px 15px
+
+  & > nav
+    +clearfix
+    .button
+      padding: 3px 10px
+    a
+      float: right
+    a.back
+      float: left
+  & + hr
+    margin-top: 0
+  .title
+    display: none
+
+#logo
+  position: absolute
+  top: 6px
+  left: 50%
+  display: block
+  width: 40px
+  border: 0
+  margin-left: -20px
+
+  .image
+    +text-shadow(0 0 10px rgba(0,0,0,.2))
+
+  h1
+    display: none
+
+#content
+  margin: 0 10px
+  padding-top: 10px
+
+  h1
+    margin-top: 1rem
+
+.menu + hr
+  margin-bottom: 0
+
+#main > footer
+  +clearfix
+  color: lighten($text-color, 50)
+  padding: 10px
+
+  .copyright
+    float: left
+
+  span
+    display: none
+
+  a
+    float: right
+
+// Desktop
+@media screen and (min-width: $breakpoint-large)
+  #main
+    margin: 0 auto
+    max-width: 64em
+    padding: 40px 0
+
+  #header
+    position: fixed
+    width: 220px
+    padding: 80px 40px 0
+    top: 0
+    text-align: center
+
+    nav, & + hr
+      display: none
+
+    .title
+      color: lighten($text-color, 50)
+      display: inline-block
+      font-size: 14px
+      line-height: 1.5em
+      text-align: center
+      text-transform: uppercase
+      position: relative
+      background: $background-color
+      padding: 0 6px
+
+      a
+        color: lighten($text-color, 40)
+        text-decoration: none
+
+    &:before
+      bottom: 11px
+      position: absolute
+      content: ''
+      height: 1px
+      border-top: 1px solid lighten($accent, 40)
+      width: 60%
+      display: block
+      left: 50%
+      margin-left: -30%
+
+  #logo
+    position: static
+    top: auto
+    left: auto
+    width: auto
+    margin: 0 auto 6px
+    text-align: center
+
+    .image-container
+      position: relative
+      margin: 0 auto 20px
+      width: 128px
+      height: 128px
+
+      .image
+        -webkit-animation: greeting 1.5s 1s 1 normal forwards
+        -webkit-animation-timing-function: ease
+        position: absolute
+        padding: 3px
+
+      img
+        +border-radius(2px)
+
+    h1
+      color: $heading-color
+      display: block
+      font-weight: 300
+      text-transform: uppercase
+      letter-spacing: 2px
+      margin: 0 0 10px
+      font-size: 18px
+      -webkit-font-smoothing: antialiased
+
+  #content
+    padding-top: 40px
+    padding-bottom: 40px
+
+    h1
+      margin-top: 0
+
+    & + hr
+      display: none
+
+  #content, #main > footer
+    +background($container-color)
+    margin-left: 300px
+    margin-right: 40px
+    max-width: 45em
+
+  #main > footer
+    border-top: 1px solid lighten($accent, 40)
+    margin: 10px 80px 10px 340px
+    font-size: .85em
+    span
+      display: inline
+    .copyright
+      float: right
+
+    & > a
+      display: none
+
+
+@-webkit-keyframes greeting
+  0%
+    top: 0
+  10%
+    top: -10px
+  20%
+    top: 0px
+  30%
+    top: -10px
+  40%
+    top: 0px
+  45%
+    +rotate(0deg)
+  60%
+    +rotate(-4deg)
+  70%
+    +rotate(4deg)
+  80%
+    +rotate(-4deg)
+  90%
+    +rotate(4deg)
+  100%
+    +rotate(0deg)

@@ -17,4 +17,4 @@ Allow: /*
 
 
 # Sitemap
-Sitemap: http://madebykevin.com/sitemap.xml
+Sitemap: http://signalexception.com/sitemap.xml

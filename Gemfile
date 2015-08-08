@@ -26,8 +26,3 @@ gem 'redcarpet'
 
 # Middleware
 gem 'rack-google-analytics'
-
-# Testing
-group :test do
-  gem 'rspec'
-end

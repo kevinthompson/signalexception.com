@@ -1,7 +1,7 @@
-Kevin Thompson
+SignalException.com
 ====================
 
-This repository contains the content for [http://madebykevin.com](http://madebykevin.com). 
+This repository contains the content for [http://signalexception.com](http://signalexception.com). 
 All content and design (including images and CSS) are copyright Kevin Thompson, unless stated otherwise, and **may not**
 be used without permission.
 
@@ -12,7 +12,7 @@ the content, code or design should be re-used without my permission.*
 
 ### Clone The Repo
 ``` bash
-git clone https://github.com/kevinthompson/madebykevin.com.git
+git clone https://github.com/kevinthompson/signalexception.com.git
 ```
 
 ### Prep the Project

@@ -1,0 +1,51 @@
+//
+// Button Styles
+// ----------------------------------------
+
+.button, a.button
+  +background($accent)
+  +border-radius(3px)
+  border: 1px solid $accent-dark
+  color: lighten($accent, 70)
+  display: block
+  font-family: $sans
+  font-size: 14px
+  padding: 5px 10px 4px
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+
+  span
+    position: relative
+    z-index: 2
+
+  &.alt
+    background: $container-color
+    +box-shadow(none)
+    color: $gray
+    padding: 4px 10px 5px
+    +text-shadow(none)
+
+  &.back
+    position: relative
+    display: inline-block
+    margin-left: 13px
+    margin-right: 2px
+    padding-left: 5px
+    background: $container-color
+    border-left: 0 !important
+
+  &.back:before
+    background: $container-color
+    border: solid $accent-dark
+    border-width: 0 0 1px 1px
+    border-radius: 2px 0 2px 2px
+    content: ''
+    display: block
+    height: 23px
+    left: -10px
+    position: absolute
+    +rotate(45deg)
+    +text-shadow(none)
+    top: 3px
+    width: 21px

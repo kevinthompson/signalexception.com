@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <%= partial 'layouts/partials/head' %>
+  <body>
+    <div id="main">
+      <%= partial 'layouts/partials/header' %>
+      <div id="content">
+        <%= yield %>
+      </div>
+      <%= partial 'layouts/partials/footer' %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<nav class="menu" id="menu">
+  <ul>
+    <li>
+      <%= link_to 'Articles', '/' %>
+    </li>
+  </ul>
+  <ul class="external">
+    <li>
+      <% link_to 'http://twitter.com/signalexception', class: 'alt button' do %>
+        <span>Follow the Blog on</span>
+        Twitter
+      <% end %>
+    </li>
+    <li>
+      <% link_to 'http://signalexception.com/feed.xml', class: 'alt button' do %>
+        Subscribe
+        <span>for new Articles</span>
+      <% end %>
+    </li>
+  </ul>
+</nav>

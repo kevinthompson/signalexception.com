@@ -1,0 +1,21 @@
+<section class="article-list">
+  <% articles_by_month.each_pair do |month,articles| %>
+    <div class="article-group">
+      <h2>
+        <%= month %>
+      </h2>
+      <ul>
+        <% articles.each do |article| %>
+          <li>
+            <span>
+              <%= link_to article.title, article.url %>
+            </span>
+            <span class="date">
+              <%= article.date.strftime date.format %>
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</section>

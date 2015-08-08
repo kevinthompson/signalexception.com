@@ -1,0 +1,67 @@
+//
+// Base Styles
+// ----------------------------------------
+
+html, body
+  height: 100%
+
+body
+  margin: 0
+  font-family: $base-font-family
+  font-size: $base-font-size
+  font-weight: $base-font-weight
+  line-height: $base-line-height
+  color: $text-color
+  +background($background-color)
+
+figure
+  margin: 0 0 2em
+
+img
+  display: block
+  width: 100%
+
+a, a:visited, a:link, a:hover
+  color: $link-color
+  text-decoration: none
+  border-bottom: 1px dotted lighten($accent, 30)
+
+.embed-container
+  position: relative
+  padding-bottom: 56.25%
+  padding-top: 30px
+  height: 0
+  overflow: hidden
+  max-width: 100%
+  height: auto
+
+  iframe, object, embed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+#content
+  h1
+    a
+      color: $heading-color
+      border-bottom: 0
+
+  iframe
+    width: 100%
+
+    &.video
+      height: 600px
+
+  h1, h2, h3, h4, h5, h6, dl, ol, ul, p, pre, small, figure, blockquote
+    margin-left: 15px
+    margin-right: 15px
+
+    @media screen and (min-width: $breakpoint-large)
+      margin-left: 40px
+      margin-right: 40px
+
+@media screen and (min-width: $breakpoint-large)
+  *:last-child
+    margin-bottom: 0 !important

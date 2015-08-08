@@ -1,0 +1,73 @@
+//
+// Menus
+// -------
+
+.menu
+  padding: 0 15px
+
+  ul
+    +clearfix
+    list-style-type: none
+    padding: 0
+    margin: 0 0 $base-line-height
+
+    li
+      margin: 0
+
+      a
+        @extend .button
+        +border-radius(3px)
+
+    &.external
+      a[href*=".com"], a[href*="feed.xml"]
+        background-position: 12px 11px
+        background-repeat: no-repeat
+        text-align: left
+        padding-left: 39px
+
+      a[href*=".com"]
+        &:after
+          text-transform: lowercase
+          content: "\203A"
+          font-size: 2.5em
+          line-height: .6em
+          color: $light-gray
+          float: right
+      a[href*="github.com"]
+        background-image: url('/images/icons/github_16.png')
+      a[href*="twitter.com"]
+        background-image: url('/images/icons/twitter_16.png')
+      a[href*="linkedin.com"]
+        background-image: url('/images/icons/linkedin_16.png')
+      a[href*="plus.google.com"]
+        background-image: url('/images/icons/google_plus_16.png')
+      a[href*="feed.xml"]
+        background-image: url('/images/icons/rss_16.png')
+
+    li, &.external li
+      a
+        border-radius: 0
+        border: 1px solid lighten($accent,40)
+      &:first-child a
+        border-top-left-radius: 3px
+        border-top-right-radius: 3px
+        border-bottom: none
+      &:last-child a
+        border-bottom-left-radius: 3px
+        border-bottom-right-radius: 3px
+        border-bottom: 1px solid lighten($accent,40)
+
+  @media screen and (min-width: $breakpoint-large)
+    padding: 0 40px
+    position: fixed
+    top: 335px
+    width: 220px
+
+    ul
+      margin-bottom: 20px
+      li, &.external li
+        margin: 0
+    span
+      display: none
+    & + hr
+      display: none

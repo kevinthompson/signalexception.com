@@ -11,7 +11,7 @@ It's slightly more difficult to do the same in Batman.js because Batman  preserv
 ``` javascript
 {
   id: 14352
-  title: 'ISIS Merch'
+  title: 'Archer Merchandise'
   Products: [
     {
       title: 'Sterling Malory Archer Autographed Photo'
