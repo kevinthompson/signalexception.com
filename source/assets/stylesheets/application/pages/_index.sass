@@ -1,0 +1,75 @@
+.index
+  #header
+    width: 220px
+    top: 0
+    text-align: center
+    margin: 20px auto 0
+
+    nav, & + hr
+      display: block
+      margin: 20px 0
+
+    .title
+      color: lighten($text-color, 50)
+      display: block
+      font-size: 14px
+      line-height: 1.5em
+      text-align: center
+      text-transform: uppercase
+      position: relative
+      background: $background-color
+      padding: 0 6px
+
+      a
+        color: lighten($text-color, 40)
+        text-decoration: none
+
+    &:before
+      bottom: 11px
+      position: absolute
+      content: ''
+      height: 1px
+      border-top: 1px solid lighten($accent, 40)
+      width: 60%
+      display: block
+      left: 50%
+      margin-left: -30%
+
+  #logo
+    position: static
+    top: auto
+    left: auto
+    width: auto
+    margin: 0 auto 6px
+    text-align: center
+
+    .image-container
+      position: relative
+      margin: 0 auto 20px
+      width: 128px
+      height: 128px
+
+      .image
+        -webkit-animation: greeting 1.5s 1s 1 normal forwards
+        -webkit-animation-timing-function: ease
+        position: absolute
+        padding: 3px
+
+      img
+        +border-radius(2px)
+
+    h1
+      color: $heading-color
+      display: block
+      font-weight: 300
+      text-transform: uppercase
+      letter-spacing: 2px
+      margin: 0 0 10px
+      font-size: 18px
+      -webkit-font-smoothing: antialiased
+
+@media screen and (min-width: $breakpoint-large)
+  .index
+    #header
+      & + hr
+        display: none

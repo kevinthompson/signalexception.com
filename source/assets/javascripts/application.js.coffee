@@ -10,6 +10,7 @@ $(document)
       event.preventDefault()
       href = $target.attr('href')
       unless href == window.location.pathname
+        $('body').attr('class', (if href == '/' then 'index' else ''))
         $.pjax
           url: href
           container: '#content'

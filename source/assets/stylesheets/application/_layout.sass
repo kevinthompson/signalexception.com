@@ -2,7 +2,7 @@
   position: relative
 
 #header
-  padding: 12px 15px
+  padding: 15px
 
   & > nav
     +clearfix
@@ -22,15 +22,18 @@
   top: 6px
   left: 50%
   display: block
-  width: 40px
+  width: 50px
   border: 0
   margin-left: -20px
 
   .image
     +text-shadow(0 0 10px rgba(0,0,0,.2))
+    background: #fff
+    padding: 5px
 
   h1
     display: none
+
 
 #content
   margin: 0 10px
@@ -151,10 +154,10 @@
   #main > footer
     border-top: 1px solid lighten($accent, 40)
     margin: 10px 80px 10px 340px
-    font-size: .85em
     span
       display: inline
     .copyright
+      font-size: .85em
       float: right
 
     & > a
