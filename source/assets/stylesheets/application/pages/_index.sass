@@ -4,6 +4,8 @@
     top: 0
     text-align: center
     margin: 20px auto 0
+    overflow: hidden
+    position: relative
 
     nav, & + hr
       display: block
@@ -11,7 +13,7 @@
 
     .title
       color: lighten($text-color, 50)
-      display: block
+      display: inline-block
       font-size: 14px
       line-height: 1.5em
       text-align: center
@@ -25,22 +27,22 @@
         text-decoration: none
 
     &:before
-      bottom: 11px
+      bottom: 25px
       position: absolute
       content: ''
       height: 1px
       border-top: 1px solid lighten($accent, 40)
-      width: 60%
+      width: 70%
       display: block
       left: 50%
-      margin-left: -30%
+      margin-left: -35%
 
   #logo
     position: static
     top: auto
     left: auto
     width: auto
-    margin: 0 auto 6px
+    margin: 0 auto
     text-align: center
 
     .image-container
@@ -64,12 +66,20 @@
       font-weight: 300
       text-transform: uppercase
       letter-spacing: 2px
-      margin: 0 0 10px
+      margin: 0
       font-size: 18px
       -webkit-font-smoothing: antialiased
 
 @media screen and (min-width: $breakpoint-large)
   .index
     #header
+      position: fixed
+      margin-top: 0
+
+      &:before
+        bottom: 11px
+        width: 60%
+        margin-left: -30%
+
       & + hr
         display: none
