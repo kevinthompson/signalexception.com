@@ -44,7 +44,6 @@ activate :syntax
 
 # Build
 configure :build do
-  use Rack::GoogleAnalytics, tracker: 'UA-24584832-1'
   activate :asset_hash
   activate :cache_buster
   activate :gzip

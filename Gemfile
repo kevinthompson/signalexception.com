@@ -23,6 +23,3 @@ gem 'builder'
 gem 'hashie'
 gem 'nokogiri'
 gem 'redcarpet'
-
-# Middleware
-gem 'rack-google-analytics'
